@@ -341,7 +341,7 @@ var scenefotobicicleta = new ScrollMagic.Scene({triggerElement: "#resilienciafot
 
 var scenebicicleta = new ScrollMagic.Scene({triggerElement: "#resilienciabicicleta", triggerHook:0.6} )
 					.addTo(controller)
-					.addIndicators() // add indicators (requires plugin)
+					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
                             sketch.transitionToIndex( document.getElementById("resilienciabicicleta").dataset.indexfoto );
@@ -363,7 +363,7 @@ var scenefotowhatsapp = new ScrollMagic.Scene({triggerElement: "#resilienciafoto
 
 var scenewhatsapp = new ScrollMagic.Scene({triggerElement: "#resilienciawhatsapp", triggerHook:0.6} )
 					.addTo(controller)
-					.addIndicators() // add indicators (requires plugin)
+					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
                             sketch.transitionToIndex( document.getElementById("resilienciawhatsapp").dataset.indexfoto );
