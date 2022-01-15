@@ -39,6 +39,14 @@ class Sketch {
     this.images[14] = "../images/diana_02.jpg"
     this.images[15] = "../images/juan-carlos-01.jpg"
     this.images[16] = "../images/juan-carlos-02.jpg"
+    this.images[17] = "../images/diana_mario.jpg"
+    this.images[18] = "../images/diana_03.jpg"
+    this.images[19] = "../images/diana_02.jpg"
+    this.images[20] = "../images/comunidad01.jpg"
+    this.images[21] = "../images/comunidad02.jpg"
+    this.images[22] = "../images/comunidad03.jpg"
+    this.images[23] = "../images/comunidad04.jpg"
+    this.images[24] = "../images/bicicleta.jpg"
 
     this.width = this.container.offsetWidth;
     this.height = this.container.offsetHeight;
