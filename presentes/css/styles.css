@@ -17,7 +17,7 @@ html {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    color: rgb(220, 244, 248);
+    color: rgb(255, 255, 255);
     font-family: 'Bitter', serif;
     /*font-family: 'Oswald', sans-serif;*/
     line-height: 1.53em;
@@ -49,7 +49,8 @@ html {
 }
 
 .azulclarosat {
-    color: rgb(176, 240, 248);
+    /*color: #b0f0f8;*/
+    color: #ffffff;
 }
 
 .amarilloclaro {
@@ -64,24 +65,61 @@ html {
     margin: 4rem 0;
 }
 
+
+/***** data ref icon *****/
+
 .dataref {
-    color: rgb(253, 140, 140);
+    color: #ffffff;
     cursor: pointer;
+    position: relative;
+    font-weight: 300;
 }
 
-.dataref:hover {
-    color: white;
-}
+    .dataref:hover {
+        color: rgb(0, 0, 0);
+    }
+
+    .dataref::before {
+        /*content: " " url(../images/file-alt-regular.svg) " ";*/
+        content: "\00a0" url(../images/dataref.svg) "\00a0";
+        display: inline-block;
+        transform: translateY(3.5px);
+    }
+
+    .dataref:hover:before {
+        /*content: " " url(../images/file-alt-regular.svg) " ";*/
+        content: "\00a0" url(../images/datarefhover.svg) "\00a0";
+        display: inline-block;
+        transform: translateY(3.5px);
+    }
+
+/***** url ref icon *****/
 
 .urlref {
-    color: rgb(253, 140, 140);
-    cursor: pointer;
-}
-
-.urlref:hover {
     color: rgb(255, 255, 255);
     cursor: pointer;
+    font-weight: 300;
 }
+
+    .urlref:hover {
+        color: rgb(0, 0, 0);
+    }
+
+    .urlref::before {
+        content: "\00a0" url(../images/urlref.svg) "\00a0";
+        pointer-events: all;
+        display: inline-block;
+        transform: translateY(3.5px);
+    }
+
+    .urlref:hover:before {
+        content: "\00a0" url(../images/urlrefhover.svg) "\00a0";
+        pointer-events: all;
+        display: inline-block;
+        transform: translateY(3.5px);
+    }
+
+
 
 #menufullscreen {
     position: fixed;
@@ -222,7 +260,6 @@ footer {
         font-weight: 200;
         font-family: 'Oswald', sans-serif;
         letter-spacing: 0.14em;
-
     }
 
 #wrappervideo {
@@ -251,6 +288,7 @@ footer {
     height: 100vh;
     z-index: 2;
     /*background-color: brown;*/
+    pointer-events: none; 
 }
 
 .wrapperimagenesfondo {
@@ -358,6 +396,7 @@ footer {
     left: calc( 45% - 60px );
     top: calc( 50% - 60px );
     cursor: pointer;
+    /*z-index: -1;*/
 }
 
 .playaudioiconsmall,.playvideoiconsmall {
@@ -367,6 +406,7 @@ footer {
     left: calc( 45% - 32px );
     top: calc( 50% - 32px );
     cursor: pointer;
+    /*z-index: -1;*/
 }
 
 
