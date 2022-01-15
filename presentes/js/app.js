@@ -5,28 +5,28 @@ var scrollPx = 0;
 var generativephotographyInstance;
 
 d3.selectAll(".playaudioicon").each(function(d) {
-    d3.xml("../images/playaudio.svg")
+    d3.xml("../images/playaudiolgbti2.svg")
         .then(data => {
             let icon = d3.select(this).node().append(data.documentElement);
         })
 });
 
 d3.selectAll(".playaudioiconsmall").each(function(d) {
-    d3.xml("../images/playaudiosmall.svg")
+    d3.xml("../images/playaudiolgbti2small.svg")
         .then(data => {
             let icon = d3.select(this).node().append(data.documentElement);
         })
 });
 
 d3.selectAll(".playvideoicon").each(function(d) {
-    d3.xml("../images/playvideo.svg")
+    d3.xml("../images/playvideolgbti2.svg")
         .then(data => {
             let icon = d3.select(this).node().append(data.documentElement);
         })
 });
 
 d3.selectAll(".playvideoiconsmall").each(function(d) {
-    d3.xml("../images/playvideosmall.svg")
+    d3.xml("../images/playvideolgbti2small.svg")
         .then(data => {
             let icon = d3.select(this).node().append(data.documentElement);
         })
