@@ -238,6 +238,143 @@ var scenevidefrente = new ScrollMagic.Scene({triggerElement: "#vidafrente", trig
                         }
 					})
 
+//alert( document.getElementById("metrobalderas").dataset.indexfoto )
+
+var scenebalderas = new ScrollMagic.Scene({triggerElement: "#metrobalderas", triggerHook:0.33} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("metrobalderas").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( 9 );
+                        }
+					})
+
+var scenevidefrente2 = new ScrollMagic.Scene({triggerElement: "#vidafrente2", triggerHook:0.33} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("vidafrente2").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("metrobalderas").dataset.indexfoto );
+                        }
+					})
+
+var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivirfotoportada", triggerHook:0.33} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("sobrevivirfotoportada").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("vidafrente2").dataset.indexfoto );
+                        }
+					})
+
+var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivir", triggerHook:0.33} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("sobrevivir").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("sobrevivirfotoportada").dataset.indexfoto );
+                        }
+					})
+
+var sceneausenciaestadoportada = new ScrollMagic.Scene({triggerElement: "#ausenciaestadofotoportada", triggerHook:0.33} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("ausenciaestadofotoportada").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("sobrevivir").dataset.indexfoto );
+                        }
+					})
+
+var sceneausenciaestado = new ScrollMagic.Scene({triggerElement: "#ausenciaestado", triggerHook:0.33} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("ausenciaestado").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("ausenciaestadofotoportada").dataset.indexfoto );
+                        }
+					})
+
+var sceneresilienciafotoportada = new ScrollMagic.Scene({triggerElement: "#resilienciafotoportada", triggerHook:0.6} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("resilienciafotoportada").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("ausenciaestado").dataset.indexfoto );
+                        }
+					})
+
+var sceneresiliencia = new ScrollMagic.Scene({triggerElement: "#resiliencia", triggerHook:0.5} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("resiliencia").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("resilienciafotoportada").dataset.indexfoto );
+                        }
+					})
+
+var scenefotobicicleta = new ScrollMagic.Scene({triggerElement: "#resilienciafotobicicleta", triggerHook:0.5} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("resilienciafotobicicleta").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("resiliencia").dataset.indexfoto );
+                        }
+					})
+
+var scenebicicleta = new ScrollMagic.Scene({triggerElement: "#resilienciabicicleta", triggerHook:0.6} )
+					.addTo(controller)
+					.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("resilienciabicicleta").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("resilienciafotobicicleta").dataset.indexfoto );
+                        }
+					})
+
+var scenefotowhatsapp = new ScrollMagic.Scene({triggerElement: "#resilienciafotowhatsapp", triggerHook:0.5} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("resilienciafotowhatsapp").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("resilienciabicicleta").dataset.indexfoto );
+                        }
+					})
+
+var scenewhatsapp = new ScrollMagic.Scene({triggerElement: "#resilienciawhatsapp", triggerHook:0.6} )
+					.addTo(controller)
+					.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("resilienciawhatsapp").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("resilienciafotowhatsapp").dataset.indexfoto );
+                        }
+					})
+
+
+
+
 
                     
 // build tween
