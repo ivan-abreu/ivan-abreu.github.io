@@ -397,7 +397,10 @@ footer {
     top: calc( 50% - 60px );
     cursor: pointer;
     /*z-index: -1;*/
+    filter: opacity(35%);
+    transition: 0.4s filter;
 }
+
 
 .playaudioiconsmall,.playvideoiconsmall {
     width: 64px;
@@ -407,6 +410,12 @@ footer {
     top: calc( 50% - 32px );
     cursor: pointer;
     /*z-index: -1;*/
+    filter: opacity(35%);
+    transition: 0.4s filter;
+}
+
+.playaudioicon:hover,.playvideoicon:hover,.playaudioiconsmall:hover,.playvideoiconsmall:hover {
+    filter: opacity(100%);
 }
 
 
