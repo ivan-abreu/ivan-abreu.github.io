@@ -1,0 +1,49 @@
+#mainmenu .menuicon {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.borderb {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+
+#nosotres {
+    width: 80%;
+    margin: auto;
+}   
+#nosotres * {
+    color: rgb(0, 0, 0);
+}
+
+.gradientnosotres {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #ffffff, #ffffff);
+    z-index: -1;
+}
+
+    .roles {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 2rem;
+        border-top: 0.5px solid rgba(0, 0, 0, 0.5);
+        padding: 1rem 0rem;
+    }
+
+    .role {
+        font-weight: 400;
+        margin-top: 1.5em;
+    }
+
+    .roles div .role:first-child {
+        margin-top: 0
+    }
+
+    .participante {
+        font-weight: 600;
+    }
+
