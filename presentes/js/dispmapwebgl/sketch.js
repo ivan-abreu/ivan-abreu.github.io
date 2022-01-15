@@ -47,6 +47,8 @@ class Sketch {
     this.images[22] = "../images/comunidad03.jpg"
     this.images[23] = "../images/comunidad04.jpg"
     this.images[24] = "../images/bicicleta.jpg"
+    this.images[25] = "../images/metro-balderas.jpg"
+    this.images[26] = "../images/by-juancarlos01.jpg"
 
     this.width = this.container.offsetWidth;
     this.height = this.container.offsetHeight;
