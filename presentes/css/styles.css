@@ -397,7 +397,7 @@ footer {
     top: calc( 50% - 60px );
     cursor: pointer;
     /*z-index: -1;*/
-    filter: opacity(35%);
+    filter: opacity(40%);
     transition: 0.4s filter;
 }
 
@@ -410,7 +410,7 @@ footer {
     top: calc( 50% - 32px );
     cursor: pointer;
     /*z-index: -1;*/
-    filter: opacity(35%);
+    filter: opacity(40%);
     transition: 0.4s filter;
 }
 
