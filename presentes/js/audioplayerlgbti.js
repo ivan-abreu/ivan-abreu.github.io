@@ -86,6 +86,8 @@ var AudioPlayerLGBTI = function(p) {
             bars.pop();
             bars.unshift(levelG);
             rectLimit += 0.05;
+            let offsetviz = p.map( song.currentTime(), 0, song.duration(), 0, 390 );
+            visualizeAudioTimer( offsetviz );
         } else { 
             playingStatus = 0; 
             rectLimit -= 0.05;
