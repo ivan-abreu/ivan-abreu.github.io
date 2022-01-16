@@ -461,7 +461,7 @@ function loadSection(url) {
 /* ---------------------------------------------------- */
 //var audioplayerI;
 
-function startPlayer(ele) {
+/*function startPlayer(ele) {
     if (typeof audioplayerI == "object" ) {
         //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#play").attr( "display", "initial" );
         //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#pause").attr( "display", "none" );
@@ -480,34 +480,18 @@ function startPlayer(ele) {
             }
         }
     } 
-}
+}*/
 
 function playAudio(ele) {
     document.getElementById("wrapperaudioplayer").style.clip = "auto";
     d3.select("#wrapperplayer").select("#tempo").style( "stroke-dashoffset", 0 );
-    if (typeof audioplayerI == "object" ) {
-        //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#play").attr( "display", "initial" );
-        //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#pause").attr( "display", "none" );
-        if ( audioplayerI.getFileRecording() != ele.dataset.file ) {
-            audioplayerI.loadRecording( ele.dataset.file );
-            audioplayerI.ele = ele;
-            //d3.select(ele).select("#play").attr( "display", "none" );
-            //d3.select(ele).select("#pause").attr( "display", "initial" );
-        } else {
-            if ( audioplayerI.togglePlaying() ) {
-                //d3.select(ele).select("#play").attr( "display", "initial" );
-                //d3.select(ele).select("#pause").attr( "display", "none" );
-            } else {
-                //d3.select(ele).select("#play").attr( "display", "none" );
-                //d3.select(ele).select("#pause").attr( "display", "initial" );
-            }
-        }
-    } 
+
+    audioplayerI.loadRecording( ele.dataset.file );
+    audioplayerI.ele = ele;
+    startAudioPlayer(ele)
 }
 
 function endAudioPlayer(ele) {
-    //d3.select(ele).select("#play").attr( "display", "initial" );
-    //d3.select(ele).select("#pause").attr( "display", "none" );
     document.getElementById("wrapperaudioplayer").style.clip = "rect(0 0 0 0)";
     sketch.transitionToIndex( 9 );
     d3.selectAll('p,h1,h2,h3')
@@ -538,12 +522,25 @@ function startAudioPlayer(ele) {
 }
 
 function closePlayer() {
-    audioplayerI.togglePlaying();
+    //audioplayerI.song.pause();
+    audioplayerI.stopPlaying();
+    //audioplayerI.togglePlaying();
+    endAudioPlayer(audioplayerI.ele)
+    //audioplayerI.togglePlaying();
 }
 
 function visualizeAudioTimer( dashoffset ) {
-    console.log( dashoffset );
     d3.select("#wrapperplayer").select("#tempo").style( "stroke-dashoffset", dashoffset );
+}
+
+function tooglePlayerUI(ele) {
+    if ( audioplayerI.togglePlaying() ) {
+        d3.select(ele).select("#play").attr( "display", "initial" );
+        d3.select(ele).select("#pause").attr( "display", "none" );
+    } else {
+        d3.select(ele).select("#play").attr( "display", "none" );
+        d3.select(ele).select("#pause").attr( "display", "initial" );
+    }
 }
 
 

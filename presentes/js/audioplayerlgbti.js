@@ -66,17 +66,20 @@ var AudioPlayerLGBTI = function(p) {
 
     function loaded() {
         song.play();
-        song.setVolume(0.3);
+        song.setVolume(0.4);
+        song.onended( endPlayer );
     }
 
     p.draw = function() {
         p.clear();
         let changingPlayinStatus = playingStatus - playingStatusPrev;
-        if ( changingPlayinStatus == 1 ) { 
+        //if ( changingPlayinStatus == -1 && song.currentTime() == song.duration() ) endAudioPlayer(p.ele);
+        /*if ( changingPlayinStatus == 1 ) { 
             startAudioPlayer(p.ele);
         } else if ( changingPlayinStatus == -1 ) {
             endAudioPlayer(p.ele);
-        }
+        }*/
+        
         playingStatusPrev = playingStatus
         if ( song.isPlaying() ) {
             playingStatus = 1;
@@ -116,6 +119,18 @@ var AudioPlayerLGBTI = function(p) {
             return playing;
         }
     }
+
+    p.stopPlaying = function() {
+        song.stop(0);
+        volScaled = 0;
+    }
+
+    function endPlayer() {
+        if ( p.abs( song.currentTime() - song.duration() ) < 0.002 ) {
+            endAudioPlayer(p.ele);
+        }
+    }
+    
 
 }
 
