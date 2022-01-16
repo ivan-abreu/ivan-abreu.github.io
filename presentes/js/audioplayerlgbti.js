@@ -117,4 +117,4 @@ var AudioPlayerLGBTI = function(p) {
 
 }
 
-let audioplayerI = new p5(AudioPlayerLGBTI, 'wrapperaudioplayer');
+let audioplayerI = new p5(AudioPlayerLGBTI, 'wrapperaudiovisualizer');
