@@ -482,7 +482,10 @@ function loadSection(url) {
     } 
 }*/
 
+var typeOfPlayer;
+
 function playAudio(ele) {
+    typeOfPlayer = "audio";
     document.getElementById("wrapperaudioplayer").style.clip = "auto";
     d3.select("#wrapperplayer").select("#tempo").style( "stroke-dashoffset", 0 );
 
@@ -522,11 +525,19 @@ function startAudioPlayer(ele) {
 }
 
 function closePlayer() {
-    //audioplayerI.song.pause();
-    audioplayerI.stopPlaying();
-    //audioplayerI.togglePlaying();
-    endAudioPlayer(audioplayerI.ele)
-    //audioplayerI.togglePlaying();
+    switch( typeOfPlayer ) {
+        case "audio":
+            audioplayerI.stopPlaying();
+            endAudioPlayer(audioplayerI.ele)
+            break;
+        case "video" :
+            clearInterval( timerVideo );
+            timerVideo = null;
+            vid.pause();
+            vid.style.display = "none";
+            endVideoPlayer();
+            break;
+    }
 }
 
 function visualizeAudioTimer( dashoffset ) {
@@ -534,18 +545,36 @@ function visualizeAudioTimer( dashoffset ) {
 }
 
 function tooglePlayerUI(ele) {
-    if ( audioplayerI.togglePlaying() ) {
-        d3.select(ele).select("#play").attr( "display", "initial" );
-        d3.select(ele).select("#pause").attr( "display", "none" );
-    } else {
-        d3.select(ele).select("#play").attr( "display", "none" );
-        d3.select(ele).select("#pause").attr( "display", "initial" );
+    switch( typeOfPlayer ) {
+        case "audio":
+            if ( audioplayerI.togglePlaying() ) {
+                d3.select(ele).select("#play").attr( "display", "initial" );
+                d3.select(ele).select("#pause").attr( "display", "none" );
+            } else {
+                d3.select(ele).select("#play").attr( "display", "none" );
+                d3.select(ele).select("#pause").attr( "display", "initial" );
+            }
+            break;
+        case "video" :
+            if ( !vid.paused ) {
+                vid.pause();
+                d3.select(ele).select("#play").attr( "display", "initial" );
+                d3.select(ele).select("#pause").attr( "display", "none" );
+            } else {
+                vid.play();
+                d3.select(ele).select("#play").attr( "display", "none" );
+                d3.select(ele).select("#pause").attr( "display", "initial" );
+            }
+            break;
     }
+
+    
 }
 
 
 
 var vid;
+var timerVideo;
 
 /*
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -561,11 +590,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
 */
 
 function playVideo(ele) {
+    typeOfPlayer = "video";
+    document.getElementById("wrapperaudioplayer").style.clip = "auto";
+    d3.select("#wrapperplayer").select("#tempo").style( "stroke-dashoffset", 0 );
+
     vid = document.getElementById("videofullscreen");
     vid.src = `../videos/${ele.dataset.file}`;
     vid.style.display = "initial";
     vid.onended = function() {   
-        d3.selectAll('p,h1,h2,h3')
+        endVideoPlayer();
+    };
+
+    vid.play();
+
+    d3.selectAll('p,h1,h2,h3')
+                    .transition()
+                    .duration(300)
+                    .ease(d3.easeLinear)
+                    .style("opacity", "0.0");
+
+    timerVideo = setInterval( () => {
+        let offsetviz = audioplayerI.map( vid.currentTime, 0, vid.duration, 0, 390 );
+        d3.select("#wrapperplayer").select("#tempo").style( "stroke-dashoffset", offsetviz );
+    }, 33) 
+                    
+
+}
+
+function endVideoPlayer() {
+    document.getElementById("wrapperaudioplayer").style.clip = "rect(0 0 0 0)";
+    sketch.transitionToIndex( 9 );
+    d3.selectAll('p,h1,h2,h3')
                     .transition()
                     .duration(300)
                     .ease(d3.easeLinear)
@@ -574,45 +629,12 @@ function playVideo(ele) {
                         vid.style.display = "none";
                         /*sketch.transitionToIndex( 9 );*/
                     });
-        
-    };
-    /*if (vid.hasOwnProperty("onended")) {
-        vid.addEventListener("ended", function () {
-            alert("Thanks for watching!");
-        });
-    }*/
-    vid.play();
-    d3.selectAll('p,h1,h2,h3')
-                    .transition()
-                    .duration(300)
-                    .ease(d3.easeLinear)
-                    .style("opacity", "0.0");
-
-    d3.select(ele)
-                    .transition()
-                    .delay(300)
-                    .duration(300)
-                    .ease(d3.easeLinear)
-                    .style("opacity", "1.0");
-    /*if (typeof audioplayerI == "object" ) {
-        d3.selectAll(".playvideoicon,.playvideoiconsmall").select("#play").attr( "display", "initial" );
-        d3.selectAll(".playvideoicon,.playvideoiconsmall").select("#pause").attr( "display", "none" );
-        if ( audioplayerI.getFileRecording() != ele.dataset.file ) {
-            audioplayerI.loadRecording( ele.dataset.file );
-            audioplayerI.ele = ele;
-            d3.select(ele).select("#play").attr( "display", "none" );
-            d3.select(ele).select("#pause").attr( "display", "initial" );
-        } else {
-            if ( audioplayerI.togglePlaying() ) {
-                d3.select(ele).select("#play").attr( "display", "initial" );
-                d3.select(ele).select("#pause").attr( "display", "none" );
-            } else {
-                d3.select(ele).select("#play").attr( "display", "none" );
-                d3.select(ele).select("#pause").attr( "display", "initial" );
-            }
-        }
-    } */
 }
+
+
+/*function closerVideo(ele) {
+
+}*/
 
 function openDataRef(ele) {
     window.open( ele.dataset.ref, "_blank")
