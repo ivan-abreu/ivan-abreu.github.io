@@ -50,6 +50,14 @@ class Sketch {
     this.images[25] = "../images/metro-balderas.jpg"
     this.images[26] = "../images/by-juancarlos01.jpg"
 
+    this.images[27] = "../images/es-lo-que-le-digo-a-samantha.jpg"
+    this.images[28] = "../images/la-ciudad-no-cerro-completamente.jpg"
+    this.images[29] = "../images/la-comunidad-somos-muy-apapachadora.jpg"
+    this.images[30] = "../images/nos-seguiamos-contactando.jpg"
+    this.images[31] = "../images/si-te-restringen-algo-pues-exploras.jpg"
+    this.images[32] = "../images/pese-al-cierre-fisico.jpg"
+
+
     this.width = this.container.offsetWidth;
     this.height = this.container.offsetHeight;
     this.container.appendChild(this.renderer.domElement);
