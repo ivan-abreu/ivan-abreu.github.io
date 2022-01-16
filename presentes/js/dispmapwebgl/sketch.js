@@ -56,6 +56,8 @@ class Sketch {
     this.images[30] = "../images/nos-seguiamos-contactando.jpg"
     this.images[31] = "../images/si-te-restringen-algo-pues-exploras.jpg"
     this.images[32] = "../images/pese-al-cierre-fisico.jpg"
+    this.images[33] = "../images/estas-cadenas.jpg"
+    this.images[34] = "../images/la-pandemia-me-dio-la-oportunidad.jpg"
 
 
     this.width = this.container.offsetWidth;
