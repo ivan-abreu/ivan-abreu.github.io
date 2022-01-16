@@ -217,7 +217,7 @@ var scenecdmx = new ScrollMagic.Scene({triggerElement: "#ciudaddemexico", trigge
 					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            sketch.transitionToIndex( 6 );
+                            sketch.transitionToIndex( 9 );
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
                             sketch.transitionToIndex( 5 );
                         }
@@ -230,7 +230,7 @@ var scenecentroamerica = new ScrollMagic.Scene({triggerElement: "#centroamerica"
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
                             sketch.transitionToIndex( 7 );
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            sketch.transitionToIndex( 6 );
+                            sketch.transitionToIndex( 9 );
                         }
 					})
 
@@ -279,7 +279,7 @@ var scenevidefrente2 = new ScrollMagic.Scene({triggerElement: "#vidafrente2", tr
                         }
 					})
 
-var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivirfotoportada", triggerHook:0.33} )
+var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivirfotoportada", triggerHook:0.6} )
 					.addTo(controller)
 					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
@@ -290,7 +290,7 @@ var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivir
                         }
 					})
 
-var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivir", triggerHook:0.33} )
+var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivir", triggerHook:0.7} )
 					.addTo(controller)
 					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
@@ -301,7 +301,7 @@ var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivir
                         }
 					})
 
-var sceneausenciaestadoportada = new ScrollMagic.Scene({triggerElement: "#ausenciaestadofotoportada", triggerHook:0.33} )
+var sceneausenciaestadoportada = new ScrollMagic.Scene({triggerElement: "#ausenciaestadofotoportada", triggerHook:0.45} )
 					.addTo(controller)
 					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
@@ -312,7 +312,7 @@ var sceneausenciaestadoportada = new ScrollMagic.Scene({triggerElement: "#ausenc
                         }
 					})
 
-var sceneausenciaestado = new ScrollMagic.Scene({triggerElement: "#ausenciaestado", triggerHook:0.33} )
+var sceneausenciaestado = new ScrollMagic.Scene({triggerElement: "#ausenciaestado", triggerHook:0.45} )
 					.addTo(controller)
 					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
@@ -322,6 +322,32 @@ var sceneausenciaestado = new ScrollMagic.Scene({triggerElement: "#ausenciaestad
                             sketch.transitionToIndex( document.getElementById("ausenciaestadofotoportada").dataset.indexfoto );
                         }
 					})
+
+var scenefotocadenas = new ScrollMagic.Scene({triggerElement: "#cadenasdeviolenciafoto", triggerHook:0.5} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("cadenasdeviolenciafoto").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("ausenciaestado2").dataset.indexfoto );
+                        }
+					})
+
+var scenecadenas = new ScrollMagic.Scene({triggerElement: "#cadenasdeviolencia", triggerHook:0.6} )
+					.addTo(controller)
+					//.addIndicators() // add indicators (requires plugin)
+                    .on("enter leave", function (e) {
+						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
+                            sketch.transitionToIndex( document.getElementById("cadenasdeviolencia").dataset.indexfoto );
+                        } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
+                            sketch.transitionToIndex( document.getElementById("cadenasdeviolenciafoto").dataset.indexfoto );
+                        }
+					})
+
+
+
+
 
 var sceneresilienciafotoportada = new ScrollMagic.Scene({triggerElement: "#resilienciafotoportada", triggerHook:0.6} )
 					.addTo(controller)
@@ -345,7 +371,7 @@ var sceneresiliencia = new ScrollMagic.Scene({triggerElement: "#resiliencia", tr
                         }
 					})
 
-var scenefotobicicleta = new ScrollMagic.Scene({triggerElement: "#resilienciafotobicicleta", triggerHook:0.5} )
+var scenefotobicicleta = new ScrollMagic.Scene({triggerElement: "#resilienciafotobicicleta", triggerHook:0.55} )
 					.addTo(controller)
 					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
@@ -388,6 +414,7 @@ var scenewhatsapp = new ScrollMagic.Scene({triggerElement: "#resilienciawhatsapp
                             sketch.transitionToIndex( document.getElementById("resilienciafotowhatsapp").dataset.indexfoto );
                         }
 					})
+
 
 
 
