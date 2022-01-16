@@ -325,6 +325,11 @@ footer {
         padding-right: 40px;
     }
 
+    #wrapperplayer #tempo {
+        stroke-dasharray: 390 390;
+        stroke-dashoffset: 0;
+    }
+
 /*
 justify-content: center;
     align-items: flex-end;
