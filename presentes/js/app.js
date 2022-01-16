@@ -484,6 +484,7 @@ function startPlayer(ele) {
 
 function playAudio(ele) {
     document.getElementById("wrapperaudioplayer").style.clip = "auto";
+    d3.select("#wrapperplayer").select("#tempo").style( "stroke-dashoffset", 0 );
     if (typeof audioplayerI == "object" ) {
         //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#play").attr( "display", "initial" );
         //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#pause").attr( "display", "none" );
@@ -540,6 +541,10 @@ function closePlayer() {
     audioplayerI.togglePlaying();
 }
 
+function visualizeAudioTimer( dashoffset ) {
+    console.log( dashoffset );
+    d3.select("#wrapperplayer").select("#tempo").style( "stroke-dashoffset", dashoffset );
+}
 
 
 
