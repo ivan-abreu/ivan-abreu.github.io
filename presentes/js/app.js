@@ -4,6 +4,7 @@ window.scrollTo(0,0);
 var scrollPx = 0;
 var generativephotographyInstance;
 
+/********* add icons  *********/
 d3.selectAll(".playaudioicon").each(function(d) {
     d3.xml("../images/playaudiolgbti2.svg")
         .then(data => {
@@ -32,6 +33,19 @@ d3.selectAll(".playvideoiconsmall").each(function(d) {
         })
 });
 
+d3.xml("../images/playeraudio.svg")
+  .then(data => {
+    d3.select("#wrapperaudioplayer #wrapperplayer").node().append(data.documentElement)
+  });
+
+d3.xml("../images/playerclose.svg")
+  .then(data => {
+    d3.select("#wrapperaudioplayer #wrapperclose").node().append(data.documentElement);
+  })
+
+
+
+
 /*d3.selectAll(".iconaudio").each(function(d) {
     d3.xml("../images/iconaudiosmall.svg")
         .then(data => {
@@ -46,6 +60,9 @@ d3.selectAll(".playvideoiconsmall").each(function(d) {
         })
 });*/
 
+/******************************/
+
+/******* menu sections  **********/
 var sectionMenu = {
     on: {
         "historias":"black",
@@ -81,7 +98,8 @@ function toggleMainMenu() {
     }
     mainmenuIsOpen = !mainmenuIsOpen;
 }
-// vidafrente
+
+
 
 var controller = new ScrollMagic.Controller();
 
@@ -238,7 +256,6 @@ var scenevidefrente = new ScrollMagic.Scene({triggerElement: "#vidafrente", trig
                         }
 					})
 
-//alert( document.getElementById("metrobalderas").dataset.indexfoto )
 
 var scenebalderas = new ScrollMagic.Scene({triggerElement: "#metrobalderas", triggerHook:0.33} )
 					.addTo(controller)
@@ -444,31 +461,53 @@ function loadSection(url) {
 /* ---------------------------------------------------- */
 //var audioplayerI;
 
-function playAudio(ele) {
+function startPlayer(ele) {
     if (typeof audioplayerI == "object" ) {
-        d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#play").attr( "display", "initial" );
-        d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#pause").attr( "display", "none" );
+        //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#play").attr( "display", "initial" );
+        //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#pause").attr( "display", "none" );
         if ( audioplayerI.getFileRecording() != ele.dataset.file ) {
             audioplayerI.loadRecording( ele.dataset.file );
             audioplayerI.ele = ele;
-            d3.select(ele).select("#play").attr( "display", "none" );
-            d3.select(ele).select("#pause").attr( "display", "initial" );
+            //d3.select(ele).select("#play").attr( "display", "none" );
+            //d3.select(ele).select("#pause").attr( "display", "initial" );
         } else {
             if ( audioplayerI.togglePlaying() ) {
-                d3.select(ele).select("#play").attr( "display", "initial" );
-                d3.select(ele).select("#pause").attr( "display", "none" );
+                //d3.select(ele).select("#play").attr( "display", "initial" );
+                //d3.select(ele).select("#pause").attr( "display", "none" );
             } else {
-                d3.select(ele).select("#play").attr( "display", "none" );
-                d3.select(ele).select("#pause").attr( "display", "initial" );
+                //d3.select(ele).select("#play").attr( "display", "none" );
+                //d3.select(ele).select("#pause").attr( "display", "initial" );
+            }
+        }
+    } 
+}
+
+function playAudio(ele) {
+    document.getElementById("wrapperaudioplayer").style.clip = "auto";
+    if (typeof audioplayerI == "object" ) {
+        //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#play").attr( "display", "initial" );
+        //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#pause").attr( "display", "none" );
+        if ( audioplayerI.getFileRecording() != ele.dataset.file ) {
+            audioplayerI.loadRecording( ele.dataset.file );
+            audioplayerI.ele = ele;
+            //d3.select(ele).select("#play").attr( "display", "none" );
+            //d3.select(ele).select("#pause").attr( "display", "initial" );
+        } else {
+            if ( audioplayerI.togglePlaying() ) {
+                //d3.select(ele).select("#play").attr( "display", "initial" );
+                //d3.select(ele).select("#pause").attr( "display", "none" );
+            } else {
+                //d3.select(ele).select("#play").attr( "display", "none" );
+                //d3.select(ele).select("#pause").attr( "display", "initial" );
             }
         }
     } 
 }
 
 function endAudioPlayer(ele) {
-    console.log( "end end end")
-    d3.select(ele).select("#play").attr( "display", "initial" );
-    d3.select(ele).select("#pause").attr( "display", "none" );
+    //d3.select(ele).select("#play").attr( "display", "initial" );
+    //d3.select(ele).select("#pause").attr( "display", "none" );
+    document.getElementById("wrapperaudioplayer").style.clip = "rect(0 0 0 0)";
     sketch.transitionToIndex( 9 );
     d3.selectAll('p,h1,h2,h3')
                     .transition()
@@ -479,8 +518,8 @@ function endAudioPlayer(ele) {
 
 function startAudioPlayer(ele) {
     console.log( "start")
-    d3.select(ele).select("#play").attr( "display", "none" );
-    d3.select(ele).select("#pause").attr( "display", "initial" );
+    //d3.select(ele).select("#play").attr( "display", "none" );
+    //d3.select(ele).select("#pause").attr( "display", "initial" );
     // 10
     sketch.transitionToIndex( ele.dataset.image );
     d3.selectAll('p,h1,h2,h3')
@@ -495,8 +534,14 @@ function startAudioPlayer(ele) {
                     .duration(300)
                     .ease(d3.easeLinear)
                     .style("opacity", "1.0");
-    //alert( ele.dataset.image )
 }
+
+function closePlayer() {
+    audioplayerI.togglePlaying();
+}
+
+
+
 
 var vid;
 
