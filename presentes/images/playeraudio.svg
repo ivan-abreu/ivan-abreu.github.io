@@ -2,12 +2,15 @@
 <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 144.1 152.1" enable-background="new 0 0 144.1 152.1" xml:space="preserve" width="144.1" height="152.1">
-<path id="tempobase" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" d="M71.9,19.9
+
+<path id="tempobase" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" d="M71.9,19.9
 	C37.7,19.9,9.9,47.7,9.9,82c0,34.3,27.8,62.1,62.1,62.1S134,116.3,134,82C134,47.7,106.2,19.9,71.9,19.9"/>
-<path id="tempo" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" d="M71.9,19.9C37.7,19.9,9.9,47.7,9.9,82
+<path id="tempo" fill="none" stroke="#ffffff" stroke-width="8" stroke-miterlimit="10" d="M71.9,19.9C37.7,19.9,9.9,47.7,9.9,82
 	c0,34.3,27.8,62.1,62.1,62.1S134,116.3,134,82C134,47.7,106.2,19.9,71.9,19.9"/>
+
 <circle id="circleoutside" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" cx="71.9" cy="82" r="57.5"/>
 <circle id="circleoutside_1_" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" cx="71.9" cy="82" r="66.2"/>
+
 <circle id="circleiinside" fill="#FFFFFF" cx="71.9" cy="82" r="42"/>
 <polygon id="play" display="none" points="59,102.6 59,61.1 94.9,81.8 "/>
 <polygon id="guia" fill="#FFFFFF" points="72.7,12 71.3,12 69.3,4 74.7,4 "/>
