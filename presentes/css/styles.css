@@ -604,6 +604,14 @@ h3.titulo {
     margin-bottom: 2rem;
 }
 
+h3.subtitulo {
+    font-size: 8rem;
+    font-weight: 100;
+    margin-top: 1em;
+    margin-bottom: 2rem;
+    line-height: 1em;
+}
+
 
 
 /*******************/
@@ -683,13 +691,44 @@ section.foto {
         margin: auto;
     }
 
+    p {
+        margin-bottom: 0.6em;
+        font-weight: 300;
+        font-size: 1rem;
+    }
+
     #videofullscreen {
         width: 95vh;
         height: auto;
     }
 
+    footer nav div:nth-child(1),footer nav div:nth-child(3) {
+        display: none;
+    }
+
     footer nav div {
-        width: auto;
+        width: 100%;
+    }
+
+    footer .creditos {
+        font-size: 0.5rem;
+        letter-spacing: 0.16em;
+    }
+
+    .preguntalarge {
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        margin-bottom: 1rem;
+        color: black;
+    }
+
+    h3.subtitulo {
+        font-size: 4rem;
+        font-weight: 100;
+        margin-top: 1em;
+        margin-bottom: 2rem;
+        line-height: 1em;
     }
 
 
