@@ -711,7 +711,7 @@ section.foto {
     }
 
     footer .creditos {
-        font-size: 0.5rem;
+        font-size: 0.45rem;
         letter-spacing: 0.16em;
     }
 
@@ -723,12 +723,50 @@ section.foto {
         color: black;
     }
 
+    h3.titulo {
+        font-size: 1.8rem;
+        font-weight: 100;
+        margin-top: 1em;
+        margin-bottom: 1.6rem;
+        line-height: 1.2em;
+    }
+
     h3.subtitulo {
         font-size: 4rem;
         font-weight: 100;
         margin-top: 1em;
         margin-bottom: 2rem;
         line-height: 1em;
+    }
+
+    #potenciallgbt p {
+        font-size: 1.5rem;
+        line-height: 1.03em;
+        font-weight: 400;
+        color: rgb(255, 255, 255);
+        /*background-color: black;*/
+    }
+
+    p .mainquote {
+        font-size: 2rem !important;
+        text-align: center;
+    }
+
+    .playaudioicon svg {
+        width: 84px;
+        height: 84px;
+    }
+
+    .playaudioicon,.playvideoicon {
+        width: 84px;
+        height: 84px;
+        position: absolute;
+        left: calc( 45% - 42px );
+        top: calc( 50% - 42px );
+        cursor: pointer;
+        /*z-index: -1;*/
+        filter: opacity(40%);
+        transition: 0.4s filter;
     }
 
 
