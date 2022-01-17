@@ -639,7 +639,9 @@ section.foto {
     -ms-transform-origin:right, top;
     -webkit-transform: rotate(-90deg);
     -webkit-transform-origin:right, top;
-    position: absolute; 
+    /*position: absolute; */
+    position: relative;
+    left: -50%;
 }
 
 .fotosidecredito {
@@ -732,7 +734,7 @@ section.foto {
     }
 
     h3.subtitulo {
-        font-size: 4rem;
+        font-size: 3.5rem;
         font-weight: 100;
         margin-top: 1em;
         margin-bottom: 2rem;
