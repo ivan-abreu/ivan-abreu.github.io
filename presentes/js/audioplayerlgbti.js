@@ -14,7 +14,7 @@ var AudioPlayerLGBTI = function(p) {
     var amp;
     var showInfo = false;
     var bars = new Array();
-    var barW = 8; // 4
+    var barW = 4; // 4
     var vol = 0;
     var volScaled = 0;
     var rectLimit = 0;
@@ -51,12 +51,12 @@ var AudioPlayerLGBTI = function(p) {
 
     p.setup = function(){
         //canvas = createCanvas(windowWidth-50, 300);
-        canvas = p.createCanvas(300, p.windowHeight-80);
+        canvas = p.createCanvas( p.windowWidth*0.2, p.windowHeight-80);
         //canvas = p.createCanvas(300, p.windowHeight);
         canvas.position(40, 40);
         song = p.loadSound('../audios/Audio_00.mp3');
         amp = new p5.Amplitude();
-        var totalBars = (p.windowWidth-50)/barW; 
+        var totalBars = (p.height)/barW; 
         for(var i=0; i<totalBars; i++) {
             bars[i] = 0; //(i%2+1)*20;
         }
@@ -102,7 +102,7 @@ var AudioPlayerLGBTI = function(p) {
         for(var i=0; i<bars.length; i++) {
             var y = p.map(i, 0, bars.length, 0, p.height);
             var xF = p.map(i, 0, bars.length, 2, 0);
-            p.rect(0, y , bars[i]*p.random( (rectLimit - (volScaled*xF))  ,(rectLimit + (volScaled*xF)) )*xF  , barW-10 );
+            p.rect(0, y , bars[i]*p.random( (rectLimit - (volScaled*xF))  ,(rectLimit + (volScaled*xF)) )*xF  , barW*0.5 );
         }
 
     }
