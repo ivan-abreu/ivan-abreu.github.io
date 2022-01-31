@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml-stylesheet type="text/css" href="../css/styles.css"?> -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 18.8 21.8" enable-background="new 0 0 18.8 21.8" xml:space="preserve" height="19">
+<g>
+	<polyline fill="none" stroke="#6E3589" stroke-miterlimit="10" points="9.1,1.4 1.4,1.4 1.4,20.4 17.4,20.4 17.4,9.7 	"/>
+	<polyline fill="none" stroke="#6E3589" stroke-miterlimit="10" points="12.1,1.4 17.4,1.4 17.4,6.7 	"/>
+	<line fill="none" stroke="#6E3589" stroke-miterlimit="10" x1="17.4" y1="1.4" x2="11.4" y2="7.4"/>
+</g>
+<rect x="3.3" y="12" fill="#6E3589" width="5.7" height="5.8"/>
+<line fill="none" stroke="#6E3589" stroke-miterlimit="10" x1="10.3" y1="14" x2="13.5" y2="14"/>
+<line fill="none" stroke="#6E3589" stroke-miterlimit="10" x1="10.3" y1="17" x2="15.5" y2="17"/>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 62 62" enable-background="new 0 0 62 62" xml:space="preserve" width="50" height="50" onclick="closePlayerVideo(this)">
+<circle id="circleiinside_3_" fill="#F29100" cx="31" cy="31" r="29"/>
+<circle id="circleiinside_1_" fill="#FCD200" cx="31" cy="31" r="26"/>
+<g id="pause_2_">
+	<rect x="29.3" y="11.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -12.8406 31)" fill="#F29100" width="3.3" height="39.1"/>
+	<rect x="11.4" y="29.3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -12.8406 31)" fill="#F29100" width="39.1" height="3.3"/>
+</g>
+</svg>
