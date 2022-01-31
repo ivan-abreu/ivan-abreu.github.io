@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="icon" href="https://agenciapresentes.org/sitio/wp-content/uploads/2020/09/MARCASAJUSTADAS-05.png" type="image/png" sizes="16x16">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://agenciapresentes.org/sitio/wp-content/uploads/2020/09/MARCASAJUSTADAS-01.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/nosotres.css">
+        <script>var currentSection = "nosotres"; </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.2.1/d3.min.js" integrity="sha512-wkduu4oQG74ySorPiSRStC0Zl8rQfjr/Ty6dMvYTmjZw6RS5bferdx8TR7ynxeh79ySEp/benIFFisKofMjPbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    </head>
+
+    <body>
+        <header id="mainmenu">
+            <nav>
+                <div class="borderb brand">
+                    <!--<span id="presente" onclick="goOutToWebPage('https://agenciapresentes.org/')">PRESENTES</span>-->
+                    <img src="../images/logo_presentes.svg" alt="presentes agencia" height="50%" onclick="goOutToWebPage('https://agenciapresentes.org/')" >
+                </div>
+                <div></div>
+                <div class="borderb rightalign"><i class="fas fa-bars menuicon" onclick="toggleMainMenu()"></i></div>
+                
+            </nav>
+        </header>
+
+        <nav id="menufullscreen">
+            <div onclick="loadSection('../historias/')" >Historias</div>
+            <div onclick="loadSection('../elles/')">Elles</div>
+            <div onclick="loadSection('../nosotres/')">Nosotres</div>
+        </nav>
+
+        <div class="wrapperimagenesfondo">
+            <!--<div class="imagenesfondo"></div>-->
+            <div class="gradientnosotres"></div>
+        </div>
+
+        <div id="mainlayout">
+
+            <section id="nosotres">
+                <h3 class="titulo"><span style="font-weight: 600;">Nosotres</span> <span style="font-size: 2.4rem;font-weight: 300;">(créditos)</span></h3>
+
+                <p><span class="extrabold">Mayores LGBTI+ en México: existir, sobrevivir, persistir</span> es una investigación de Agencia Presentes realizada con el apoyo del <span class="semibold" >Fondo de Respuesta Rápida para América Latina y el Caribe</span> organizado por <span class="semibold" >Internews</span>, <span class="semibold" >Chicas Poderosas</span>, <span class="semibold" >Consejo de Redacción y Fundamedios</span>.</p> 
+                <p>Los contenidos de los trabajos periodísticos que aquí se publican son responsabilidad exclusiva de sus autores y no necesariamente reflejan los puntos de vista de las organizaciones.
+                </p>
+                <div class="roles">
+                    
+                    <div>
+                        <div class="role">Edición y dirección general:</div>
+                        <div class="participante">Milena Pafundi</div>
+                        <div class="participante">Ana Fornaro</div>
+                        <div class="participante">María Eugenia Ludueña</div>
+
+                        <div class="role">Coordinación general</div>
+                        <div class="participante">Milena Pafundi</div>
+
+                        <div class="role">Investigación y redacción</div>
+                        <div class="participante">Georgina G. Alvarez</div>
+
+                        <div class="role">Diseño UX-UI, visualización de datos<br>y desarrollo web:</div>
+                        <div class="participante">Iván Abreu</div>
+                    </div>
+
+
+                    <div>
+                        <div class="role">Apoyo de edición de reportaje</div>
+                        <div class="participante">Montserrat Sánchez Maldonado</div>
+
+                        <div class="role">Videos</div>
+                        <div class="participante">Río</div>
+                        <div class="participante">Milena Pafundi</div>
+
+                        <div class="role">Fotografias:</div>
+                        <div class="participante">Río</div>
+                        <div class="participante">Daniel Lobato</div>
+                        <div class="participante">Milena Pafundi</div>
+                        <div class="participante">Juan Carlos Yustis</div>
+                        <!--<div class="participante"><i style="font-weight: 300;">Open source repocitory</i></div>-->
+                    </div>
+
+                </div>
+
+            </section>
+            
+            
+            <footer>
+                <nav>
+                    <div></div>
+                    <div>
+                        <span class="creditos" id='date-time' >DOMINGO 9 DE ENERO DE 2022</span>
+                        <script>
+                            {
+                                let dias = ["LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO", "DOMINGO"];
+                                let meses = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"];
+                                let dt = new Date();
+                                let dtformat = `${dias[dt.getDay()]}, ${dt.getDate()} DE ${meses[dt.getMonth()]} DE ${dt.getFullYear()}`;
+                                document.getElementById('date-time').innerText=dtformat;
+                            }
+                        </script>
+                        <span class="creditos">PRESENTES | PERIODISMO DE GÉNEROS</span>
+                        <span class="creditos">© 2022</span>
+                    </div>
+                    <div></div>
+                </nav>
+            </footer>
+        </div>
+
+
+        <script src="../js/ScrollMagic.min.js"></script>
+        <script src="../js/debug.addIndicators.min.js"></script>
+        <script src="../js/animation.gsap.js"></script>
+        <script src="../js/TweenMax.min.js"></script>
+        <script src="../js/ScrollToPlugin.min.js"></script>
+        ../
+        <script src="../js/app.js"></script>
+        
+    </body>
+</html>
