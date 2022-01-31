@@ -527,6 +527,7 @@ justify-content: center;
         /*height: var( --height-iconscroll );*/
         width: var( --width-iconscroll );
         margin-top: 10vh;
+        color: #FFFFFF;
     }
     #scrolldowniconwrapper svg {
         /*z-index: 2;*/
@@ -538,7 +539,12 @@ justify-content: center;
     margin-top: 0.5rem;
     font-size: 0.45rem;
     font-weight: 300;
+    color: #FFFFFF;
 }
+
+.tooltip i {
+    color: #FFFFFF;
+} 
 
 .playaudio + i {
     font-size: 0.62em;
