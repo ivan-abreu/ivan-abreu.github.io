@@ -953,3 +953,4 @@ function adjustMainMenu(currentTriggerEle) {
 }
 
 adjustMainMenu("inicio")
+audioplayerI.loadRecording( "null.mp3" );

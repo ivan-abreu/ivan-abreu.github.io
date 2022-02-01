@@ -5,7 +5,7 @@ var canvas;
 
 var AudioPlayerLGBTI = function(p) {
     p.ele;
-    p.file = "Audio_00.mp3";
+    p.file = "null.mp3";
     var playingStatus = 0;
     var playingStatusPrev = 0;
     var song;
