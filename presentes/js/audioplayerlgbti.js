@@ -59,7 +59,7 @@ var AudioPlayerLGBTI = function(p) {
         canvas = p.createCanvas( p.windowWidth*0.2, p.windowHeight-80);
         //canvas = p.createCanvas(300, p.windowHeight);
         canvas.position(40, 40);
-        song = p.loadSound('../audios/Audio_00.mp3');
+        song = p.loadSound('../audios/null.mp3');
         amp = new p5.Amplitude();
         var totalBars = (p.height)/barW; 
         for(var i=0; i<totalBars; i++) {
