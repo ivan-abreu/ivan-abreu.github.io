@@ -30,7 +30,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin-bottom: 2rem;
-        border-top: 0.5px solid rgba(0, 0, 0, 0.5);
+        border-top: 0.5px solid #6E358980;
         padding: 1rem 0rem;
     }
 
@@ -55,5 +55,11 @@
 
 footer nav div:nth-child(2) {
     border-top: 1px solid rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 600px) {
+    .roles {
+        grid-template-columns: 1fr;
+    }
 }
 

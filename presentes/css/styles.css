@@ -10,6 +10,7 @@
     --lgbti_p_-color: #63358B;
     --color_base: #6E3589;
     --color_base_hover: #C664FF;
+    --color_base_halfopacity: #6E358980;
 }
 
 body {
@@ -270,8 +271,8 @@ footer {
     }
 
     footer .creditos {
-        font-size: 0.6rem;
-        font-weight: 200;
+        font-size: 0.65rem;
+        font-weight: 300;
         font-family: 'Oswald', sans-serif;
         letter-spacing: 0.14em;
     }
@@ -872,7 +873,7 @@ h5.titulo {
     }
 
     footer .creditos {
-        font-size: 0.45rem;
+        font-size: 0.5rem;
         letter-spacing: 0.16em;
     }
 
