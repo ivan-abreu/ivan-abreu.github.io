@@ -807,6 +807,28 @@ h5.titulo {
     margin-top: 3rem;
 }
 
+/************ data visualziations ********/
+
+#ciudadmexicoenvejecimiento {
+    width: 68%;
+}
+
+#noventaydosoculto {
+    width: 90%;
+}
+
+#violenciacenofamiliar {
+    width: 80%;
+}
+
+#vihmedicacion {
+    width: 80%;
+}
+
+#accesosalud {
+    width: 100%;
+}
+
 
 @media only screen and (max-width: 600px) {
 
@@ -936,6 +958,14 @@ h5.titulo {
         line-height: 1.2em;
         margin-bottom: 0.6em;
         /* text-indent: 1em; */
+    }
+
+    #ciudadmexicoenvejecimiento {
+        width: 100%;
+    }
+
+    #noventaydosoculto {
+        width: 100%;
     }
 
     #violenciacenofamiliar {
