@@ -40,6 +40,10 @@
         font-size: 1.2rem;
     }
 
+    .roles>div {
+        margin-bottom: 1.5em;
+    }
+
     .roles div .role:first-child {
         margin-top: 0
     }
@@ -50,11 +54,12 @@
     }
 
     footer .creditos {
-        color: black;
+        color: #6E3589;
+        font-weight: 400;
     }
 
 footer nav div:nth-child(2) {
-    border-top: 1px solid rgb(0, 0, 0);
+    border-top: 1px solid #6E3589;
 }
 
 @media only screen and (max-width: 600px) {
