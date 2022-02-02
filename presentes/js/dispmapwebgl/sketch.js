@@ -15,9 +15,6 @@ class Sketch {
     this.debug = opts.debug || false
     this.easing = opts.easing || 'easeInOut'
 
-    //this.clicker = document.getElementById("content");
-    //this.clicker = document.getElementById("presente");
-
 
     this.container = document.getElementById("slider");
 
@@ -77,12 +74,10 @@ class Sketch {
 
     this.paused = true;
     this.initiate(()=>{
-      //console.log(this.textures);
       this.setupResize();
       this.settings();
       this.addObjects();
       this.resize();
-      //this.clickEvent();
       this.play();
     })
     
@@ -98,21 +93,11 @@ class Sketch {
     for (const imagename in this.imagesDic) {
       console.log ( this.imagesDic[imagename] )
       let promise = new Promise(resolve => {
-        //that.textures[i] = new THREE.TextureLoader().load( this.imagesDic[imagename] , resolve );
         that.texturesDic[imagename] = new THREE.TextureLoader().load( this.imagesDic[imagename] , resolve );
       });
       promises.push(promise);
     }
     
-
-    /*
-    this.images.forEach((url,i)=>{
-      let promise = new Promise(resolve => {
-        that.textures[i] = new THREE.TextureLoader().load( url, resolve );
-      });
-      promises.push(promise);
-    }) 
-    */
 
     Promise.all(promises).then((result) => {
       console.log( result);
@@ -122,18 +107,11 @@ class Sketch {
     });
   }
 
-  /*
-  clickEvent(){
-    this.clicker.addEventListener('click',()=>{
-      this.next();
-    })
-  }*/
 
   settings() {
     let that = this;
     if(this.debug) this.gui = new dat.GUI();
     this.settings = {progress:0.5};
-    // if(this.debug) this.gui.add(this.settings, "progress", 0, 1, 0.01);
 
     Object.keys(this.uniforms).forEach((item)=> {
       this.settings[item] = this.uniforms[item].value;
@@ -153,7 +131,6 @@ class Sketch {
     
 
     // image cover
-    //this.imageAspect = this.textures[0].image.height/this.textures[0].image.width;
     this.imageAspect = this.texturesDic["portada01"].image.height/this.texturesDic["portada01"].image.width;
     let a1; let a2;
     if(this.height/this.width>this.imageAspect) {
@@ -199,8 +176,6 @@ class Sketch {
         swipe: { type: "f", value: 0 },
         width: { type: "f", value: 0 },
         radius: { type: "f", value: 0 },
-        //texture1: { type: "f", value: this.textures[0] },
-        //texture2: { type: "f", value: this.textures[1] },
         texture1: { type: "f", value: this.texturesDic["portada01"] },
         texture2: { type: "f", value: this.texturesDic["portada02"] },
         displacement: { type: "f", value: new THREE.TextureLoader().load('../img/disp1.jpg') },
@@ -226,54 +201,10 @@ class Sketch {
     this.render();
   }
 
-  /*
-  next(){
-    if(this.isRunning) return;
-    this.isRunning = true;
-    let len = this.textures.length;
-    let nextTexture =this.textures[(this.current +1)%len];
-    this.material.uniforms.texture2.value = nextTexture;
-    let tl = new TimelineMax();
-    tl.to(this.material.uniforms.progress,this.duration,{
-      value:1,
-      ease: Power2[this.easing],
-      onComplete:()=>{
-        //console.log('FINISH');
-        this.current = (this.current +1)%len;
-        this.material.uniforms.texture1.value = nextTexture;
-        this.material.uniforms.progress.value = 0;
-        this.isRunning = false;
-    }})
-  }
-  */
-
-  /*
-  transitionToIndex( i ) {
-    //if(this.isRunning) return;
-    this.isRunning = true;
-    let len = this.textures.length;
-    let nextTexture =this.textures[i];
-    this.material.uniforms.texture2.value = nextTexture;
-    let tl = new TimelineMax();
-    tl.to(this.material.uniforms.progress,this.duration,{
-      value:1,
-      ease: Power2[this.easing],
-      onComplete:()=>{
-        //console.log('FINISH');
-        this.current = i;
-        this.material.uniforms.texture1.value = nextTexture;
-        this.material.uniforms.progress.value = 0;
-        this.isRunning = false;
-    }})
-  }
-  */
 
   transitionToImagename(imgname) {
-    //if(this.isRunning) return;
     this.isRunning = true;
-    //let len = this.textures.length;
     let len = Object.keys(this.texturesDic).length;
-    //let nextTexture = this.textures[i];
     let nextTexture = this.texturesDic[imgname];
     this.material.uniforms.texture2.value = nextTexture;
     let tl = new TimelineMax();
@@ -281,7 +212,6 @@ class Sketch {
       value:1,
       ease: Power2[this.easing],
       onComplete:()=>{
-        //console.log('FINISH');
         this.current = imgname;
         this.material.uniforms.texture1.value = nextTexture;
         this.material.uniforms.progress.value = 0;
@@ -293,15 +223,10 @@ class Sketch {
     if (this.paused) return;
     this.time += 0.05; // 0.05
     this.material.uniforms.time.value = this.time;
-    // this.material.uniforms.progress.value = this.settings.progress;
 
     Object.keys(this.uniforms).forEach((item)=> {
       this.material.uniforms[item].value = this.settings[item];
     });
-
-    //this.camera.position.z = 3;
-    // this.plane.rotation.y = 0.4*Math.sin(this.time)
-    // this.plane.rotation.x = 0.5*Math.sin(0.4*this.time)
 
     requestAnimationFrame(this.render.bind(this));
     this.renderer.render(this.scene, this.camera);
