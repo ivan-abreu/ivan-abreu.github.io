@@ -35,7 +35,7 @@ d3.xml("../images/playeraudio_color.svg")
   });
 
 d3.selectAll(".wrappervideo .wrapperplayer").each(function(d) {
-    d3.xml("../images/playeraudio_color.svg") // "../images/playervideo.svg"
+    d3.xml("../images/playeraudio_color.svg") 
         .then(data => {
             let icon = d3.select(this).node().append(data.documentElement);
         })
@@ -47,7 +47,7 @@ d3.xml("../images/playerclose_color.svg")
   })
 
 d3.selectAll(".wrappervideo .wrapperclose").each(function(d) {
-    d3.xml("../images/playerclose_colorvideo.svg") // "../images/playerclosevideo.svg"
+    d3.xml("../images/playerclose_colorvideo.svg") 
         .then(data => {
             let icon = d3.select(this).node().append(data.documentElement);
         })
@@ -167,7 +167,6 @@ var mainmenuIsOpen = false;
 var menuicon = document.getElementsByClassName("menuicon");
 var headerele = document.querySelectorAll(".borderb");
 var footerele = document.getElementById("footercreditos");
-//var footerele = document.getElementsByTagName("UL")[0];
 
 function toggleMainMenu() {
     var menuele = document.getElementById("menufullscreen");
@@ -205,7 +204,6 @@ function playAnimacionPortada() {
     timerPortada = setInterval(() => {
         indexTransPortada = (indexTransPortada+1)%rangeTransPortada;
         console.log( imagesAnimPortada[indexTransPortada]);
-        //sketch.transitionToIndex( indexTransPortada ); 
         sketch.transitionToImagename( imagesAnimPortada[indexTransPortada] ) 
     },3500)    
 }
@@ -221,7 +219,6 @@ var tweens1 = TweenMax.to(".tituloprincipal", 1.8, {"opacity": "0", "y": window.
 	
 	var scene = new ScrollMagic.Scene({triggerElement: "#portadapreguntas", duration: window.innerHeight*0.5, triggerHook:0.749 , offset:-window.innerHeight*0.25})
 					.setTween(tweens1)
-					//.addIndicators() // add indicators (requires plugin)
 					.addTo(controller)
                     .on("enter", () => {
                         adjustMainMenu("portadapreguntas");
@@ -231,7 +228,6 @@ var tweens2 = TweenMax.to("#scrolldowniconwrapper,.tooltip", 1.8, {"opacity": "0
 	
     var scene2 = new ScrollMagic.Scene({triggerElement: "#portadapreguntas", duration: window.innerHeight*0.5, triggerHook:0.749 , offset:-window.innerHeight*0.25})
                     .setTween(tweens2)
-                    //.addIndicators() // add indicators (requires plugin)
                     .addTo(controller);
 
 /**************************************************/
@@ -239,18 +235,7 @@ var tweens2 = TweenMax.to("#scrolldowniconwrapper,.tooltip", 1.8, {"opacity": "0
 /******************preguntas portada **************/
 var scenePreguntas = new ScrollMagic.Scene({triggerElement: "#preguntasportada", triggerHook:0.5,  offset:-window.innerHeight*0.25 } )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-					/*.on("update", function (e) {
-						//console.log("update")
-                        // siempre que mueves el scroll, aunque solo cuando lo mueves, de manera que funciona tambien fuera del rango de afectación
-                        //console.log( e.target.controller().info("scrollDirection") );
-					})*/
-					/*.on("enter", function (e) {
-						//console.log("enter")
-                        //console.log( e.type == "enter" ? "inside" : "outside")
-					})*/
                     .on("enter leave", function (e) {
-						//console.log("arriba")
                         console.log( "enter leave: ", e.target.controller().info("scrollDirection"), e.type, e.type == "enter" ? "inside" : "outside" )
                         if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
                             stopAnimacionPortada();
@@ -266,40 +251,20 @@ var scenePreguntas = new ScrollMagic.Scene({triggerElement: "#preguntasportada",
                             playAnimacionPortada();
                             sketch.play();
                         }
-                        //FORWARD enter
 					})
-                    /*.on("leave", function (e) {
-						console.log("leave")
-					})
-					.on("start", function (e) {
-                        stopAnimacionPortada()
-                        console.log( "start");
-					})*//*
-                    .on("start end", function (e) {
-						//playAnimacionPortada()
-                        //console.log( "end");
-                        //console.log( "start end", e.type,  e.type == "start" ? "top" : "bottom" )                        
-					})
-					.on("progress", function (e) {
-						//console.log("progress")
-                        // cuando mueves el scroll dentro del rango de afectación
-                        //console.log( e.progress.toFixed(3) )
-					});*/
+
 /**************************************************/
 
 
 var sceneElles = new ScrollMagic.Scene({triggerElement: "#elles",triggerHook:0.4} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
                             sketch.duration = 1;
-                            //sketch.transitionToIndex( 4 );
                             sketch.transitionToImagename( document.getElementById("elles").dataset.image  )
                             adjustMainMenu("elles");
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
                             sketch.duration = 0.6;
-                            //sketch.transitionToIndex( 3 );
                             sketch.transitionToImagename( document.getElementById("preguntasportada").dataset.image  )
                             adjustMainMenu("preguntasportada");
                         }
@@ -309,14 +274,11 @@ var sceneElles = new ScrollMagic.Scene({triggerElement: "#elles",triggerHook:0.4
                     
 var sceneIntroelles = new ScrollMagic.Scene({triggerElement: "#introelles", triggerHook:0.33} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( 5 );
                             sketch.transitionToImagename( document.getElementById("introelles").dataset.image  )
                             adjustMainMenu("introelles");
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( 4 );
                             sketch.transitionToImagename( document.getElementById("elles").dataset.image  )
                             adjustMainMenu("elles");
                         }
@@ -326,14 +288,11 @@ var sceneIntroelles = new ScrollMagic.Scene({triggerElement: "#introelles", trig
 
 var scenecdmx = new ScrollMagic.Scene({triggerElement: "#ciudaddemexico", triggerHook:0.33} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( 9 );
                             sketch.transitionToImagename( document.getElementById("ciudaddemexico").dataset.image  )
                             adjustMainMenu("ciudaddemexico");
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( 5 );
                             sketch.transitionToImagename( document.getElementById("introelles").dataset.image  )
                             adjustMainMenu("introelles");
                         }
@@ -342,14 +301,11 @@ var scenecdmx = new ScrollMagic.Scene({triggerElement: "#ciudaddemexico", trigge
 
 var scenecentroamerica = new ScrollMagic.Scene({triggerElement: "#centroamerica", triggerHook:0.33} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( 7 );
                             sketch.transitionToImagename( document.getElementById("centroamerica").dataset.image  )
                             adjustMainMenu("centroamerica");
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( 9 );
                             sketch.transitionToImagename( document.getElementById("ciudaddemexico").dataset.image  )
                             adjustMainMenu("ciudaddemexico");
                         }
@@ -358,14 +314,11 @@ var scenecentroamerica = new ScrollMagic.Scene({triggerElement: "#centroamerica"
 
 var scenepotenciallgbt = new ScrollMagic.Scene({triggerElement: "#potenciallgbt", triggerHook:0.33} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( 8 );
                             sketch.transitionToImagename( document.getElementById("potenciallgbt").dataset.image  )
                             adjustMainMenu("potenciallgbt");
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( 7 );
                             sketch.transitionToImagename( document.getElementById("centroamerica").dataset.image  )
                             adjustMainMenu("centroamerica");
                         }
@@ -373,14 +326,11 @@ var scenepotenciallgbt = new ScrollMagic.Scene({triggerElement: "#potenciallgbt"
 
 var scenevidefrente = new ScrollMagic.Scene({triggerElement: "#vidafrente", triggerHook:0.33} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( 9 );
                             sketch.transitionToImagename( document.getElementById("vidafrente").dataset.image  )
                             adjustMainMenu("vidafrente");
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( 8 );
                             sketch.transitionToImagename( document.getElementById("potenciallgbt").dataset.image  )
                             adjustMainMenu("potenciallgbt");
                         }
@@ -389,14 +339,11 @@ var scenevidefrente = new ScrollMagic.Scene({triggerElement: "#vidafrente", trig
 
 var scenebalderas = new ScrollMagic.Scene({triggerElement: "#metrobalderas", triggerHook:0.33} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
                     .on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("metrobalderas").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("metrobalderas").dataset.image  )
                             adjustMainMenu("metrobalderas");
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( 9 );
                             sketch.transitionToImagename( document.getElementById("vidafrente").dataset.image  )
                             adjustMainMenu("vidafrente");
                         }
@@ -404,14 +351,11 @@ var scenebalderas = new ScrollMagic.Scene({triggerElement: "#metrobalderas", tri
 
 var scenevidefrente2 = new ScrollMagic.Scene({triggerElement: "#vidafrente2", triggerHook:0.33} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("vidafrente2").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("vidafrente2").dataset.image  )
                             adjustMainMenu("vidafrente2");
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("metrobalderas").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("metrobalderas").dataset.image  )
                             adjustMainMenu("metrobalderas");
                         }
@@ -419,14 +363,11 @@ var scenevidefrente2 = new ScrollMagic.Scene({triggerElement: "#vidafrente2", tr
 
 var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivirfotoportada", triggerHook:0.6} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("sobrevivirfotoportada").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("sobrevivirfotoportada").dataset.image  )
                             adjustMainMenu("sobrevivirfotoportada")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("vidafrente2").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("vidafrente2").dataset.image  )
                             adjustMainMenu("vidafrente2")
                         }
@@ -434,14 +375,11 @@ var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivir
 
 var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivir", triggerHook:0.7} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("sobrevivir").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("sobrevivir").dataset.image  )
                             adjustMainMenu("sobrevivir")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("sobrevivirfotoportada").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("sobrevivirfotoportada").dataset.image  )
                             adjustMainMenu("sobrevivirfotoportada")
                         }
@@ -449,14 +387,11 @@ var scenesobrevivirportada = new ScrollMagic.Scene({triggerElement: "#sobrevivir
 
 var sceneausenciaestadoportada = new ScrollMagic.Scene({triggerElement: "#ausenciaestadofotoportada", triggerHook:0.45} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("ausenciaestadofotoportada").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("ausenciaestadofotoportada").dataset.image  )
                             adjustMainMenu("ausenciaestadofotoportada")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("sobrevivir").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("sobrevivir").dataset.image  )
                             adjustMainMenu("sobrevivir")
                         }
@@ -464,14 +399,11 @@ var sceneausenciaestadoportada = new ScrollMagic.Scene({triggerElement: "#ausenc
 
 var sceneausenciaestado = new ScrollMagic.Scene({triggerElement: "#ausenciaestado", triggerHook:0.45} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("ausenciaestado").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("ausenciaestado").dataset.image  )
                             adjustMainMenu("ausenciaestado")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("ausenciaestadofotoportada").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("ausenciaestadofotoportada").dataset.image  )
                             adjustMainMenu("ausenciaestadofotoportada")
                         }
@@ -479,14 +411,11 @@ var sceneausenciaestado = new ScrollMagic.Scene({triggerElement: "#ausenciaestad
 
 var scenefotocadenas = new ScrollMagic.Scene({triggerElement: "#cadenasdeviolenciafoto", triggerHook:0.5} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("cadenasdeviolenciafoto").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("cadenasdeviolenciafoto").dataset.image  )
                             adjustMainMenu("cadenasdeviolenciafoto")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("ausenciaestado2").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("ausenciaestado").dataset.image  )
                             adjustMainMenu("ausenciaestado")
                         }
@@ -494,14 +423,11 @@ var scenefotocadenas = new ScrollMagic.Scene({triggerElement: "#cadenasdeviolenc
 
 var scenecadenas = new ScrollMagic.Scene({triggerElement: "#cadenasdeviolencia", triggerHook:0.6} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("cadenasdeviolencia").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("cadenasdeviolencia").dataset.image  )
                             adjustMainMenu("cadenasdeviolencia")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("cadenasdeviolenciafoto").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("cadenasdeviolenciafoto").dataset.image  )
                             adjustMainMenu("cadenasdeviolenciafoto")
                         }
@@ -513,14 +439,11 @@ var scenecadenas = new ScrollMagic.Scene({triggerElement: "#cadenasdeviolencia",
 
 var sceneresilienciafotoportada = new ScrollMagic.Scene({triggerElement: "#resilienciafotoportada", triggerHook:0.6} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("resilienciafotoportada").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("resilienciafotoportada").dataset.image  )
                             adjustMainMenu("resilienciafotoportada")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("ausenciaestado").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("cadenasdeviolencia").dataset.image  )
                             adjustMainMenu("cadenasdeviolencia")
                         }
@@ -528,14 +451,11 @@ var sceneresilienciafotoportada = new ScrollMagic.Scene({triggerElement: "#resil
 
 var sceneresiliencia = new ScrollMagic.Scene({triggerElement: "#resiliencia", triggerHook:0.5} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("resiliencia").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("resiliencia").dataset.image  )
                             adjustMainMenu("resiliencia")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("resilienciafotoportada").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("resilienciafotoportada").dataset.image  )
                             adjustMainMenu("resilienciafotoportada")
                         }
@@ -543,14 +463,11 @@ var sceneresiliencia = new ScrollMagic.Scene({triggerElement: "#resiliencia", tr
 
 var scenefotobicicleta = new ScrollMagic.Scene({triggerElement: "#resilienciafotobicicleta", triggerHook:0.55} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("resilienciafotobicicleta").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("resilienciafotobicicleta").dataset.image  )
                             adjustMainMenu("resilienciafotobicicleta")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("resiliencia").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("resiliencia").dataset.image  )
                             adjustMainMenu("resiliencia")
                         }
@@ -558,14 +475,11 @@ var scenefotobicicleta = new ScrollMagic.Scene({triggerElement: "#resilienciafot
 
 var scenebicicleta = new ScrollMagic.Scene({triggerElement: "#resilienciabicicleta", triggerHook:0.6} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("resilienciabicicleta").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("resilienciabicicleta").dataset.image  )
                             adjustMainMenu("resilienciabicicleta")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("resilienciafotobicicleta").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("resilienciafotobicicleta").dataset.image  )
                             adjustMainMenu("resilienciafotobicicleta")
                         }
@@ -573,14 +487,11 @@ var scenebicicleta = new ScrollMagic.Scene({triggerElement: "#resilienciabicicle
 
 var scenefotowhatsapp = new ScrollMagic.Scene({triggerElement: "#resilienciafotowhatsapp", triggerHook:0.5} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("resilienciafotowhatsapp").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("resilienciafotowhatsapp").dataset.image  )
                             adjustMainMenu("resilienciafotowhatsapp")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("resilienciabicicleta").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("resilienciabicicleta").dataset.image  )
                             adjustMainMenu("resilienciabicicleta")
                         }
@@ -588,14 +499,11 @@ var scenefotowhatsapp = new ScrollMagic.Scene({triggerElement: "#resilienciafoto
 
 var scenewhatsapp = new ScrollMagic.Scene({triggerElement: "#resilienciawhatsapp", triggerHook:0.6} )
 					.addTo(controller)
-					//.addIndicators() // add indicators (requires plugin)
-                    .on("enter leave", function (e) {
+					.on("enter leave", function (e) {
 						if ( e.target.controller().info("scrollDirection") == "FORWARD" && e.type == "enter" ) {
-                            //sketch.transitionToIndex( document.getElementById("resilienciawhatsapp").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("resilienciawhatsapp").dataset.image  )
                             adjustMainMenu("resilienciawhatsapp")
                         } else if ( e.target.controller().info("scrollDirection") == "REVERSE" && e.type == "leave" ) {
-                            //sketch.transitionToIndex( document.getElementById("resilienciafotowhatsapp").dataset.indexfoto );
                             sketch.transitionToImagename( document.getElementById("resilienciafotowhatsapp").dataset.image  )
                             adjustMainMenu("resilienciafotowhatsapp")
                         }
@@ -603,55 +511,7 @@ var scenewhatsapp = new ScrollMagic.Scene({triggerElement: "#resilienciawhatsapp
 
 
 
-
-
-
-                    
-// build tween
-//var tweens1 = TweenMax.from(".gradient", 1.2, {autoAlpha: 0, scale:0.1});
-/*
-var tweens1 = TweenMax.to(".gradient", 1.8, {"background-image": "linear-gradient(to right, rgba(18,44,68,1), rgba(18,44,68,1))"});
-	
-	var scene = new ScrollMagic.Scene({triggerElement: "#intro", duration: 250, triggerHook: "onEnter", offset:'300'})
-					.setTween(tweens1)
-					//.addIndicators() // add indicators (requires plugin)
-					.addTo(controller);
-
-var tweens2 = TweenMax.to(".gradient", 1.8, {"background-image": "linear-gradient(to right, rgba(155,255,0,0.5), rgba(155,0,0,100.8))"});
-	
-    var scene2 = new ScrollMagic.Scene({triggerElement: "#vidafrentevineta", duration: 250, triggerHook: "onEnter", offset:'300'})
-                    .setTween(tweens2)
-                    //.addIndicators() // add indicators (requires plugin)
-                    .addTo(controller);
-                    
-
-var tweens3 = TweenMax.to(".gradient", 1.8, {"background-image": "linear-gradient(to right, rgba(18,44,68,1), rgba(18,44,68,1))"});
-	
- var scene3 = new ScrollMagic.Scene({triggerElement: "#vidafrente", duration: 250, triggerHook: "onEnter", offset:'300'})
-                 .setTween(tweens3)
-                 //.addIndicators() // add indicators (requires plugin)
-                 .addTo(controller);
-*/
-
 /* ------------- useful functions ------------------- */
-
-// option by js
-/*
-function disableScroll() {
-	// Get the current page scroll position
-	scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-	scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-
-		// if any scroll is attempted, set this to the previous value
-		window.onscroll = function() {
-			window.scrollTo(scrollLeft, scrollTop);
-		};
-}
-
-function enableScroll() {
-	window.onscroll = function() {};
-}
-*/
 
 // option by css
 function disableScroll() {
@@ -667,33 +527,11 @@ function goOutToWebPage(url) {
 }
 
 function loadSection(url) {
-    //toggleMainMenu();
     window.open(url, '_self');
 }
 
 /* ---------------------------------------------------- */
-//var audioplayerI;
 
-/*function startPlayer(ele) {
-    if (typeof audioplayerI == "object" ) {
-        //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#play").attr( "display", "initial" );
-        //d3.selectAll(".playaudioicon,.playaudioiconsmall").select("#pause").attr( "display", "none" );
-        if ( audioplayerI.getFileRecording() != ele.dataset.file ) {
-            audioplayerI.loadRecording( ele.dataset.file );
-            audioplayerI.ele = ele;
-            //d3.select(ele).select("#play").attr( "display", "none" );
-            //d3.select(ele).select("#pause").attr( "display", "initial" );
-        } else {
-            if ( audioplayerI.togglePlaying() ) {
-                //d3.select(ele).select("#play").attr( "display", "initial" );
-                //d3.select(ele).select("#pause").attr( "display", "none" );
-            } else {
-                //d3.select(ele).select("#play").attr( "display", "none" );
-                //d3.select(ele).select("#pause").attr( "display", "initial" );
-            }
-        }
-    } 
-}*/
 
 var typeOfPlayer;
 
@@ -715,13 +553,9 @@ function playAudio(ele) {
 
 function endAudioPlayer(ele) {
     document.getElementById("wrapperaudioplayer").style.clip = "rect(0 0 0 0)";
-    //sketch.transitionToIndex( 9 );
+
     sketch.transitionToImagename( ele.dataset.imagesection  )
-    /*d3.selectAll('p,q,h1,h2,h3,video')
-                    .transition()
-                    .duration(300)
-                    .ease(d3.easeLinear)
-                    .style("opacity", "1.0");*/
+
     d3.selectAll('section')
                     .transition()
                     .duration(300)
@@ -730,16 +564,9 @@ function endAudioPlayer(ele) {
 }
 
 function startAudioPlayer(ele) {
-    console.log( "start")
-    //d3.select(ele).select("#play").attr( "display", "none" );
-    //d3.select(ele).select("#pause").attr( "display", "initial" );
-    // 10
+
     sketch.transitionToImagename( ele.dataset.image  )
-    /*d3.selectAll('p,q,h1,h2,h3,video')
-                    .transition()
-                    .duration(300)
-                    .ease(d3.easeLinear)
-                    .style("opacity", "0.0"); */
+
     d3.selectAll('section')
                     .transition()
                     .duration(300)
@@ -798,21 +625,8 @@ var vid;
 var timerVideo;
 var activeVideoplayer;
 
-/*
-document.addEventListener("DOMContentLoaded", function(event) {
-    vid = document.getElementById("videofullscreen");
-    vid.onended = function() {
-        alert("The video has ended");
-    };
-
-    function videoEnded(ele) {
-        alert("The video has ended");
-    }
-});
-*/
 
 function playVideo(wid) {
-    //alert( wid.dataset.idvideow )
 
     document.getElementsByTagName("video").forEach( (videoele) => {
         if ( !videoele.paused ) {
@@ -834,36 +648,23 @@ function playVideo(wid) {
     playerViz.style.display = "initial"
     closeB.style.display = "initial"
     d3.select(playerViz).select("#tempo").style( "stroke-dashoffset", 0 );
-    //ele.getElementsByClassName("wrapperplayer")[0].style.filter = "opacity(100%)";
     typeOfPlayer = "video";
-    /*document.getElementById("wrapperaudioplayer").style.clip = "auto";
-    d3.select("#wrapperplayer").select("#tempo").style( "stroke-dashoffset", 0 );*/
+
 
     
 
     vid = ele.getElementsByTagName("video")[0];
-    //vid.src = `../videos/${ele.dataset.file}`;
-    //vid.style.display = "initial";
     vid.onended = function() {   
         endVideoPlayer(ele);
     };
 
     vid.onpause = function() {
-        //endVideoPlayer(ele);
+        
     };
 
-    //vid.controls = true;
     d3.select(playerViz).select("#play").attr( "display", "none" );
     d3.select(playerViz).select("#pause").attr( "display", "initial" );
     vid.play();
-
-    /*
-    d3.selectAll('p,h1,h2,h3')
-                    .transition()
-                    .duration(300)
-                    .ease(d3.easeLinear)
-                    .style("opacity", "0.0");
-    */
    
     timerVideo = setInterval( () => {
         let offsetviz = audioplayerI.map( vid.currentTime, 0, vid.duration, 0, 390 );
@@ -875,32 +676,17 @@ function playVideo(wid) {
 }
 
 function toggleVideo(ele) {
-    //vidJQ = document.getElementById( ele.dataset.idvideo );
     vid = document.getElementById( ele.dataset.idvideo );
-    //let idvideo = `#${ele.dataset.idvideo}`
-    //alert( idvideo )
     if ( !vid.paused ) {
-        //$(idvideo).get(0).pause();
         vid.pause();
         d3.select(activeVideoplayer).select("#play").attr( "display", "initial" );
         d3.select(activeVideoplayer).select("#pause").attr( "display", "none" );
     } else {
-        //$(idvideo).get(0).play();
         vid.play();
         d3.select(activeVideoplayer).select("#play").attr( "display", "none" );
         d3.select(activeVideoplayer).select("#pause").attr( "display", "initial" );
     }
-    /*
-    if ( !vid.paused ) {
-        vid[0].pause();
-        d3.select(activeVideoplayer).select("#play").attr( "display", "initial" );
-        d3.select(activeVideoplayer).select("#pause").attr( "display", "none" );
-    } else {
-        vid[0].play();
-        d3.select(activeVideoplayer).select("#play").attr( "display", "none" );
-        d3.select(activeVideoplayer).select("#pause").attr( "display", "initial" );
-    }
-    */
+
 }
 
 function endVideoPlayer(ele) {
@@ -911,17 +697,6 @@ function endVideoPlayer(ele) {
     playerViz.style.display = "none"
     closeB.style.display = "none"
     vid.controls = false;
-    //document.getElementById("wrapperaudioplayer").style.clip = "rect(0 0 0 0)";
-    //sketch.transitionToIndex( 9 );
-    /*
-    d3.selectAll('p,h1,h2,h3')
-                    .transition()
-                    .duration(300)
-                    .ease(d3.easeLinear)
-                    .style("opacity", "1.0")
-                    .on("end", () => {
-                        vid.style.display = "none";
-                    });*/
 }
 
 function closePlayerVideo(ele) {
@@ -931,9 +706,6 @@ function closePlayerVideo(ele) {
     endVideoPlayer(vidw)
 }
 
-/*function closerVideo(ele) {
-
-}*/
 
 function openDataRef(ele) {
     window.open( ele.dataset.ref, "_blank")
