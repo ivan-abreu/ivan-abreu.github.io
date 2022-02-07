@@ -654,6 +654,11 @@ function playVideo(wid) {
         alert( "video mobile ")
         vid.controls = true;
         vid.play(); 
+
+        vid.onended = function() {   
+            endVideoPlayer(ele);
+        };
+
     } else {
         let playerViz = ele.getElementsByClassName("wrapperplayer")[0];
         ele.getElementsByTagName("svg")[1].setAttribute("data-idvideo", wid.dataset.idvideo );
@@ -680,6 +685,7 @@ function playVideo(wid) {
             d3.select(playerViz).select("#tempo").style( "stroke-dashoffset", offsetviz );
         }, 33) 
     }
+    
                     
 
 }
