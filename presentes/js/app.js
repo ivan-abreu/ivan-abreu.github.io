@@ -700,7 +700,7 @@ function toggleVideo(ele) {
 
 function endVideoPlayer(ele) {
     if (ismobile) {
-
+        vid.controls = false;
     } else {
         let playerViz = ele.getElementsByClassName("wrapperplayer")[0];
         let closeB = ele.getElementsByClassName("wrapperclose")[0];
