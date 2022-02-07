@@ -17,8 +17,18 @@ var isiPhone = false
 if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) { 
     isiPhone = true;
 }
-alert( isiPhone )
+//alert( isiPhone )
 /********* add icons | botomesaudio y video  *********/
+
+document.addEventListener("fullscreenchange", function () {
+    alert(document.fullscreen);
+}, false);
+document.addEventListener("mozfullscreenchange", function () {
+    alert(document.mozFullScreen);
+}, false);
+document.addEventListener("webkitfullscreenchange", function () {
+    alert(document.webkitIsFullScreen);
+}, false);
 
 d3.selectAll(".playaudioicon").each(function(d) {
     d3.xml("../images/playaudiolgbti2.svg")
