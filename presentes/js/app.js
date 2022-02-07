@@ -4,13 +4,15 @@ window.scrollTo(0,0);
 var scrollPx = 0;
 var generativephotographyInstance;
 
+var ismobile = false;
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-    // true for mobile device
-    alert("mobile device");
-  }else{
-    // false for not mobile device
-    alert("not mobile device");
+    ismobile = true;
+    //alert("mobile device");
   }
+  //else{
+    // false for not mobile device
+    //alert("not mobile device");
+  //}
 
 /********* add icons | botomesaudio y video  *********/
 
@@ -642,43 +644,43 @@ function playVideo(wid) {
             endVideoPlayer( document.getElementById(  `${videoele.id}w` ) )
         }
     })
-
+    // ismobile
+    // vid.controls = true;
     ele = document.getElementById(wid.dataset.idvideow)
-    
     activeVideoplayer = ele;
-    let playerViz = ele.getElementsByClassName("wrapperplayer")[0];
-    ele.getElementsByTagName("svg")[1].setAttribute("data-idvideo", wid.dataset.idvideo );
-    let closeB = ele.getElementsByClassName("wrapperclose")[0];
-    ele.getElementsByTagName("svg")[2].setAttribute("data-idvideo", wid.dataset.idvideo );
-    ele.getElementsByTagName("svg")[2].setAttribute("data-idvideow", wid.dataset.idvideow );
-    let iconvideoplay = ele.getElementsByClassName("playvideoiconsmall")[0];
-    iconvideoplay.style.display = "none"
-    playerViz.style.display = "initial"
-    closeB.style.display = "initial"
-    d3.select(playerViz).select("#tempo").style( "stroke-dashoffset", 0 );
     typeOfPlayer = "video";
+    if (ismobile) {
+        vid.play(); 
+    } else {
+        let playerViz = ele.getElementsByClassName("wrapperplayer")[0];
+        ele.getElementsByTagName("svg")[1].setAttribute("data-idvideo", wid.dataset.idvideo );
+        let closeB = ele.getElementsByClassName("wrapperclose")[0];
+        ele.getElementsByTagName("svg")[2].setAttribute("data-idvideo", wid.dataset.idvideo );
+        ele.getElementsByTagName("svg")[2].setAttribute("data-idvideow", wid.dataset.idvideow );
+        let iconvideoplay = ele.getElementsByClassName("playvideoiconsmall")[0];
+        iconvideoplay.style.display = "none"
+        playerViz.style.display = "initial"
+        closeB.style.display = "initial"
+        d3.select(playerViz).select("#tempo").style( "stroke-dashoffset", 0 );
+        typeOfPlayer = "video";
 
 
-    
-
-    vid = ele.getElementsByTagName("video")[0];
-    vid.onended = function() {   
-        endVideoPlayer(ele);
-    };
-
-    vid.onpause = function() {
         
-    };
 
-    d3.select(playerViz).select("#play").attr( "display", "none" );
-    d3.select(playerViz).select("#pause").attr( "display", "initial" );
-    vid.play();
-   
-    timerVideo = setInterval( () => {
-        let offsetviz = audioplayerI.map( vid.currentTime, 0, vid.duration, 0, 390 );
-        d3.select(playerViz).select("#tempo").style( "stroke-dashoffset", offsetviz );
-    }, 33) 
+        vid = ele.getElementsByTagName("video")[0];
+        vid.onended = function() {   
+            endVideoPlayer(ele);
+        };
+
+        d3.select(playerViz).select("#play").attr( "display", "none" );
+        d3.select(playerViz).select("#pause").attr( "display", "initial" );
+        vid.play(); // mobile & dektop
     
+        timerVideo = setInterval( () => {
+            let offsetviz = audioplayerI.map( vid.currentTime, 0, vid.duration, 0, 390 );
+            d3.select(playerViz).select("#tempo").style( "stroke-dashoffset", offsetviz );
+        }, 33) 
+    }
                     
 
 }
@@ -698,13 +700,19 @@ function toggleVideo(ele) {
 }
 
 function endVideoPlayer(ele) {
-    let playerViz = ele.getElementsByClassName("wrapperplayer")[0];
-    let closeB = ele.getElementsByClassName("wrapperclose")[0];
-    let iconvidepplay = ele.getElementsByClassName("playvideoiconsmall")[0];
-    iconvidepplay.style.display = "initial"
-    playerViz.style.display = "none"
-    closeB.style.display = "none"
-    vid.controls = false;
+    if (ismobile) {
+
+    } else {
+        let playerViz = ele.getElementsByClassName("wrapperplayer")[0];
+        let closeB = ele.getElementsByClassName("wrapperclose")[0];
+        let iconvidepplay = ele.getElementsByClassName("playvideoiconsmall")[0];
+        iconvidepplay.style.display = "initial"
+        playerViz.style.display = "none"
+        closeB.style.display = "none"
+        vid.controls = false;
+    }
+        // vid.controls = true;)
+    
 }
 
 function closePlayerVideo(ele) {
