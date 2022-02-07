@@ -13,7 +13,11 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     // false for not mobile device
     //alert("not mobile device");
   //}
-
+var isiPhone = false
+if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) { 
+    isiPhone = true;
+}
+alert( isiPhone )
 /********* add icons | botomesaudio y video  *********/
 
 d3.selectAll(".playaudioicon").each(function(d) {
@@ -659,10 +663,16 @@ function playVideo(wid) {
             //alert("ended")  
             endVideoPlayer(ele);
         };
-        vid.onabort = function() {   
+
+        if(isiPhone){
+            $('#video_element').bind('ended', function(){
+                document.getElementById('video_element').webkitExitFullScreen();
+            });
+        }
+        /*vid.onabort = function() {   
             alert("abort")
             endVideoPlayer(ele);
-        };
+        };*/
 
         vid.onsuspend = function(e) {   
             alert("suspend")
