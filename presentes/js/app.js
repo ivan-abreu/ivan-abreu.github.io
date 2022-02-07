@@ -655,10 +655,12 @@ function playVideo(wid) {
         vid.controls = true;
         vid.play(); 
 
-        vid.onended = function() {   
+        vid.onended = function() { 
+            alert("ended")  
             endVideoPlayer(ele);
         };
         vid.onabort = function() {   
+            alert("abort")
             endVideoPlayer(ele);
         };
 
