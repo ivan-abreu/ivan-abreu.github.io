@@ -658,6 +658,9 @@ function playVideo(wid) {
         vid.onended = function() {   
             endVideoPlayer(ele);
         };
+        vid.onabort = function() {   
+            endVideoPlayer(ele);
+        };
 
     } else {
         let playerViz = ele.getElementsByClassName("wrapperplayer")[0];
