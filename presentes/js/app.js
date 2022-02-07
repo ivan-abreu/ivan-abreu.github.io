@@ -650,6 +650,7 @@ function playVideo(wid) {
     activeVideoplayer = ele;
     typeOfPlayer = "video";
     if (ismobile) {
+        vid.controls = true;
         vid.play(); 
     } else {
         let playerViz = ele.getElementsByClassName("wrapperplayer")[0];
