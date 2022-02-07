@@ -4,6 +4,14 @@ window.scrollTo(0,0);
 var scrollPx = 0;
 var generativephotographyInstance;
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    // true for mobile device
+    alert("mobile device");
+  }else{
+    // false for not mobile device
+    alert("not mobile device");
+  }
+
 /********* add icons | botomesaudio y video  *********/
 
 d3.selectAll(".playaudioicon").each(function(d) {
