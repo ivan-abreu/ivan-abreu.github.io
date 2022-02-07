@@ -711,7 +711,9 @@ function toggleVideo(ele) {
 
 function endVideoPlayer(ele) {
     if (ismobile) {
+        alert( ismobile )
         vid.controls = false;
+        iconvidepplay.style.display = "initial"
     } else {
         let playerViz = ele.getElementsByClassName("wrapperplayer")[0];
         let closeB = ele.getElementsByClassName("wrapperclose")[0];
