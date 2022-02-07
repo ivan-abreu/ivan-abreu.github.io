@@ -656,11 +656,16 @@ function playVideo(wid) {
         vid.play(); 
 
         vid.onended = function() { 
-            alert("ended")  
+            //alert("ended")  
             endVideoPlayer(ele);
         };
         vid.onabort = function() {   
             alert("abort")
+            endVideoPlayer(ele);
+        };
+
+        vid.onsuspend = function(e) {   
+            alert("suspend")
             endVideoPlayer(ele);
         };
 
