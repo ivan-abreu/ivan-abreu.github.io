@@ -648,8 +648,10 @@ function playVideo(wid) {
     // vid.controls = true;
     ele = document.getElementById(wid.dataset.idvideow)
     activeVideoplayer = ele;
+    vid = ele.getElementsByTagName("video")[0];
     typeOfPlayer = "video";
     if (ismobile) {
+        alert( "video mobile ")
         vid.controls = true;
         vid.play(); 
     } else {
@@ -665,10 +667,6 @@ function playVideo(wid) {
         d3.select(playerViz).select("#tempo").style( "stroke-dashoffset", 0 );
         typeOfPlayer = "video";
 
-
-        
-
-        vid = ele.getElementsByTagName("video")[0];
         vid.onended = function() {   
             endVideoPlayer(ele);
         };
