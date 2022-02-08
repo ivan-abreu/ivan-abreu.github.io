@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="c1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 631 86" style="enable-background:new 0 0 631 86;" xml:space="preserve">
+	<g id="XMLID_681_">
+		<text id="XMLID_42_" transform="matrix(1 0 0 1 115.666 34.5678)">
+			<tspan class="p1" x="0" y="0" style="font-family:'Barlow'; font-size:35px;" data-es="Información" data-en="Information">Información </tspan>
+			<tspan class="p2" x="0" y="34" style="font-family:'Barlow'; font-size:35px;" data-es="y manejo de datos" data-en="and data management">y manejo de datos</tspan>
+		</text>
+	</g>
+	<path id="circulo" style="fill:#B73CFF;" d="M73.7,29c-5.3-12-17-19.9-30.6-19.9c-18.6,0-33.7,15-33.7,33.6
+		c0,18.6,15.3,33.6,33.9,33.6c0.1,0,0.7-0.1,0.7-0.1V44h15v28.3c2-0.9,4-2.1,5-3.3V29H73.7z"/>
+	<path id="XMLID_47_" style="fill:#FFB419;" d="M44,77h15v-4.7c-4,2.5-9,3.9-15,4V77z"/>
+	<path id="XMLID_49_" style="fill:#FFB419;" d="M73.7,29c2,4,3.1,8.8,3.1,13.8c0,10.7-4.8,20-12.8,26.2v8h16V29H73.7z"/>
+	<path id="XMLID_52_" style="fill:#B73CFF;" d="M44,44v32.2c6-0.1,11-1.5,15-4V44H44z"/>
+	<path id="XMLID_51_" d="M44,44v32.2c6-0.1,11-1.5,15-4V44H44z"/>
+	<path id="XMLID_54_" style="fill:#B73CFF;" d="M76.8,42.8c0-5-1.1-9.8-3.1-13.8H64v40C72,62.8,76.8,53.5,76.8,42.8z"/>
+	<path id="XMLID_53_" d="M76.8,42.8c0-5-1.1-9.8-3.1-13.8H64v40C72,62.8,76.8,53.5,76.8,42.8z"/>
+	<rect id="XMLID_40_" x="84" y="11" style="fill:#FFB419;" width="16" height="66"/>
+	<path id="trazobase" style="fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;" d="M47.7,81.7
+		c19.6-2.3,34.8-19,34.8-39.2C82.5,20.7,64.8,3,43,3S3.5,20.7,3.5,42.5S21.2,82,43,82h582"/>
+	<g transform="translate(0,0)">
+		<polygon id="e1" style="display:none;" points="614.2,68.4 607,73.7 609.8,65.2 602.6,59.9 611.5,60 614.2,51.5 617,60 625.9,59.9 618.7,65.2 621.5,73.7 "/>
+		<polygon id="e2" style="display:none;" points="614.2,45.5 607,50.7 609.8,42.2 602.6,37 611.5,37 614.2,28.5 617,37 625.9,37 618.7,42.2 621.5,50.7 "/>
+		<polygon id="e3" style="display:none;" points="614.2,22.5 607,27.8 609.8,19.3 602.6,14.1 611.5,14.1 614.2,5.6 617,14.1 625.9,14.1 618.7,19.3 621.5,27.8 "/>
+	</g>
+	<text id="p" class="porcientocompetencia" x="555" y="55" style="display: none; font-family: Barlow; font-size: 30px;" text-anchor="end">0%</text>
+	<g transform="translate(80,0)"><path id="flechalinea" style="display: none;fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M525.1,21.5l14.7,14.7c3.1,3.1,3.1,8.2,0,11.3l-14.7,14.7"/></g>
+</svg>
