@@ -20,7 +20,7 @@ if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
 //alert( isiPhone )
 /********* add icons | botomesaudio y video  *********/
 
-document.addEventListener("fullscreenchange", function () {
+/*document.addEventListener("fullscreenchange", function () {
     alert(document.fullscreen);
 }, false);
 document.addEventListener("mozfullscreenchange", function () {
@@ -28,7 +28,7 @@ document.addEventListener("mozfullscreenchange", function () {
 }, false);
 document.addEventListener("webkitfullscreenchange", function () {
     alert(document.webkitIsFullScreen);
-}, false);
+}, false);*/
 
 d3.selectAll(".playaudioicon").each(function(d) {
     d3.xml("../images/playaudiolgbti2.svg")
@@ -665,7 +665,7 @@ function playVideo(wid) {
     vid = ele.getElementsByTagName("video")[0];
     typeOfPlayer = "video";
     if (ismobile) {
-        alert( "video mobile ")
+        //alert( "video mobile ")
         vid.controls = true;
         vid.play(); 
 
@@ -674,20 +674,20 @@ function playVideo(wid) {
             endVideoPlayer(ele);
         };
 
-        if(isiPhone){
+        /*if(isiPhone){
             $('#video_element').bind('ended', function(){
                 document.getElementById('video_element').webkitExitFullScreen();
             });
-        }
+        }*/
         /*vid.onabort = function() {   
             alert("abort")
             endVideoPlayer(ele);
         };*/
 
-        vid.onsuspend = function(e) {   
-            alert("suspend")
+        /*vid.onsuspend = function(e) {   
+            //alert("suspend")
             endVideoPlayer(ele);
-        };
+        };*/
 
     } else {
         let playerViz = ele.getElementsByClassName("wrapperplayer")[0];
@@ -736,7 +736,7 @@ function toggleVideo(ele) {
 
 function endVideoPlayer(ele) {
     if (ismobile) {
-        alert( ismobile )
+        //alert( ismobile )
         vid.controls = false;
         iconvidepplay.style.display = "initial"
     } else {
