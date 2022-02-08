@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>knowledge close gapp for kthh</title>
+		<meta charset="utf-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'/>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+		<!-- <link rel="manifest" href="/site.webmanifest"> -->
+
+		<!-- <link rel="icon" type="image/png" sizes="16x16" href="images/gapp-favicon-16x16.png"> -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/gapp.css">
+	</head>
+	<body>
+
+
+		<div id="menu-mobile">
+		  <div id="bg-menu-mobile"></div>
+		  
+		  <ul>
+		  	<li data-page="unboarding" class="selectpage currentpage" data-es="Inicio" data-en="Home"></li>
+		    <li data-page="howtousegapp" class="selectpage" data-es="¿Cómo utilizar Gapp?" data-en="How to use Gapp?" ></li>
+		    <li data-page="gapp" class="selectpage" data-es="Acerca de Gaap" data-en="About Gaap" ></li>  
+		    <li data-page="competenciesmenu" class="selectpage" data-es="Comenzar" data-en="Let's Start" ></li>
+		    <li data-page="radialdiagram" class="selectpage" data-competenciaid="A1" data-es="Revisa tu avance" data-en="Check your progress" ></li>
+		    <!-- <li data-page="sankeydiagram.html" class="selectpage inactivesection" data-es="Tu resultado global" data-en="Your global score" ></li> -->
+		    <li data-page="recommendedcontentmenu" class="selectpage inactivesectionnn" data-es="Contenidos de aprendizaje" data-en="Your learning path" ></li>
+		    <li>
+		    	<span class="selectlang selectedlang" data-lang="es" >Español</span>
+				<svg version="1.1" id="langindicator" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="76px" height="52px" viewBox="0 0 76 52" style="enable-background:new 0 0 76 52;" xml:space="preserve">
+					<g id="flecha">
+						<polygon id="XMLID_3_" style="fill:#FFFFFF;" points="0,39 25.3,26 25.3,52"/>
+						<circle id="XMLID_6_" style="fill:#FFFFFF;" cx="38" cy="39" r="10"/>
+					</g>
+				</svg>
+		    	<span class="selectlang" data-lang="en">English</span>
+		    </li>
+		  </ul>
+		</div>
+
+		<div id="mainheaderback" class="mainheaderwrapper"></div>
+		<header id="mainheader" class="mainheaderwrapper">
+
+			<svg class="ham hamRotate ham4" viewBox="0 0 100 100"  onclick="this.classList.toggle('active')" id="hamburger">
+			  <path
+			        class="line top"
+			        d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+			  <path
+			        class="line middle"
+			        d="m 70,50 h -40" />
+			  <path
+			        class="line bottom"
+			        d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+		    </svg>
+
+			<div id="usuario">
+				<img src="images/user.svg" />
+				<div class="profile" style="margin-left: 1rem;"></div>  
+			</div> 
+			<img src="images/logogapp.svg" height="75%" onclick="loadPage('gapp')" style="cursor: pointer;" />
+		</header>
+
+		<main id="mainwrapper">
+			
+		</main>
+
+		<div id="forkthh">
+			FOR <img src="images/forkthh.svg" height="15" style="margin-left: 0.35rem;">
+		</div>
+		<div id="landscapeWarning">
+			<object type="image/svg+xml" data="images/movile-orientation-icon-azul.svg" ></object>
+		</div>
+
+
+		<!-- <script type="text/javascript" src="../../assets/js/lib/jquery.min.js"></script> -->
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+		
+		<!-- <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script> -->
+
+		<!-- <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/GSDevTools3.min.js"></script> -->
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+		<script type="text/javascript" src="js/uncompressed/plugins/animation.gsap.js"></script>
+
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+		
+		<script type="text/javascript" src="js/useful_functions.js"></script>
+		<script type="text/javascript" src="js/gapp.js"></script>
+	</body>
+</html>

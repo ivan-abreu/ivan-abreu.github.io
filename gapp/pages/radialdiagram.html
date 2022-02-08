@@ -1,0 +1,1284 @@
+<style type="text/css">
+
+	body {
+		background-color: #d7f4f2 !important;
+	}
+
+	.layout * {
+		/*opacity: 0;*/
+	}
+	.layout {
+		/*height: 702px;*/
+		margin: 60px 10px 0px 10px;
+		/*margin-top: 60px;*/
+		/*display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-gap: 10px;
+		align-content: start;*/
+
+		/*height: 2000px;*/
+	}
+
+	#titleguiadelecturawrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-gap: 10px;
+		align-content: start;
+	}
+	
+	
+
+
+	/* title section */
+
+	.titlesection {
+		font-size: 2.1rem;
+		line-height: 2.0rem;
+		padding-top: 20px;
+		grid-column: 1 / 4;
+	}
+
+	/* guia de lectura */
+
+	.guiadelectura {
+	    display: grid;
+	    grid-template-columns: 0.5fr auto;
+	    align-items: center;
+	    align-content: end;
+	    grid-gap: 10px;
+	    padding-left: 10%;
+	    padding-top: 20px;
+	    border-left: solid 1px #819291;
+	    grid-column: 4 / 7;
+	}
+
+		.guiadelectura div {
+			display: flex;
+			/*flex-direction: column;*/
+		}
+		.guiadelectura div * {
+			margin-top: 0.25rem;
+		}
+		.guiadelectura div svg {
+			/*width: 80%;*/
+			height:"15px";
+		}
+		.guiadelectura .score_name {
+			text-transform: uppercase;
+			font-size: 1rem;
+		}
+		.guiadelectura #borde {
+			height: 100%;
+			border-left: solid 1px #819291;
+		}
+
+		.finishedicon {
+			width: 25px;
+			height: 25px;
+			background-color: white;
+			border: solid 2px #002680;
+		}
+
+	/**/
+
+	#triggerradialdataviz {
+		width: 100%;
+		height: 1px;
+		grid-column: 1 / 7;
+		display: flex;
+		justify-content: center;
+	}
+
+	#radialdatavizwrapper {
+		width: 48%;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		/*display: flex;
+		justify-content: flex-start;*/
+		z-index: 4;
+		/*pointer-events: none;*/
+		background-color: none;
+	}
+	
+	/*#radialdatavizwrapper svg {
+		width: 100%;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		display: flex;
+		justify-content: flex-start;
+		z-index: 4;
+		pointer-events: none;
+	}
+*/
+	#radialdataviz { /* svg */
+		width: 100%;
+		height: auto;
+		/*background-color: #d7f4f2;*/
+	}
+
+	.area {
+		/*fill:#FFFFFF00 !important;*/
+		transition: fill 0.4s;
+	}
+
+	#numerosss path {
+		/*fill:#FFFFFF00 !important;*/
+		transition: fill 0.4s;
+	}
+
+
+	.competenciaseleccionada {
+		stroke:#002680 !important;
+	}
+
+	.competenciaseleccionadastroke {
+		/*stroke:#002680 !important;*/
+		stroke:#70F2E6 !important;
+		/*stroke:#35FF0044 !important;*/
+	}
+
+	.numeroseleccionado {
+		display: initial !important;
+	}
+
+	.estrellaseleccionada {
+		fill:#FFFFFF !important;
+	}
+
+	#lineascentrales path {
+		transition: stroke-width 0.4s;
+	}
+
+	.competenciaseleccionadagrosor {
+		stroke-width:10 !important;
+	}
+
+	/*#radialdaviz:before {
+	  width:calc(100vh-20px);
+	}*/
+
+	#competenciaswrapper {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-gap: 10px;
+		align-content: start;
+		margin-top: 1rem;
+		padding-bottom: 60vh;
+		color: #002680;
+	}
+
+		/*#competenciaswrapper .competenciawrapper {
+			grid-column: 4 / 7;
+			height: 300px;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			align-content: start;
+			grid-gap: 10px;
+		}
+*/
+		#competenciaswrapper .competenciawrapper {
+		    grid-column: 4 / 7;
+		    /*height: 300px;*/
+		    /*border: solid 2px black;*/
+		    display: grid;
+		    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		    align-content: start;
+		    /*align-items: stretch;
+		    justify-items: stretch;*/
+		    grid-gap: 5px;
+		    margin-bottom: 100px;
+		}
+
+
+			.level {
+				font-size: 1.5rem;
+				font-weight: 400;
+				grid-column: 1 / 9;
+				grid-row: 1 / 2;
+				justify-self: end;
+				text-transform: uppercase;
+			}
+
+			.numcompetencie {
+				font-size: 2.5rem;
+				font-weight: 500;
+				grid-column: 1 / 3;
+				grid-row: 2 / 3;
+				justify-self: center;
+				align-self: center;
+			}
+
+
+			.brecommendedcontent {
+			    grid-column: 1 / 3;
+			    grid-row: 3 / 4;
+			    display: flex;
+			    flex-direction: column;
+			    justify-content: flex-start;
+			    margin-top: 1rem;
+			}
+
+				.irecommendedcontent {
+					width: 100%;
+					height: auto;
+				}
+
+				.textrecommendedcontent {
+					text-align: center;
+					/*color: red;*/
+				}
+
+
+			.titulocompetencia {
+			    grid-column: 2 / 9;
+			    grid-row: 2 / 3;
+			    display: flex;
+			    justify-content: flex-end;
+			    align-self: center;
+			}
+
+				.titulocompetencia svg {
+				    width: 90%;
+				    height: auto;
+				}
+
+			.skills {
+				grid-column: 4 / 9;
+				grid-row: 3 / 4;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				font-size: 0.9rem;
+			}
+			.skill {
+				margin-top: 0.5rem;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+				.skill {
+					margin-top: 0.5rem;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+				}
+
+				.skill .levelicons {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					margin-left: 1rem;
+					/*align-items: center;*/
+				}
+
+				.skill .levelicons img{
+					height: 0.8rem; 
+					width: auto;
+					padding-top: 0.2rem;
+					display: none;
+				}
+
+
+	/*.p,.i,.a {
+		display: initial !important;
+	}	*/	
+
+
+	#vscrollindicator {
+		position: fixed;
+		right: 10px;
+		/*top: 153px;*/
+		top: calc(50% - 70px);
+		z-index: 11;
+		height: 140px;
+	}
+
+
+	/* mobile 	*/
+	@media only screen 
+	and (min-device-width: 375px) 
+	and (max-device-width: 812px) {
+		body {
+			background-color: #FFFFFF;
+		}
+		.layout {
+			margin-top: 40px;
+		}
+		/*.competenciamenu {
+			grid-column: 1 / 7;
+			display: flex;
+			justify-content: center;
+			background-color: red;
+		}
+
+		.competenciamenu svg {
+			width: 80%;
+			margin-bottom: -15px;
+		}*/
+
+		/**/
+
+		.titlesection {
+			font-size: 1.3rem;
+			line-height: 1.29rem;
+			grid-column: 1 / 4;
+		}
+
+		.level.unfinished {
+			font-size: 1.25rem;
+		}
+
+		.guiadelectura {
+		    display: grid;
+		    grid-template-columns: 0.33fr auto;
+		    align-items: end;
+		    align-content: end;
+		    grid-gap: 10px;
+		    padding-left: 10%;
+		    margin-top: 20px;
+		    border-left: solid 1px #819291;
+		    grid-column: 4 / 7;
+		}
+			.guiadelectura div {
+				display: flex;
+				/*flex-direction: column;*/
+			}
+			.guiadelectura div * {
+				/*margin-top: 0.25rem;*/
+			}
+			.guiadelectura .score_name {
+				text-transform: uppercase;
+				font-size: 0.6rem;
+			}
+			.guiadelectura #borde {
+				height: 100%;
+				border-left: solid 1px #819291;
+			}
+
+			.finishedicon {
+				width: 25px;
+				height: 25px;
+				background-color: white;
+				border: solid 1px #002680;
+			}
+
+		/**/
+
+		#radialdatavizwrapper { /* svg */
+			width: 100%;
+			background-color: #d7f4f2;
+			border-bottom: solid 4px #002680;
+			display: flex;
+			justify-content: center;
+			/*
+			pointer-events: none;*/
+		}
+
+		#radialdataviz { /* svg */
+			width: 84%;
+			height: auto;
+			/*pointer-events: none;*/
+		}
+
+		#competenciaswrapper {
+			/*background-color: #FFFFFF;*/
+			/*margin-left: -10px;
+			margin-right: -10px;*/
+		}
+
+		#competenciaswrapper .competenciawrapper {
+			grid-column: 1 / 7;
+			/*background-color: white;*/
+			padding: 0px 10px;
+		}
+
+		#vscrollindicator {
+			position: absolute;
+			right: 10px;
+			/*top: 153px;*/
+			top: calc(50% - 70px);
+			z-index: 11;
+			height: 140px;
+		}
+
+		
+
+
+	}
+
+	
+
+	
+</style>
+
+<div class="layout">
+	<h1 style="display: none">radial diagram</h1>
+	<div id="titleguiadelecturawrapper">
+		<div class="titlesection azuloscuro" data-es='Círculo<br/>de tus<br/><span class="extrabold">competencias<br/>y habilidades</span>' data-en='Circle<br/>of yours<br/><span class="extrabold" >competencies<br/>and skills</span>' > 
+			Círculo<br/>de tus<br/><span class="extrabold">competencias<br/>y habilidades</span>
+		</div>
+		<div class="guiadelectura grisclaroverdozo" >
+			<div class="score_name" data-es='Compentencia terminada' data-en='Completed competencie' >Compentencia terminada</div>
+			<div class="finishedicon"></div>
+			<!-- <div id="borde"></div> -->
+			<div class="score_name" data-es='Principiante' data-en='Beginner' >Principiante</div>
+			<div >
+				
+
+				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.7px" height="12px" viewBox="0 0 20.7 19.6" style="enable-background:new 0 0 20.7 19.6;" xml:space="preserve">
+					<g id="XMLID_66_" transform="matrix(0.85,0,0,0.85,375,570) translate(0,-240) scale(1.3,1.3) rotate(270)">
+						<path id="XMLID_67_" style="fill:#819291;" d="M317.7-330l-4.2-5.8l6.7,2.2l4.2-5.8v7.2l6.7,2.2l-6.8,2.2l0.1,7.2l-4.2-5.8
+							l-6.8,2.2L317.7-330z"/>
+					</g>
+				</svg>
+				
+			</div>
+
+			<div class="score_name" data-es='Intermedio' data-en='Intermediate' >Intermedio</div>
+			<div>
+				
+
+				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.7px" height="12px" viewBox="0 0 20.7 19.6" style="enable-background:new 0 0 20.7 19.6;" xml:space="preserve">
+					<g id="XMLID_66_" transform="matrix(0.85,0,0,0.85,375,570) translate(0,-240) scale(1.3,1.3) rotate(270)">
+						<path id="XMLID_67_" style="fill:#819291;" d="M317.7-330l-4.2-5.8l6.7,2.2l4.2-5.8v7.2l6.7,2.2l-6.8,2.2l0.1,7.2l-4.2-5.8
+							l-6.8,2.2L317.7-330z"/>
+					</g>
+				</svg>
+				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.7px" height="12px" viewBox="0 0 20.7 19.6" style="enable-background:new 0 0 20.7 19.6;" xml:space="preserve">
+					<g id="XMLID_66_" transform="matrix(0.85,0,0,0.85,375,570) translate(0,-240) scale(1.3,1.3) rotate(270)">
+						<path id="XMLID_67_" style="fill:#819291;" d="M317.7-330l-4.2-5.8l6.7,2.2l4.2-5.8v7.2l6.7,2.2l-6.8,2.2l0.1,7.2l-4.2-5.8
+							l-6.8,2.2L317.7-330z"/>
+					</g>
+				</svg>
+				
+			</div>
+
+			<div class="score_name" data-es='Avanzado' data-en='Advanced' >Avanzado</div>
+			<div>
+				
+
+				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.7px" height="12px" viewBox="0 0 20.7 19.6" style="enable-background:new 0 0 20.7 19.6;" xml:space="preserve">
+					<g id="XMLID_66_" transform="matrix(0.85,0,0,0.85,375,570) translate(0,-240) scale(1.3,1.3) rotate(270)">
+						<path id="XMLID_67_" style="fill:#819291;" d="M317.7-330l-4.2-5.8l6.7,2.2l4.2-5.8v7.2l6.7,2.2l-6.8,2.2l0.1,7.2l-4.2-5.8
+							l-6.8,2.2L317.7-330z"/>
+					</g>
+				</svg>
+				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.7px" height="12px" viewBox="0 0 20.7 19.6" style="enable-background:new 0 0 20.7 19.6;" xml:space="preserve">
+					<g id="XMLID_66_" transform="matrix(0.85,0,0,0.85,375,570) translate(0,-240) scale(1.3,1.3) rotate(270)">
+						<path id="XMLID_67_" style="fill:#819291;" d="M317.7-330l-4.2-5.8l6.7,2.2l4.2-5.8v7.2l6.7,2.2l-6.8,2.2l0.1,7.2l-4.2-5.8
+							l-6.8,2.2L317.7-330z"/>
+					</g>
+				</svg>
+				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.7px" height="12px" viewBox="0 0 20.7 19.6" style="enable-background:new 0 0 20.7 19.6;" xml:space="preserve">
+					<g id="XMLID_66_" transform="matrix(0.85,0,0,0.85,375,570) translate(0,-240) scale(1.3,1.3) rotate(270)">
+						<path id="XMLID_67_" style="fill:#819291;" d="M317.7-330l-4.2-5.8l6.7,2.2l4.2-5.8v7.2l6.7,2.2l-6.8,2.2l0.1,7.2l-4.2-5.8
+							l-6.8,2.2L317.7-330z"/>
+					</g>
+				</svg>
+				
+			</div>
+		</div>
+	</div>
+	<div id="triggerradialdataviz" 	></div>
+
+	<div id="radialdatavizwrapper"></div>
+
+	<div id="competenciaswrapper">
+
+		<div id="A1" class="competenciawrapper c1" data-competenciaid="A1" >
+			<div class="level">Intermedio</div>
+			<div class="numcompetencie">1</div>
+			<div class="titulocompetencia">
+			</div>
+			<div class="brecommendedcontent unfinishedopacity" >
+				<img class="irecommendedcontent" src="images/iconrecommendedcontent.svg" >
+			    <div class="textrecommendedcontent">contenido<br/>recomendado</div>
+		    </div>
+		    <div class="skills">
+		    </div>
+		</div>
+
+		<div id="A2" class="competenciawrapper c2" data-competenciaid="A2" >
+			<div class="level unfinished">Competencia sin terminar</div>
+			<div class="numcompetencie">2</div>
+			<div class="titulocompetencia">
+			</div>
+			<div class="brecommendedcontent unfinishedopacity" >
+				<img class="irecommendedcontent" src="images/iconrecommendedcontent.svg" >
+			    <div class="textrecommendedcontent">contenido<br/>recomendado</div>
+		    </div>
+		    <div class="skills">
+			</div>
+		</div>
+
+		<div id="A3" class="competenciawrapper c3" data-competenciaid="A3" >
+			<div class="level unfinished">Competencia sin terminar</div>
+			<div class="numcompetencie">3</div>
+			<div class="titulocompetencia">
+			</div>
+			<div class="brecommendedcontent unfinishedopacity" >
+				<img class="irecommendedcontent" src="images/iconrecommendedcontent.svg" >
+			    <div class="textrecommendedcontent">contenido<br/>recomendado</div>
+		    </div>
+		    <div class="skills">
+			</div>
+		</div>
+
+		<div id="A4" class="competenciawrapper c4" data-competenciaid="A4" >
+			<div class="level unfinished">Competencia sin terminar</div>
+			<div class="numcompetencie">4</div>
+			<div class="titulocompetencia">
+			</div>
+			<div class="brecommendedcontent unfinishedopacity" >
+				<img class="irecommendedcontent" src="images/iconrecommendedcontent.svg" >
+			    <div class="textrecommendedcontent">contenido<br/>recomendado</div>
+		    </div>
+		    <div class="skills">
+			</div>
+		</div>
+
+		<div id="A5" class="competenciawrapper c5" data-competenciaid="A5" >
+			<div class="level unfinished">Competencia sin terminar</div>
+			<div class="numcompetencie">5</div>
+			<div class="titulocompetencia">	
+			</div>
+			<div class="brecommendedcontent unfinishedopacity" >
+				<img class="irecommendedcontent" src="images/iconrecommendedcontent.svg" >
+			    <div class="textrecommendedcontent">contenido<br/>recomendado</div>
+		    </div>
+		    <div class="skills">
+			</div>
+		</div>
+
+		<div id="A6" class="competenciawrapper c6" data-competenciaid="A6" >
+			<div class="level unfinished">Competencia sin terminar</div>
+			<div class="numcompetencie">6</div>
+			<div class="titulocompetencia">
+			</div>
+			<div class="brecommendedcontent unfinishedopacity" >
+				<img class="irecommendedcontent" src="images/iconrecommendedcontent.svg" >
+			    <div class="textrecommendedcontent">contenido<br/>recomendado</div>
+		    </div>
+		    <div class="skills">
+			</div>
+		</div>
+
+		<div id="A7" class="competenciawrapper c7" data-competenciaid="A7">
+			<div class="level unfinished">Competencia sin terminar</div>
+			<div class="numcompetencie">7</div>
+			<div class="titulocompetencia">
+			</div>
+			<div class="brecommendedcontent unfinishedopacity" >
+				<img class="irecommendedcontent" src="images/iconrecommendedcontent.svg" >
+			    <div class="textrecommendedcontent">contenido<br/>recomendado</div>
+		    </div>
+		    <div class="skills">
+			</div>
+		</div>
+
+		<div id="A8" class="competenciawrapper c8" data-competenciaid="A8">
+			<div class="level unfinished">Competencia sin terminar</div>
+			<div class="numcompetencie">8</div>
+			<div class="titulocompetencia">
+			</div>
+			<div class="brecommendedcontent unfinishedopacity" >
+				<img class="irecommendedcontent" src="images/iconrecommendedcontent.svg" >
+			    <div class="textrecommendedcontent">contenido<br/>recomendado</div>
+		    </div>
+		    <div class="skills">
+			</div>
+		</div>
+
+		<div id="A9" class="competenciawrapper c9" data-competenciaid="A9">
+			<div class="level unfinished">Competencia sin terminar</div>
+			<div class="numcompetencie">9</div>
+			<div class="titulocompetencia">
+			</div>
+			<div class="brecommendedcontent unfinishedopacity" >
+				<img class="irecommendedcontent" src="images/iconrecommendedcontent.svg" >
+			    <div class="textrecommendedcontent">contenido<br/>recomendado</div>
+		    </div>
+		    <div class="skills">
+			</div>
+		</div>
+
+	</div>
+
+	
+</div>
+
+<script type="text/javascript">
+	
+	var posprev = 0;
+
+	$(document).ready( function() {
+
+		changeLanguage( defaultlanguage );
+
+		const queryString = window.location.search;
+
+		const urlParams = new URLSearchParams(queryString);
+
+		if (  urlParams.get('uid') != null ) {
+			candidate_id = urlParams.get('uid');
+		} 
+
+		$('.mainheaderwrapper').addClass('godown')
+
+		let conversions = {
+		  "Información y manejo de datos" : {
+		    "classcompetencie": ".c1",
+		    "indexcompetencie": 0,
+		    "areacompetencie": "#c1.area"
+		  },
+		  "Comunicación y colaboración" : {
+		    "classcompetencie": ".c2",
+		    "indexcompetencie": 1,
+		    "areacompetencie": "#c2.area"
+		  },
+		  "Gestión de Seguridad" : {
+		    "classcompetencie": ".c3",
+		    "indexcompetencie": 2,
+		    "areacompetencie": "#c3.area"
+		  },
+		  "Resolución de problemas":{
+		    "classcompetencie": ".c4",
+		    "indexcompetencie": 3,
+		    "areacompetencie": "#c4.area"
+		  },
+		  "Innovación":{
+		    "classcompetencie": ".c5",
+		    "indexcompetencie": 4,
+		    "areacompetencie": "#c5.area"
+		  },
+		  "Tecnología":{
+		    "classcompetencie": ".c6",
+		    "indexcompetencie": 5,
+		    "areacompetencie": "#c6.area"
+		  },
+		  "Formas de trabajo":{
+		    "classcompetencie": ".c7",
+		    "indexcompetencie": 6,
+		    "areacompetencie": "#c7.area"
+		  },
+		  "Madurez y responsabilidad":{
+		    "classcompetencie": ".c8",
+		    "indexcompetencie": 7,
+		    "areacompetencie": "#c8.area"
+		  },
+		  "Creación de contenido digital":{
+		    "classcompetencie": ".c9",
+		    "indexcompetencie": 8,
+		    "areacompetencie": "#c9.area"
+		  },
+		  "level":{
+		    "Principiante":".p",
+		    "Intermedio":".i",
+		    "Avanzado":".a"
+		  }
+		}
+
+		function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+		  var angleInRadians = ((angleInDegrees - 0) * Math.PI) / 180.0;
+
+		  return {
+		    x: centerX + radius * Math.cos(angleInRadians),
+		    y: centerY + radius * Math.sin(angleInRadians)
+		  };
+		}
+
+		function describeArc(x, y, radius, startAngle, endAngle) {
+		  var start = polarToCartesian(x, y, radius, endAngle);
+		  var end = polarToCartesian(x, y, radius, startAngle);
+
+		  var largeArcFlag = endAngle - startAngle <= 180 ? '0' : '1';
+
+		  var d = [
+		    'M',
+		    start.x,
+		    start.y,
+		    'A',
+		    radius,
+		    radius,
+		    0,
+		    largeArcFlag,
+		    0,
+		    end.x,
+		    end.y
+		  ].join(' ');
+
+		  return d;
+		}
+
+		function radians_to_degrees(radians) {
+		  var pi = Math.PI;
+		  return radians * (180 / pi);
+		}
+
+		var endpointurlquestionaireradial = `https://gapp-kthh.supter.ai/api/questionaire/33ff13f0-b445-11eb-bed0-67f1e9864943?uid=${candidate_id}`;
+
+		// get endpoint
+		d3.json(endpointurlquestionaireradial, function(data) {
+
+		  console.log( data )
+		  dbidcandidate = data.candidate_id;
+		  totalCompetencies = data.competencies.length;
+
+		  d3.selectAll(".profile").text( data.profile );
+
+		  // add wrapper svg
+		  var radialsvg = d3
+		    .select('#radialdatavizwrapper')
+		    .append('svg')
+		    .attr('width', 300)
+		    .attr('height', 300)
+		    .attr('viewBox', "0 0 300 300")
+		    .attr('id', 'radialdataviz');
+		    // .style('background-color', '#ff000022');
+
+		  // add mask
+		  radialsvg
+		    .append('defs')
+		    .append('mask')
+		    .attr('id', 'Mask')
+		    .append('circle')
+		    .attr('cx', 150)
+		    .attr('cy', 150)
+		    .attr('r', 147)
+		    .attr('fill', 'white')
+		    .style('opacity', 1.0);
+
+		  // add big circle
+		  radialsvg
+		    .append('circle')
+		    .attr('r', 148)
+		    .attr('cx', 150)
+		    .attr('cy', 150)
+		    .attr(
+		      'style',
+		      'fill:none;stroke:#002680;stroke-width:1.8853;stroke-miterlimit:10;'
+		    );
+
+		  // add group, wrapper to mask elements
+		  var g = radialsvg.append('g').attr('mask', 'url(#Mask)');
+
+		  // add middle circle
+		  radialsvg
+		    .append('circle')
+		    .attr('r', 68)
+		    .attr('cx', 150)
+		    .attr('cy', 150)
+		    .attr(
+		      'style',
+		      'fill:none;stroke:#002680;stroke-width:1.8853;stroke-miterlimit:10;'
+		    );
+
+		  // ad small circle|
+		  radialsvg
+		    .append('circle')
+		    .attr('r', 28)
+		    .attr('cx', 150)
+		    .attr('cy', 150)
+		    .attr(
+		      'style',
+		      'fill:none;stroke:#002680;stroke-width:1.8853;stroke-miterlimit:10;'
+		    );
+
+
+		  /////// aqui /////////////////
+
+		  
+		  let skillsList = {};
+		  let skillsInCompetencie = [];
+		  // var competenciesSkillsReady = {c1,c2,c3};
+
+		  // question counter
+		  data.competencies.every(cobj => (totalquestions += cobj.questions.length));
+		 //alert( totalquestions)
+		   /////// realmente aqui /////////////////
+		   
+		   data.competencies.forEach((ctoskillsObj, icskill) => { 
+		   		skillsInCompetencie.push({});
+		   		ctoskillsObj.questions.forEach( (skillobj,iskill) => {
+		   			skillsList[skillobj.skill.name.es] = {
+		              	id: skillobj.skill.id,
+		              	en:skillobj.skill.name.en, 
+		              	es:skillobj.skill.name.es 
+		            };
+		            skillsInCompetencie[skillsInCompetencie.length-1][skillobj.skill.name.es] = {
+		              	id: skillobj.skill.id,
+		              	en:skillobj.skill.name.en, 
+		              	es:skillobj.skill.name.es 
+		            };
+
+		   		})
+		   })
+
+		   var totalquestions = Object.keys(skillsList).length;
+		   var totalskills = Object.keys(skillsList).length;		   
+
+		  var delta = (Math.PI * 2) / totalquestions;
+		  var deltag = 360 / totalquestions;
+		  var theta = delta;
+		  var thetag = deltag;
+		  var thetagprev = thetag - deltag - deltag * 0.5;
+		  var thetaprev = theta - delta - delta * 0.5;
+
+		  var r = 90;
+
+		  
+
+		  let retardo = 0;
+		  
+		  // itera por cada competencia
+		  data.competencies.forEach((cobj, ic) => {
+
+		 	indexCompetencie = iconsSvgs.findIndex((elemento, indice) => {
+			   if (elemento.id === cobj.id) return true;
+			})
+
+		    radialsvg
+		      .append('g')
+		      .attr(
+		        'transform',
+		        `translate(150,150) rotate(${thetag - deltag})`
+		        // `translate(150,150) rotate(${thetag - deltag - deltag * 0.5})`
+		      )
+		      .append('line')
+		      .attr('x1', '68')
+		      .attr('y1', '0')
+		      .attr('x2', '148')
+		      .attr('y2', '0')
+		      .attr('style', 'stroke:#002680;stroke-width:2');
+
+		    // area
+
+		    var scalestar = cobj.completed ? 0.8 : 0.8; //0.8;
+		    var colorStarCompleted = '#b7cecc00'; // '#FFB41924'; // '#D7F4F2AA'; //cobj.completed ? '#001488' : '#D7F4F200';
+
+		    for (const skillEleC in skillsInCompetencie[ic]) {
+		      const x = r * 1 * Math.cos(theta - delta * 0.5);
+		      const y = r * 1 * Math.sin(theta - delta * 0.5);
+		      const x2 = r * 1.225 * Math.cos(theta - delta * 0.5);
+		      const y2 = r * 1.225 * Math.sin(theta - delta * 0.5);
+		      const x3 = r * 1.45 * Math.cos(theta - delta * 0.5);
+		      const y3 = r * 1.45 * Math.sin(theta - delta * 0.5);
+		      theta += delta;
+		      thetag += deltag;
+
+		      //console.log( skillsInCompetencie[ic][skillEleC].id )
+		      radialsvg
+		        .append('g')
+		        .style('pointer-events', 'none')
+		        .attr('transform', `translate(150,150) `)
+		        .append('polygon')
+		        .attr('fill', colorStarCompleted)
+		        .attr('data-fill', colorStarCompleted)
+		        .attr('data-dbid', skillsInCompetencie[ic][skillEleC].id)
+		        .classed('p', true)
+		        .attr(
+		          'points',
+		          '0,2.7 3.7,5.4 2.3,1 6,-1.6 1.4,-1.6 0,-6 -1.4,-1.6 -6,-1.6 -2.3,1 -3.7,5.4'
+		        )
+		        .attr(
+		          'transform',
+		          `translate(${x},${y}) scale(${scalestar})  rotate(${thetag}) `
+		        );
+
+		      radialsvg
+		        .append('g')
+		        .style('pointer-events', 'none')
+		        .attr('transform', `translate(150,150) `)
+		        .append('polygon')
+		        .attr('fill', colorStarCompleted)
+		        .attr('data-dbid', skillsInCompetencie[ic][skillEleC].id)
+		        .classed('i', true)
+		        .attr(
+		          'points',
+		          '0,2.7 3.7,5.4 2.3,1 6,-1.6 1.4,-1.6 0,-6 -1.4,-1.6 -6,-1.6 -2.3,1 -3.7,5.4'
+		        )
+		        .attr(
+		          'transform',
+		          `translate(${x2},${y2}) scale(${scalestar}) rotate(${thetag})`
+		        );
+
+		      radialsvg
+		        .append('g')
+		        .style('pointer-events', 'none')
+		        .attr('transform', `translate(150,150) `)
+		        .append('polygon')
+		        .attr('fill', colorStarCompleted)
+		        .attr('data-dbid', skillsInCompetencie[ic][skillEleC].id)
+		        .classed('a', true)
+		        .attr(
+		          'points',
+		          '0,2.7 3.7,5.4 2.3,1 6,-1.6 1.4,-1.6 0,-6 -1.4,-1.6 -6,-1.6 -2.3,1 -3.7,5.4'
+		        )
+		        .attr(
+		          'transform',
+		          `translate(${x3},${y3}) scale(${scalestar}) rotate(${thetag})`
+		        );
+		    }
+
+		    const thetaLerp = lerp(theta, thetaprev, 0.65);
+		    const xt = 46 * Math.cos(thetaLerp);
+		    const yt = 46 * Math.sin(thetaLerp);
+
+		    // add numeros de la competencia 
+		    radialsvg
+		      .append('text')
+		      .text(ic + 1)
+		      .attr('transform', `translate(150,150) `)
+		      .attr('x', xt)
+		      .attr('y', yt)
+		      .attr('dy', 14) // fontSize 60px
+		      .attr('fill', '#001477')
+		      .style('font-size', '40px')
+		      .style('font-weight', '500')
+		      .attr("id", `n${ic+1}`)
+		      .classed("numeros", true)
+		      .style('display', 'none')
+		      .attr('text-anchor', 'middle');
+
+		    var colorCompetenciaCompleted = cobj.completed ? '#FFFFFF' : '#D7F4F2';
+
+		    // add area de la competencia
+		    //console.log(colorCompetenciaCompleted);
+		    g.append('path')
+		      .attr(
+		        'd',
+		        describeArc(
+		          150,
+		          150,
+		          133,
+		          thetagprev - deltag,
+		          thetag - deltag
+		        )
+		      )
+		      .attr('fill', 'none')
+		      .attr('stroke-width', 133)
+		      .attr('stroke', colorCompetenciaCompleted)
+		      .attr('data-stroke', colorCompetenciaCompleted)
+		      .attr('data-star', colorCompetenciaCompleted)
+		      .classed('compSegmento', true)
+		      .classed('area', true)
+		      .attr('id', `c${ic + 1}`)
+		      .attr('data-anchoridc',  iconsSvgs[indexCompetencie].idonradial  )
+		      .on('click', function() {
+		        if (dist(150, 150, d3.mouse(this)[0], d3.mouse(this)[1]) < 150) {
+
+		        	$('.compSegmento').each( function() {
+		        		$(this).attr('stroke', $(this).data('stroke') )
+		        	})
+
+		          	// if ( !isMobile ) d3.select(this).attr('stroke', '#70F2E6');
+
+		          	if ( $('.skillstars').attr('fill') != '#D7F4F200' ) {
+
+		          	}
+		          	let offsetScroll =  isMobile ? $( window ).height()*0.71 : 100;
+					anchorCompetencie = d3.select(this).attr('data-anchoridc');
+
+					let pos = $(anchorCompetencie).offset().top - offsetScroll  
+
+					let transitionTime = map( dist(posprev,0,pos,0), 350, 3000, 600, 2500);
+					if ( isMobile ) {
+						window.scrollTo({
+							left:0,
+							top:pos,
+							behavior: 'smooth'
+						})
+					} else {
+						$('html,body').animate({scrollTop: pos }, transitionTime );
+					}
+
+					posprev = pos;
+		        }
+		      });
+
+		    thetagprev = thetag;
+		    thetaprev = theta;
+
+		    let classcompetencie = conversions[cobj.full_name.es].classcompetencie
+		    let indexcompetencie = conversions[cobj.full_name.es].indexcompetencie
+		    let areacompetencie = conversions[cobj.full_name.es].areacompetencie
+
+		    
+		    if ( cobj.completed ) {
+		        let selectorLevelC = `${classcompetencie} svg polygon${ conversions["level"][cobj.level.es] }`;
+		            // console.log( selectorLevelC );
+		            let levelC = `polygon${ conversions["level"][cobj.level.es] }`;
+		            //console.log( levelC );
+		            // circulo
+		            d3.select("#areas").select(areacompetencie).style("fill","#FFFFFF");
+		            // d3.select(areacompetencie).style("stroke","#FFFFFF");
+
+		            d3.selectAll(classcompetencie).select("svg").selectAll(levelC).style("fill","#002680");
+		            // texto del nivel de la competencia
+		            d3.selectAll(classcompetencie).select(".level")
+		                            .text( cobj.level[defaultlanguage] )
+		                            .classed("unfinished", false)
+		                            .attr("data-es", cobj.level.es)
+		                            .attr("data-en", cobj.level.en)
+		                            .classed("bold", true);
+		            // boton recomended content
+		            d3.selectAll(classcompetencie).select(".brecommendedcontent")
+		                            .classed("unfinishedopacity", false)
+		                            .classed("showcursorhand", true)
+		                            .attr("data-dbid", cobj.id)
+		                            .select(".textrecommendedcontent")
+		                            .attr("data-es", "contenido<br/>recomendado")
+		                            .attr("data-en", "recommended<br/>content");
+		                            
+
+
+
+		            // load svg competencies
+		            let itmp = ic;
+		            d3.xml(`images/iconoscompetencias/${iconsSvgs[ic].file}`, function(data) {
+			                d3.select(iconsSvgs[itmp].idonradial).select('.titulocompetencia').node().append(data.documentElement)
+
+			                let $t1 = $(iconsSvgs[itmp].idonradial + ' .titulocompetencia').find("path#trazobase");
+								pathPrepare($t1);
+								// TweenMax.to($t1, 0.8, {strokeDashoffset: (825.47509765625*2), ease:Power2.easeInOut, delay: retardo})
+								TweenMax.to($t1, 0.8, {strokeDashoffset: 1532, ease:Power2.easeInOut, delay: retardo});
+								retardo += 0.1;
+			                //
+			                d3.selectAll(classcompetencie).select(".porcientocompetencia")
+			                                .style("display", "initial")
+			                                .text(`${Math.round(cobj.progress)}%`);
+
+			                switch(cobj.level.es) {
+			                  case "Avanzado":
+			                    gsap.to(`${classcompetencie} #e3`, {display: "inherit", duration: 0});
+			                  case "Intermedio":
+			                    gsap.to(`${classcompetencie} #e2`, {display: "inherit", duration: 0});
+			                  case "Principiante":
+			                    gsap.to(`${classcompetencie} #e1`, {display: "inherit", duration: 0});
+			                    break;
+			                }
+			                changeLanguage( defaultlanguage );
+		            	}
+		            ) 
+
+		            changeLanguage( defaultlanguage );
+
+		            // load result status 
+		            let endpointCompenteceResult = `https://gapp-kthh.supter.ai/api/competence/result/${cobj.id}?uid=${dbidcandidate}`
+
+		            d3.json(endpointCompenteceResult, function(dataR) {
+
+		              dataR.competencies[0].skills.forEach( (skillobj,iskill) => {
+
+		                let skillString  = `<div class="skill" >`
+		                  skillString += `  <span data-es="${skillobj.name.es}" data-en="${skillobj.name.en}">${skillobj.name[defaultlanguage]}</span>`
+		                  skillString += `  <div class="levelicons" >`
+		                    skillString += `    <img class="p" src="images/estrellita.svg" />`
+		                    skillString += `    <img class="i" src="images/estrellita.svg" />`
+		                    skillString += `    <img class="a" src="images/estrellita.svg" />`
+		                    skillString += `  </div>`
+		                    skillString += `</div>`
+
+		                let skillEle = $(skillString );
+
+		                $(`${classcompetencie} .skills`).append(skillEle)
+
+		                switch(skillobj.level.es) {
+		                  case "Avanzado":
+		                    skillEle.find("img.a").css("display", "initial")
+		                    d3.select(`[data-dbid="${skillobj.content[0].skillId}"].a`).attr('fill', '#002680')
+		                  case "Intermedio":
+		                    skillEle.find("img.i").css("display", "initial")
+		                    d3.select(`[data-dbid="${skillobj.content[0].skillId}"].i`).attr('fill', '#002680')
+		                  case "Principiante":
+		                    skillEle.find("img.p").css("display", "initial")
+		                    d3.select(`[data-dbid="${skillobj.content[0].skillId}"].p`).attr('fill', '#002680')
+		                    break;
+		                }
+
+		                // d3.selectAll(`[data-dbid="${skillobj.content[0].skillId}"]`).attr('fill', '#000000')
+		                console.log( skillobj.content[0].skillId )
+		                console.log( skillobj )
+
+		                //skillObj.find(".levelicons img").css("display", "initial")
+
+		                let selector = `${ classcompetencie }.h${iskill+1}${ conversions["level"][skillobj.level.es] }`;
+		                let selectorskillt = `${ classcompetencie } .h${iskill+1} ${ conversions["level"][skillobj.level.es] }`;
+
+		                d3.selectAll(selector).select("path").style("fill","#002680");
+		                d3.selectAll(selectorskillt).style("display","initial");
+		                //d3.selectAll(".c4 .h1 .b").style("display","initial");
+
+		                new ScrollMagic.Scene({
+		                    triggerElement: slides[indexcompetencie]
+		                  })
+		                  .setClassToggle(`${selector} path`, "estrellaseleccionada")
+		                  .addTo(controllerIndicator);
+
+		                changeLanguage( defaultlanguage );
+		              } )
+		              
+		            })
+		    } else {
+		      // texto del nivel de la competencia
+		            d3.selectAll(classcompetencie).select(".level")
+		                            .text( "TERMINA TU AUTO-EVALUACION" )
+		                            .classed("unfinished", true)
+		                            .classed("showcursorhand", true)
+		                            .attr("data-es", "TERMINA TU AUTO-EVALUACION")
+		                            .attr("data-en", "FINISH YOUR SELF-EVALUATION");
+		            // boton recomended content
+		            d3.selectAll(classcompetencie).select(".brecommendedcontent")
+		                            .classed("unfinishedopacity", true)
+		                            .classed("showcursordisabled", true)
+		                            .select(".textrecommendedcontent")
+		                            .attr("data-es", "contenido<br/>recomendado")
+		                            .attr("data-en", "recommended<br/>content");
+
+		            
+		            let itmp = ic;
+		            d3.xml(`images/iconoscompetencias/${iconsSvgs[ic].file}`, function(data) {
+		                d3.select(iconsSvgs[itmp].idonradial).select('.titulocompetencia').node().append(data.documentElement)
+		                //alert( `#${iconsSvgs[itmp].idc}` )
+		                //d3.select( `${iconsSvgs[itmp].idonradial}` ).select('.iconoc').style('display', 'none')
+
+		                let $t1 = $(iconsSvgs[itmp].idonradial + ' .titulocompetencia').find("path#trazobase");
+							pathPrepare($t1);
+							// TweenMax.to($t1, 0.8, {strokeDashoffset: (825.47509765625*2), ease:Power2.easeInOut, delay: retardo})
+							TweenMax.to($t1, 0.8, {strokeDashoffset: 1532, ease:Power2.easeInOut, delay: retardo});
+							retardo += 0.1;
+
+						// let delaytmp = 25;
+						// //var pies = document.querySelectorAll(".competenciamenu svg");
+						// drawPieChart(
+						//    $(iconsSvgs[itmp].idonradial + ' .titulocompetencia').find("svg"),
+						//    cobj.progress,
+						//    67,67,
+						//    43.25,42.41,
+						//    1500, delaytmp,
+						//    `${iconsSvgs[itmp].idonradial} text.porcientocompetencia`
+						// );
+
+
+		                
+		                d3.select(iconsSvgs[itmp].idonradial).select('.titulocompetencia')
+		                									 .classed("showcursorhand", true)
+		                									 .classed("unfinished", true)
+		                									 .attr("data-dbid", cobj.id)
+		                //
+		                d3.selectAll(classcompetencie).select("#flechalinea").style("display", "initial");
+		                d3.selectAll(classcompetencie).select(".porcientocompetencia")
+		                                .style("display", "initial")
+		                                .text(`${cobj.progress}%`);
+		            })
+
+		            let skillsNames = {};
+
+		            cobj.questions.forEach( (skillobj,iskill) => {
+		              skillsNames[skillobj.skill.name.es] = {en:skillobj.skill.name.en, es:skillobj.skill.name.es };
+		            })
+		            //console.log( skillsNames )
+		            for (const propertyskill in skillsNames) {
+		                //console.log(`${propertyskill}: ${skillsNames[propertyskill]}`);
+		                let skillString  = `<div class="skill unfinishedopacity" >`
+		                skillString += `  <span data-es="${skillsNames[propertyskill].es}" data-en="${skillsNames[propertyskill].en}">${skillsNames[propertyskill][defaultlanguage]}</span>`
+		                skillString += `  <div class="levelicons" >`
+		                  skillString += `    <img class="p" src="images/estrellita.svg" />`
+		                  skillString += `    <img class="i" src="images/estrellita.svg" />`
+		                  skillString += `    <img class="a" src="images/estrellita.svg" />`
+		                  skillString += `  </div>`
+		                  skillString += `</div>`
+
+		              let skillEle = $(skillString);
+
+		              $(`${classcompetencie} .skills`).append(skillEle)
+
+		            }
+		          //}
+		          
+
+		          //console.log( competencie.completed );
+		    }
+
+
+		  });
+
+		  controllerRadiaDataViz = new ScrollMagic.Controller({globalSceneOptions: {
+		                      triggerHook: 0.05
+		                    }
+		                  });
+
+		  var sceneRadialViz = new ScrollMagic.Scene({triggerElement: "#triggerradialdataviz"})
+		                      .setPin("#radialdatavizwrapper")
+		                      // .addIndicators({name: "circulo"}) // add indicators (requires plugin)
+		                      .addTo(controllerRadiaDataViz);
+
+
+		  var controllerIndicator;
+		  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+		    controllerIndicator = new ScrollMagic.Controller({
+		                  globalSceneOptions: {
+		                    triggerHook: 0.72,
+		                    duration: 310
+		                  }
+		                });
+		  }else{
+		    controllerIndicator = new ScrollMagic.Controller({
+		                  globalSceneOptions: {
+		                    triggerHook: 0.22,
+		                    duration: 310
+		                  }
+		                });
+		  }
+
+		  var slides = document.querySelectorAll(".competenciawrapper");
+		  var areas = document.querySelectorAll(".area");
+		  var numeros = document.querySelectorAll(".numeros");
+		  var lineascentralesi = document.querySelectorAll("#lineascentrales .ii");
+		  var lineascentraleso = document.querySelectorAll("#lineascentrales .oo");
+
+		  //alert(numeros.length)
+
+		  var numerosEvents = [];
+		  var azulEvents = [];
+		  var strokeEvents = [];
+
+		  var slideCounter = 0;
+		  for (var i=0; i<slides.length; i++) {
+		    //console.log(i)
+		    azulEvents[i] = new ScrollMagic.Scene({
+		        triggerElement: slides[i]
+		      })
+		      .setClassToggle([areas[i]], "competenciaseleccionadastroke")
+		      //.addIndicators() // add indicators (requires plugin)
+		      .addTo(controllerIndicator);
+
+		    numerosEvents[i] = new ScrollMagic.Scene({
+		        triggerElement: slides[i]
+		      })
+		      .setClassToggle([numeros[i]], "numeroseleccionado")
+		      // .addIndicators() // add indicators (requires plugin)
+		      .addTo(controllerIndicator);
+
+		    // strokeEvents[i] = new ScrollMagic.Scene({
+		    //     triggerElement: slides[i]
+		    //   })
+		    //   .setClassToggle([lineascentralesi[i],lineascentraleso[i]], "competenciaseleccionadagrosor")
+		    //   .addTo(controllerIndicator);
+		    
+		  }
+
+
+		  	let offsetScroll =  isMobile ? $( window ).height()*0.71 : 100;
+			anchorCompetencie = "#A1";
+			let pos = $(anchorCompetencie).offset().top - offsetScroll  
+			//$('html,body').animate({scrollTop: $(anchorCompetencie).offset().top-($( window ).height()*offsetScroll)},2000);
+			$('html').animate({scrollTop: pos },800);
+			posprev = pos;
+		});
+	
+
+	})
+</script>

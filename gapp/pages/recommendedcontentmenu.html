@@ -1,0 +1,227 @@
+<style type="text/css">
+
+	body {
+		background-color: #d7f4f2 !important;
+	}
+
+
+	.layout {
+		height: 702px;
+		margin-top: 60px;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: auto; /* 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */ /* 9 competencias */
+		/*background-color: #d7f4f2;*/
+		/*justify-items: stretch;*/
+		align-content: start;
+	}
+
+	
+	.naranja {
+		color: #FF6C2C;
+	}
+	.blanco {
+		color: white;
+	}
+	.naranjafondo {
+		background-color: #FF6C2C;
+	}
+	
+	.scrollicon {
+		grid-column: 3 / 5;
+		width: 20%;
+		min-width: 114px;
+		align-self: center;
+		justify-self: center;
+	}
+	
+
+	.competencia {
+		grid-column: 2 / 6;
+	}
+
+	.competenciamenu {
+		grid-column: 2 / 6;
+		display: flex;
+		justify-content: center;
+	}
+
+	.competenciamenu svg {
+		height: 67px !important;
+		margin-bottom: 10px;
+	}
+
+	#landscapeWarning {
+		display: none;
+	}
+
+
+
+	.introsection {
+		grid-column: 2 / 6;
+		margin: 10px 0px 35px 0px;
+		color: #229bff;
+		border-bottom: solid 1px #229bff;
+		padding-bottom: 12px;
+		font-size: 2rem;
+		text-transform: uppercase;
+		font-weight: 300;
+	}
+
+	#wrappermenu {
+		grid-column: 1 / 7;
+	}
+
+	/* mobile 	*/
+	@media only screen 
+	and (min-device-width: 375px) 
+	and (max-device-width: 812px) {
+		body {
+			background-color: #d7f4f2;
+		}
+		.layout {
+			margin-top: 40px;
+		}
+		.competenciamenu {
+			grid-column: 1 / 7;
+			display: flex;
+			justify-content: center;
+			/*background-color: red;*/
+		}
+
+		.competenciamenu svg {
+			width: 80%;
+			/*height: 57px !important;*/
+			margin-bottom: -15px;
+		}
+		.introsection {
+			grid-column: 2 / 6;
+			margin: 10px 0px 35px 0px;
+			color: #229bff;
+			border-bottom: solid 1px #229bff;
+			padding-bottom: 12px;
+			font-size: 1rem;
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+	}
+
+	
+
+	
+</style>
+<div class="layout">
+
+	<h1 style="display: none">recomendations</h1>
+
+	<header class="introsection" data-es="Contenido recomendado<br>para las competencias terminadas" data-en="Recommended content<br>for completed competencies" >
+		Contenido recomendado<br>para las competencias terminadas		
+	</header>
+
+	<div id="wrappermenu"></div>
+
+</div>
+<script type="text/javascript">
+	$(document).ready( function() {
+
+		changeLanguage( defaultlanguage )
+		$('.mainheaderwrapper').addClass('godown')
+		
+		
+
+
+		const queryString = window.location.search;
+		console.log(queryString);
+		const urlParams = new URLSearchParams(queryString);
+		//alert( urlParams.get('uid') )
+		var endpointurl = `https://gapp-kthh.supter.ai/api/questionaire/${dbidquestionnaire}`
+		if (  urlParams.get('uid') != null ) {
+			//alert( urlParams.get('uid') )
+			endpointurl += "?uid="+urlParams.get('uid');
+		} else {
+			endpointurl += "?uid=2321e8a0-b445-11eb-bed0-67f1e9864943";
+			//"2321e8a0-b445-11eb-bed0-67f1e9864943"
+		}
+
+
+		//d3.json("https://gapp-kthh.supter.ai/api/questionaire/33ff13f0-b445-11eb-bed0-67f1e9864943?uid=2321e8a0-b445-11eb-bed0-67f1e9864943", function(data) {
+		d3.json(endpointurl, function(data) {
+		//d3.json("json/33ff13f0-b445-11eb-bed0-67f1e9864943-u.json", function(data) {
+			console.log( data )
+			dbidcandidate = data.candidate_id;
+			// submitquestion.answer.userId = data.candidate_id;
+			// //alert( data.candidate_id )
+			// console.log( `cuestionario recibido del usuario 2321e8a0-b445-11eb-bed0-67f1e9864943` )
+			
+			totalCompetencies = data.competencies.length;
+			numCompetenciesCompleted = data.competencies.filter(cObj => cObj.completed == true ).length;
+			console.log( totalCompetencies, numCompetenciesCompleted ); // !!!!!
+
+			// questionnaireJson = data;
+			// d3.selectAll(".profile").text( data.profile );
+
+			let compentenciesMenu = document.querySelectorAll(".competenciamenu");
+
+
+			let retardo = 0;
+			data.competencies.forEach( (obj,i) => {
+
+			 		//console.log( obj.completed );
+			 		if ( obj.completed  ) {
+
+
+			 			let ec  = `<div class="competenciamenu disable-select finishedcompetencie" data-competenciaid="A${i}" data-index="${i}" data-dbid="${obj.id}" style="cursor:pointer;" >`
+							ec += `</div>`
+
+						let ecObj  =  $(ec);
+
+						d3.xml(`images/iconoscompetencias/${iconsSvgs[i].file}`, function(data) {
+							d3.select(ecObj).node().append(data.documentElement)
+							ecObj.find("#flechalinea").css("display", "initial")
+							ecObj.find('#e1').parent().attr('transform','translate(-60,0)');
+							//alert( `#c${i+1} #e3` )
+
+							let $t1 = ecObj.find("path#trazobase");
+							pathPrepare($t1);
+							// TweenMax.to($t1, 0.8, {strokeDashoffset: (825.47509765625*2), ease:Power2.easeInOut, delay: retardo})
+							TweenMax.to($t1, 0.8, {strokeDashoffset: 1532, ease:Power2.easeInOut, delay: retardo});
+							retardo += 0.1;
+
+							switch(obj.level.es) {
+				 			  case "Avanzado":
+				 			  	ecObj.find('#e3').css('display','initial');
+				 			  case "Intermedio":
+				 			  	ecObj.find('#e2').css('display','initial');
+				 			  case "Principiante":
+				 			  	ecObj.find('#e1').css('display','initial');
+				 			    break;
+				 			}
+
+
+					 		let splitedTitleMatrix = firstWordAndRestMatrixLang(obj.full_name.es, obj.full_name.en) 
+
+					 		ecObj.find("svg text tspan").each(function( index ) {
+							  console.log( index + ": " + $( this ).text() );
+							  console.log( splitedTitleMatrix[defaultlanguage][index] )
+							  $(this).text( splitedTitleMatrix[defaultlanguage][index]  )
+							  $(this).attr( "data-es", splitedTitleMatrix.es[index] )
+							  		 .attr( "data-en", splitedTitleMatrix.en[index] );
+							});
+
+					    }) 
+
+						$("#wrappermenu").append(ecObj);
+
+
+			 		} 
+			 		//retardo += 0.025;
+			 		
+			 	}
+
+
+			);
+
+		});
+
+	})
+</script>

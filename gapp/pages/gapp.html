@@ -1,0 +1,176 @@
+<style type="text/css">
+
+	body {
+		background-color: #d7f4f2 !important;
+	}
+
+	.layout * {
+		/*opacity: 0;*/
+	}
+	.layout {
+		/*height: 702px;*/
+		margin-top: 60px;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* 9 competencias */
+		/*background-color: #d7f4f2;*/
+	}
+
+	.layout p {
+		margin-bottom: 0.8rem;
+		position: relative;
+	}
+
+	.gapp {
+		/*font-size: 8rem;*/
+		font-weight: 600;
+		/*position: relative;*/
+		/*z-index: -1;*/
+		/*color: #FFB419;*/
+		/*margin-top:2.3rem;*/
+		/*margin-left: -1rem;*/
+		/*letter-spacing: -0.6rem;*/
+	}
+
+	.primerpp {
+		/*position: relative;*/
+		/*margin-left: -10rem;*/
+	}
+
+	/*.layout p:first-of-type {
+		
+	}*/
+
+	
+	.naranja {
+		color: #FF6C2C;
+	}
+	.blanco {
+		color: white;
+	}
+	.naranjafondo {
+		background-color: #FF6C2C;
+	}
+	
+	.scrollicon {
+		grid-column: 3 / 5;
+		width: 20%;
+		min-width: 114px;
+		align-self: center;
+		justify-self: center;
+	}
+	/*#comenzar {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		line-height: 100px;
+		font-size: 0.8rem;
+		text-align: center;
+		grid-column: 1 / 3;
+		align-self: center;
+		justify-self: center;
+	}*/
+	
+
+	
+
+	.competencia {
+		grid-column: 2 / 6;
+	}
+
+	.competenciamenu {
+		grid-column: 2 / 6;
+		display: flex;
+		justify-content: center;
+	}
+
+	.competenciamenu svg {
+		height: 67px !important;
+		margin-bottom: 10px;
+	}
+
+	#landscapeWarning {
+		display: none;
+	}
+
+	/* mobile 	*/
+	@media only screen 
+	and (min-device-width: 375px) 
+	and (max-device-width: 812px) {
+		body {
+			background-color: #d7f4f2;
+		}
+		.layout {
+			margin-top: 40px;
+			padding: 0px 20px;
+		}
+		.competenciamenu {
+			grid-column: 1 / 7;
+			display: flex;
+			justify-content: center;
+			/*background-color: red;*/
+		}
+
+		.competenciamenu svg {
+			width: 80%;
+			/*height: 57px !important;*/
+			margin-bottom: -15px;
+		}
+	}
+
+	
+
+	
+</style>
+<div class="layout azulgapp" style="font-size: 2rem;font-weight: 300;padding-top: 4rem;">
+		
+	<h1 style="display: none">gapp</h1>
+	<!-- <img src="images/logogapp.svg"> -->
+	
+	<p data-es="<span class='gapp'>Gapp</span> es una herramienta poderosa para descubrir brechas de conocimiento en el ámbito digital y también es un proveedor de contenido personalizado para cerrar estas brechas." data-en="<span class='gapp'>Gapp</span> is a powerful tool to discover the digital knowledge gaps and a personalized content provider to close them."><span class='gapp'>Gapp</span><span class='primerp'> es una herramienta poderosa para descubrir brechas de conocimiento en el ámbito digital y también es un proveedor de contenido personalizado para cerrar estas brechas.</span></p>
+
+	<p data-es="Los principales marcos de referencia que hemos utilizado son los publicados por la Unión Europea sobre las competencias digitales que necesitan los ciudadanos<span class='superindice'>1</span> y los emprendedores<span class='superindice'>2</span>. Hemos elegido y adaptado estos marcos a nuestro contexto debido a su desarrollo y uso generalizado en varios países." data-en="The main reference frameworks that we have used are those published by the European Union regarding digital competences needed by citizens<span class='superindice'>1</span> and entrepreneurs<span class='superindice'>2</span>. We have chosen and adapted these frameworks to our context due to their development and wide use across multiple countries.">Los principales marcos de referencia que hemos utilizado son los publicados por la Unión Europea sobre las competencias digitales que necesitan los ciudadanos<span class="superindice">1</span> y los emprendedores<span class="superindice">2</span>. Hemos elegido y adaptado estos marcos a nuestro contexto debido a su desarrollo y uso generalizado en varios países.</p>
+
+	<p data-es="Además de estas sólidas bases, <span class='gapp'>Gapp</span>  incorpora preguntas relacionadas con las habilidades que se requieren como individuos para maximizar el retorno de las inversiones en transformación digital e innovación, a partir de la investigación realizada por el grupo del Foro Económico Mundial que se especializa en el tema." data-en="As well as these solid bases, <span class='gapp'>Gapp</span>  incorporates questions related to the skills that are required as individuals in order to maximize the return on digital transformation and innovation investments, parting from the research done by the World Economic Forum’s group that specializes on the subject">Además de estas sólidas bases, <span class='gapp'>Gapp</span>  incorpora preguntas relacionadas con las habilidades que se requieren como individuos para maximizar el retorno de las inversiones en transformación digital e innovación, a partir de la investigación realizada por el grupo del Foro Económico Mundial que se especializa en el tema.</p>
+
+	<p data-es="Una vez realizada la autoevaluación de Gapp, se mostrará una serie de contenidos recomendados en función de las brechas de conocimiento identificadas utilizando nuestro Motor de recomendación GAPP. Dicho contenido puede incluir artículos, videos o podcasts que sean relevantes para la brecha de conocimiento identificada." data-en="Once Gapp self-assessment has been taken, a series of recommended contents based on the identified gaps will be displayed using our GAPP recommendation engine. Such content may include articles, videos, or podcasts that are relevant to the identified knowledge gap">Una vez realizada la autoevaluación de Gapp, se mostrará una serie de contenidos recomendados en función de las brechas de conocimiento identificadas utilizando nuestro Motor de recomendación GAPP. Dicho contenido puede incluir artículos, videos o podcasts que sean relevantes para la brecha de conocimiento identificada.</p>
+
+	<div data-es="<span>1</span> Carretero Gomez, S., Vuorikari, R., Punie, Y., (2017), DigComp 2.1: The Digital Competence Framework for Citizens with eight proficiency levels and examples of use, Publications Office of the European Union. 2 Bacigalupo, M., Kampylis, P., Punie, Y., Van Den Brande, L., (2016), EntreComp: The Entrepreneurship Competence Framework, Publications Office of the European Union." data-en="1 Carretero Gomez, S., Vuorikari, R., Punie, Y., (2017), DigComp 2.1: The Digital Competence Framework for Citizens with eight proficiency levels and examples of use, Publications Office of the European Union. 2 Bacigalupo, M., Kampylis, P., Punie, Y., Van Den Brande, L., (2016), EntreComp: The Entrepreneurship Competence Framework, Publications Office of the European Union." class="referencia" style="margin-top: 2rem;margin-bottom: 4rem;"><span>1</span> Carretero Gomez, S., Vuorikari, R., Punie, Y., (2017), DigComp 2.1: The Digital Competence Framework for Citizens with eight proficiency levels and examples of use, Publications Office of the European Union.<br><span>2</span> Bacigalupo, M., Kampylis, P., Punie, Y., Van Den Brande, L., (2016), EntreComp: The Entrepreneurship Competence Framework, Publications Office of the European Union.</div>
+		
+
+
+
+</div>
+<script type="text/javascript">
+	$(document).ready( function() {
+		changeLanguage( defaultlanguage )
+		
+		$('.mainheaderwrapper').addClass('godown');
+
+		//if ( dbidcandidate == '' ) {
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			var endpointurl = "https://gapp-kthh.supter.ai/api/questionaire/33ff13f0-b445-11eb-bed0-67f1e9864943"
+
+			if (  urlParams.get('uid') != null ) {
+				endpointurl += "?uid="+urlParams.get('uid');
+				if (  urlParams.get('defaultlanguage') != null ) {
+					defaultlanguage = urlParams.get('defaultlanguage');
+					// endpointurl += "&defaultlanguage="+urlParams.get('defaultlanguage');
+				} else {
+					defaultlanguage = 'es';
+					// endpointurl += "&defaultlanguage=es";
+				}
+			} else {
+				//alert( "Gapp necesita el identificador de un cantidato")
+				// endpointurl += "?uid=2321e8a0-b445-11eb-bed0-67f1e9864943";
+
+			}
+
+			d3.json(endpointurl, function(data) { 
+					dbidcandidate = data.candidate_id;
+					d3.selectAll(".profile").text( data.profile );
+				
+			})
+		//}
+
+	})
+</script>

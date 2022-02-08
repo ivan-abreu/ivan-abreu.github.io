@@ -1,0 +1,821 @@
+<style type="text/css">
+
+	body {
+		background-color: #d7f4f2 !important;
+	}
+
+	#landscapeWarning {
+		display: none;
+	}
+
+
+
+	
+
+
+	.layout {
+		display: grid;
+		margin: 0px auto auto auto;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 	
+		width: 550px;
+		/*justify-self: center; */
+		/*align-content: start;*/
+		/*height: 2000px;*/
+	}
+
+	
+	/* questionarie data & question */
+
+	
+	
+	
+	header.headerwrapper {
+		grid-column: 1 / 7;
+		background-color: #d7f4f2;
+		z-index: 2;
+		padding-top: 60px
+	}
+
+	.competenciewrapper {
+		grid-column: 1 / 7;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		position: relative;
+
+	}
+
+		.competenciewrapper {
+			/*grid-column: 1 / 7;
+			grid-row: 1 / 2;*/
+		}
+
+		.competencielevelname{
+			grid-column: 1 / 7;
+			grid-row: 1 / 2;
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+			text-align: right;
+			text-transform: uppercase;
+		}
+
+		.competenciesvg {
+			grid-column: 1 / 7;
+			grid-row: 2 / 3;
+		}
+
+
+	.recommendedcontents {
+		grid-column: 1 / 7;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+		margin-top: 20px;
+		/*background-color: white;*/
+		/*padding-left: 10px;*/
+		/*border: solid 1px red;*/
+	}
+
+	
+
+	.introsection {
+		grid-column: 1 / 7;
+		margin: 10px 0px 35px 0px;
+		color: #229bff;
+		border-bottom: solid 1px #229bff;
+		padding-bottom: 12px;
+		font-size: 2rem;
+		text-transform: uppercase;
+		font-weight: 300;
+	}
+
+		/*.questionindicator {
+			grid-column: 1 / 2;
+			display: flex;
+			justify-content: center;
+			padding-top: 2px;
+			padding-bottom: 8px;
+		}*/
+
+
+
+		/*.questionheader {
+			grid-column: 2 / 7;
+			padding: 0.6rem 0px 1rem 0px;
+		}*/
+
+		
+
+	.skillrecommendedcontents{
+		grid-column: 1 / 7;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+		margin-bottom: 40px;
+	}
+
+		.levelskill {
+			grid-column: 1 / 7;
+			color: #ffb419;
+			display: flex;
+			align-items: center;
+		}
+
+			.levelicons {
+				display: flex;
+				align-items: center;
+			}
+			.levelicons img {
+				margin-right: 0.4rem;
+				height: 1em;
+			}
+
+			.levelname {
+				margin-left: 0.5rem;
+				text-transform: uppercase;
+			}
+
+
+
+		.titleskill {
+			grid-column: 1 / 7;
+			font-size: 1.35rem;
+			color: #229bff;
+			margin-bottom: 1rem;
+		}
+
+		.recommendedcontent {
+		    grid-column: 1 / 7;
+		    display: grid;
+		    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		    /*grid-template-rows: 0.75fr 1fr;*/
+		    /*margin-top: -1.5rem;*/
+		    margin-bottom: 2rem;
+		    cursor: pointer;
+		}
+
+			.contentimagewrapper {
+				grid-column: 1 / 5;
+				position: relative;
+				margin-top: 0.5rem;
+			}
+
+				.contentimagebackground {
+					width: 100%;
+					/*height: 100%;*/
+					background-color: #229bff;
+					overflow: hidden;
+					position: relative;
+				}
+
+				.contentimagebackground:after {
+				  content: "";
+				  display: block;
+				  padding-bottom: 100%;
+				}
+
+				.contentimage {
+					mix-blend-mode: overlay;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+
+				.iconlink {
+					position: absolute;
+					left: 10px;
+					bottom: 10px;
+					z-index: 2;
+				}
+
+				.iconlink img {
+					width: 28px !important;
+				}
+
+				.iconvisited {
+					position: absolute;
+					right: 10px;
+					bottom: 10px;
+					z-index: 2;
+				}
+
+				.iconvisited img {
+					width: 84px !important;
+				}
+
+				.loadingcontent {
+					position: absolute;
+					left: calc( 50% - 55.5px );
+					bottom: calc( 50% - 49.75px );
+					z-index: 2;
+				}
+
+				.linesend {
+				    stroke-dasharray: 18 8.5;
+				    stroke-dashoffset: 100%;
+				    animation: rightmov 2s linear infinite;
+				}
+
+				@keyframes rightmov {
+				  to {
+				    stroke-dashoffset: 0%;
+				  }
+				}
+
+				 
+				.linereceive {
+					stroke-dasharray: 18 8.5;
+				    stroke-dashoffset: 0%;
+				    animation: leftmov 2s linear infinite;
+				}
+
+				@keyframes leftmov {
+				  to {
+				    stroke-dashoffset: 100%;
+				  }
+				}
+
+			.iconrelevant {
+				grid-column: 5 / 7;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+
+			.domainname{
+				grid-column: 1 / 7;
+				font-size: 0.8rem;
+				font-weight: 400;
+				color: #229bff;
+			}
+
+			.titlecontent{
+				grid-column: 1 / 7;
+				font-size: 1rem;
+				font-weight: 600;
+				color: #229bff;
+			}
+
+			.descriptioncontent{
+				grid-column: 1 / 7;
+				font-size: 1rem;
+				font-weight: 300;
+				color: #229bff;
+			}
+
+
+			/*.optionnumber {
+			    grid-column: 2 / 3;
+			    grid-row: 1 / 3;
+			    font-size: 8rem;
+			    color: #b73cff44;
+			    padding-left: 10px;
+			}*/
+			/*.checkbox {
+				grid-column: 1 / 2;
+				grid-row: 2 / 3;
+			}
+				.checkbox svg {
+					width: 100%;
+					height: auto;
+				}*/
+
+			/*.optiontext{
+				grid-column: 2 / 7;
+				grid-row: 2 / 3;
+				font-size: 1.2rem;
+				padding-left: 10px;
+				font-weight: 500;
+			}
+
+			.selectedoption {
+				fill:black !important;
+			}
+
+			.palomitaoption {
+				stroke-dasharray: 100%;
+				stroke-dashoffset: 100%;
+			}
+*/
+
+
+	/*.endcompetenciewrapper {
+	    width: 100%;
+	    height: 100vh;
+	    background-color: #00268000; 
+	    position: fixed;
+	    left: 0px;
+	    top: 0px;
+	    z-index: 1000;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	}
+
+		.endcompetenciemessage {
+		    width: 1vw;
+		    height: 1vw;
+		    border-radius: 1vw;
+		    background-color: #00268000;
+		    font-size: 2.88rem;
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    z-index: 1001;
+		    cursor: pointer;
+		    position: relative;
+		}
+
+		.endcompetenciemessage div {
+			text-align: center;
+			line-height: 2.5rem;
+			color: #ffffff00;
+		}
+
+		.endcompetenciemessage img {
+		    position: absolute;
+		    top: 18%;
+		    opacity: 0.0;
+		    width: 18px;
+		}*/
+
+	/* mobile 	*/
+	@media only screen 
+	and (min-device-width: 375px) 
+	and (max-device-width: 812px) {
+		body {
+			background-color: #d7f4f2;
+		}
+		.layout {
+			width: auto;
+			/*margin-top: 40px;*/
+			margin: 0px 10px 0px 10px;
+		}
+
+		#submitoption {
+		    width: 144px;
+		    height: 144px;
+		    border-radius: 72px;
+		    position: absolute;
+		    right: -26px; /*-26px;*/
+		    top: calc( 50% - 288px );
+		    text-align: center;
+		    line-height: 146px;
+		    /* color: rgb(255,255,255); */
+		    z-index: 12;
+		    cursor: pointer;
+		    font-family: Barlow;
+		    font-weight: 600;
+		    font-size: 20px;
+		    background-color: #ffb419;
+		    /*mix-blend-mode: difference;*/
+		    /*display: none;*/
+		}
+
+
+		.endcompetenciemessage {
+		    width: 1vw; /* */
+		    height: 1vw;
+		    border-radius: 1vw;
+		    background-color: #00268000;
+		    font-size: 2.0rem;
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    z-index: 1001;
+		    cursor: pointer;
+		    position: relative;
+		}
+
+		.endcompetenciemessage div {
+			text-align: center;
+			line-height: 1.8rem;
+			color: #ffffff00;
+		}
+
+		.endcompetenciemessage img {
+		    position: absolute;
+		    top: 18%;
+		    opacity: 0.0;
+		    width: 14px;
+		}
+
+		
+	}
+
+	
+
+	
+</style>
+<div class="layout">
+	<h1 style="display: none;">Recommended content</h1>
+
+	<header class="headerwrapper">
+		<div class="introsection" data-es="Contenido recomendado" data-en="Recommended content">Contenido recomendado</div>
+		<div class="competenciewrapper">
+			<div class="competencielevelname"></div>
+			<div class="competenciesvg" data-competenciaid="A1" >
+				
+			</div>
+
+		</div>
+
+		
+	</header>
+
+	<div class="recommendedcontents">
+		
+
+
+
+	</div>
+
+
+	
+
+ 
+</div>
+
+
+
+<script type="text/javascript">
+	$(document).ready( function() {
+		
+
+		$(document).off("scroll");	
+		$('.mainheaderwrapper').addClass('godown')
+		
+		var levelToNum = {
+			"Principiante":1,
+			"Intermedio":2,
+			"Avanzado":3
+		}
+
+		changeLanguage( defaultlanguage );
+
+		/* 
+		id: "33d6a460-b445-11eb-bed0-67f1e9864943", name: "Información y manejo de datos"
+		id: "33df56f8-b445-11eb-bed0-67f1e9864943", name: "Comunicación y colaboración"
+		id: "33e2d967-b445-11eb-bed0-67f1e9864943", name: "Gestión de Seguridad"
+		id: "33e5e6a8-b445-11eb-bed0-67f1e9864943", name: "Resolución de problemas"
+		id: "33e857aa-b445-11eb-bed0-67f1e9864943", name: "Innovación"
+		id: "33ec4f45-b445-11eb-bed0-67f1e9864943", name: "Tecnología"
+		id: "33f32d18-b445-11eb-bed0-67f1e9864943", name: "Formas de trabajo"
+		id: "33fc2dc6-b445-11eb-bed0-67f1e9864943", name: "Madurez y responsabilidad"
+		id: "33e01a47-b445-11eb-bed0-67f1e9864943", name: "Creación de contenido digital"
+		*/
+		/*
+		2321e8a0-b445-11eb-bed0-67f1e9864943  Kevin
+		8e4d0860-bcf3-11eb-a503-731a3133f9eb  Andrea
+		97a8a9a0-bcf3-11eb-a503-731a3133f9eb  Luis
+		b29535d0-bcf3-11eb-a503-731a3133f9eb  Ivan
+		d032d840-bcf3-11eb-a503-731a3133f9eb  Gabo
+		*/
+
+		// caso competenca 1 + Andrea 
+		//dbidCompetencie = "33d6a460-b445-11eb-bed0-67f1e9864943";
+		//dbidcandidate = "2321e8a0-b445-11eb-bed0-67f1e9864943";
+		//alert( dbidCompetencie + "    " + dbidcandidate )
+		let endpointCompetencieResults = `https://gapp-kthh.supter.ai/api/competence/result/${dbidCompetencie}?uid=${dbidcandidate}`
+
+
+		indexCompetencie = iconsSvgs.findIndex((elemento, indice) => {
+		  if (elemento.id === dbidCompetencie) {
+		    return true;
+		  }
+		});
+
+		// d3.xml(`images/iconoscompetencias/${iconsSvgs[indexCompetencie].file}`, function(data) {
+		// 	d3.select('.competenciesvg').node().append(data.documentElement)
+
+		// 	let $t1 = $('.competenciesvg').find("path#trazobase");
+		// 	pathPrepare($t1);
+		// 	// TweenMax.to($t1, 0.8, {strokeDashoffset: (825.47509765625*2), ease:Power2.easeInOut, delay: retardo})
+		// 	TweenMax.to($t1, 0.8, {strokeDashoffset: 1532, ease:Power2.easeInOut, delay:0.4});
+	 //    }) 
+
+
+
+		d3.json(endpointCompetencieResults, function(data) {
+
+			console.log( "///////////// endpoint result data //////////////" );
+			console.log( data );
+
+			d3.selectAll(".profile").text( data.profile );
+
+			////////////////////////////////
+			
+			///////////////////////////////////////
+
+			// let tspanList = eleObj.find("svg text tspan");
+					
+			// 		console.log( "total", tspanList.length );
+
+			// 		let splitedTitleMatrix = firstWordAndRestMatrixLang(obj.full_name.es, obj.full_name.en) 
+			// 		//console.log( splitedTitleMatrix);
+					
+			// 		tspanList.each( function( its ) {
+			// 			console.log( $(this) )
+			// 			$(this).text( splitedTitleMatrix[defaultlanguage][its] )
+			// 				   .attr( "data-es", splitedTitleMatrix.es[its] )
+			// 		 	 	   .attr( "data-en", splitedTitleMatrix.en[its] );
+			// 		});
+
+
+			////////////////////////////////////////
+
+			d3.xml(`images/iconoscompetencias/${iconsSvgs[indexCompetencie].file}`, function(dataf) {
+				d3.select('.competenciesvg').node().append(dataf.documentElement)
+
+				let $t1 = $('.competenciesvg').find("path#trazobase");
+				pathPrepare($t1);
+				TweenMax.to($t1, 0.8, {strokeDashoffset: 1532, ease:Power2.easeInOut, delay:0.4});
+
+				let tspanList = $('.competenciesvg').find("svg text tspan");
+
+				//alert( tspanList.length );
+
+				//  SEPARA EN LINEAS LOS TITULOS DE COMPETENCIAS PARA EL SVG
+				let splitedTitleMatrix = firstWordAndRestMatrixLang(
+												data.competencies[0].full_name.es, 
+												data.competencies[0].full_name.en
+												) 
+
+
+				tspanList.each(function( i ) {
+				  $( this ).text( splitedTitleMatrix[defaultlanguage][i] )
+				 	 	   .attr( "data-es", splitedTitleMatrix.es[i] )
+				 	 	   .attr( "data-en", splitedTitleMatrix.en[i] );
+				});
+
+		    }) 
+
+			// COMPETENCIE LEVEL
+			d3.select(".competencielevelname")
+				.text( data.competencies[0].level[defaultlanguage])
+				.attr( "data-es", data.competencies[0].level.es )
+			 	.attr( "data-en", data.competencies[0].level.en );
+
+			var consecutiveContent = 0;
+
+			// SKILLS LIST
+			data.competencies[0].skills.forEach( (skillobj,iskill) => {
+
+				let moduleSkillEntity  = `<div class="skillrecommendedcontents" >`
+					moduleSkillEntity += `	<div class="levelskill">`
+					moduleSkillEntity += `		<div class="levelicons">`
+					for (var le = 0; le < levelToNum[skillobj.level.es] ; le++) {
+						moduleSkillEntity += `			<img src="images/estrellitaamarilla.svg" />`
+					}
+					moduleSkillEntity += `		</div>`
+					moduleSkillEntity += `		<div class="levelname" data-es="${skillobj.level.es}" data-en="${skillobj.level[defaultlanguage]}">${skillobj.level.en}</div>`
+					moduleSkillEntity += `	</div>`
+					moduleSkillEntity += `	<div class="titleskill" data-es="${skillobj.name.es}" data-en="${skillobj.name[defaultlanguage]}" >${skillobj.name.en}</div>`
+					moduleSkillEntity += `</div>`
+
+				$(".recommendedcontents").append(moduleSkillEntity)
+
+
+				let defaultimages ={"link_pdf": "images/pdfimage.svg", "link_gapp": "images/gappimage.svg"}
+
+
+				// CONTENT LIST FOR THIS SKILL
+				skillobj.content.forEach( (contentobj,icontent) => {
+
+					consecutiveContent++;
+
+					let idcontent = `c-${contentobj.id}-${consecutiveContent}`
+
+					let moduleContentEntity  = `<div class="recommendedcontent" id="${idcontent}" >`
+						moduleContentEntity += `	<div class="domainname">${extractDomain( contentobj.link )}</div>`
+
+						moduleContentEntity += `	<div class="titlecontent">${contentobj.title}</div>`
+
+						if (  contentobj.description.length >= 181 ) {
+							moduleContentEntity += `	<div class="descriptioncontent toggledescription" data-limiteddescription="${contentobj.description.substring(0, 181)} ... <img src='images/moretext.svg' height='11' />" data-description="${contentobj.description} <img src='images/lesstext.svg' height='11' />" data-togglestatus="1" >${contentobj.description.substring(0, 181)} ... <img src='images/moretext.svg' height='11' /></div>`
+						} else {
+							moduleContentEntity += `	<div class="descriptioncontent" >${contentobj.description}</div>`
+
+						}
+
+						// moduleContentEntity += `	<div class="titlecontent">Publicación recomedada</div>`
+						// moduleContentEntity += `	<div class="descriptioncontent">Descripción de esta publicación recomendada</div>`
+						
+						moduleContentEntity += `	<div class="contentimagewrapper">`
+						moduleContentEntity += `		<div class="contentimagebackground" data-link="${contentobj.link}" data-dbid="${contentobj.id}" data-dbuid="${contentobj.uid}" >`
+
+						if (contentobj.image == 'link_pdf' || contentobj.image == 'link_gapp') {
+							moduleContentEntity += `			<img class="contentimage" src="${defaultimages[contentobj.image]}" >`
+						} else {
+							moduleContentEntity += `			<img class="contentimage" src="${contentobj.image}" >`
+						}
+						
+						//moduleContentEntity += `			<img class="contentimage" src="images/gappimage.svg" >`
+						
+						
+						moduleContentEntity += `		</div>`
+
+						moduleContentEntity += `		<div class="iconlink" ><img src="images/iconexternallink.svg"></div>`
+
+						if ( contentobj.seen == "1" ) {
+							moduleContentEntity += `		<div class="iconvisited" ><img src="images/iconvisited.svg"></div>`
+						} else {
+							moduleContentEntity += `		<div class="iconvisited" style="display:none;"><img src="images/iconvisited.svg"></div>`
+						}
+						
+
+						moduleContentEntity += `	</div>`
+
+						let mediogrosor = 0,
+							grandegrosor = 0,
+							chicofill = "#229BFF"
+							relevante = 0;
+
+						if ( contentobj.liked == "1" ) {
+							mediogrosor = 18;
+							grandegrosor = 36;
+							chicofill = "#FFFFFF";
+							relevante = 1;
+						}
+
+						
+						moduleContentEntity += `	<div class="iconrelevant" >`
+						moduleContentEntity += `		<svg version="1.1" id="${idcontent}"  data-relevant="${relevante}" data-id="#${idcontent}" data-dbid="${contentobj.id}" data-dbuid="${contentobj.uid}" data-link="${contentobj.link}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="112.9px" height="106.8px" viewBox="0 0 112.9 106.8" style="enable-background:new 0 0 112.9 106.8;" xml:space="preserve">`
+
+						
+						moduleContentEntity += `			<path id="grande" style="fill:none;stroke:#B73CFF;stroke-width:${grandegrosor};stroke-miterlimit:10;" d="M71,39.8c-3.9-3.3-9.6-2.7-13.1,1`
+						moduleContentEntity += `			l-1.4,1.4l-1.4-1.4c-3.5-3.7-9.3-4.2-13.1-1c-4.4,3.8-4.7,10.6-0.7,14.7l13.6,14.1c0.9,0.9,2.3,0.9,3.2,0l13.6-14.1`
+						moduleContentEntity += `			C75.7,50.3,75.4,43.6,71,39.8L71,39.8z"/>`
+
+						moduleContentEntity += `			<path id="medio" style="fill:none;stroke:#229BFF;stroke-width:${mediogrosor};stroke-miterlimit:10;" d="M71,39.8c-3.9-3.3-9.6-2.7-13.1,1`
+
+						moduleContentEntity += `			l-1.4,1.4l-1.4-1.4c-3.5-3.7-9.3-4.2-13.1-1c-4.4,3.8-4.7,10.6-0.7,14.7l13.6,14.1c0.9,0.9,2.3,0.9,3.2,0l13.6-14.1`
+						moduleContentEntity += `			C75.7,50.3,75.4,43.6,71,39.8L71,39.8z"/>`
+
+						moduleContentEntity += `			<path id="chico" style="fill:${chicofill};" d="M71,39.8c-3.9-3.3-9.6-2.7-13.1,1l-1.4,1.4l-1.4-1.4c-3.5-3.7-9.3-4.2-13.1-1`
+						moduleContentEntity += `			c-4.4,3.8-4.7,10.6-0.7,14.7l13.6,14.1c0.9,0.9,2.3,0.9,3.2,0l13.6-14.1C75.7,50.3,75.4,43.6,71,39.8L71,39.8z"/>`
+						moduleContentEntity += `		</svg>`
+						moduleContentEntity += `	</div>`
+						moduleContentEntity += `</div>`
+
+
+					$(".skillrecommendedcontents").eq(iskill).append( moduleContentEntity ).ready( function () {
+
+					});
+
+					
+
+					
+					
+				})
+
+			})
+		})
+
+		$( "body" ).undelegate(".contentimagebackground","click").delegate( ".contentimagebackground", "click", function() {
+			//alert( $(this).data("link") )
+			window.open( $(this).data("link") , "_blank");
+
+			// Luis
+
+			let ele = $(this)
+			
+			let submitseen = {
+				"user_id": dbidcandidate,
+				"content_id":  $(this).data("dbid")
+				// "liked": "0",
+				// "seen":"1",
+				// "url": $(this).data("link"),
+			}
+
+			d3.json("https://48npahzxyh.execute-api.us-east-2.amazonaws.com/dev/insert",function(error, data) {
+				console.log("respuesta Luis");
+				console.log(data);
+				console.log(error);
+				//ele.parent().find(".iconvisited").css("display", "initial");
+			})
+			.header("Content-Type","application/json")
+			.send("POST", JSON.stringify( submitseen ) );
+
+			// Kevin
+
+			let submitseenliked = {
+				"content":{
+					"id": $(this).data("dbuid"),
+					"candidate_id": dbidcandidate,
+			        "seen": true
+				}
+			}
+
+			console.log( "submitseenliked ////////////////"  )
+			console.log( submitseenliked )
+
+			d3.json("https://gapp-kthh.supter.ai/api/likedseen",function(error, data) {
+				console.log("respuesta Kevin");
+				console.log(data);
+				console.log(error);
+				//ele.parent().find(".iconvisited").css("display", "initial");
+			})
+			.header("Content-Type","application/json")
+			.send("POST", JSON.stringify( submitseenliked ) );
+
+			ele.parent().find(".iconvisited").css("display", "initial");
+			
+		})
+
+		veces = 0;
+
+		$( "body" ).undelegate(".iconrelevant svg","click").delegate( ".iconrelevant svg", "click", function() {	
+			console.log( ++veces );
+			if (  $(this).data("relevant") == '0' ) {
+				$(this).data("relevant", 1) 
+				gsap.to(`${$(this).data("id")} #chico` , {fill: "#FFFFFF", duration: 0.6, delay:0.0});
+				gsap.to(`${$(this).data("id")} #medio` , { "stroke-width": 18, duration: 0.4, delay:0.4, ease: Elastic.easeOut.config(0.8,0.3) });
+				gsap.to(`${$(this).data("id")} #grande` , {"stroke-width": 36, duration: 0.4, delay:0.6, ease: Elastic.easeOut.config(0.8,0.3)});
+
+				// Luis
+
+				let submitliked = {
+					"user_id": dbidcandidate,
+					"content_id":  $(this).data("dbid")
+					// "liked":"1",
+					// "link": $(this).data("link")
+				}
+
+				console.log (submitliked);
+
+				d3.json("https://48npahzxyh.execute-api.us-east-2.amazonaws.com/dev/update_like",function(error, data) {
+					console.log("respuesta Luis");
+					console.log(data);
+					console.log(error);
+				})
+				.header("Content-Type","application/json")
+				.send("POST", JSON.stringify( submitliked ) );
+
+				// Kevin
+
+				let submitseenliked = {
+					"content":{
+						"id": $(this).data("dbuid"),
+						"candidate_id": dbidcandidate,
+						"liked": true
+					}
+				}
+
+				d3.json("https://gapp-kthh.supter.ai/api/likedseen",function(error, data) {
+					console.log("respuesta Kevin");
+					console.log(data);
+					console.log(error);
+				})
+				.header("Content-Type","application/json")
+				.send("POST", JSON.stringify( submitseenliked ) );
+
+			} else {
+				$(this).data("relevant", 0) 
+				gsap.to(`${$(this).data("id")} #chico` , {fill: "#229BFF", duration: 0.6, delay:0.0});
+				gsap.to(`${$(this).data("id")} #medio` , { "stroke-width": 0, duration: 0.4, delay:0.4, ease: Power4.easeOut });
+				gsap.to(`${$(this).data("id")} #grande` , {"stroke-width": 0, duration: 0.4, delay:0.6, ease: Power4.easeOut});
+
+				// Luid 
+				let submitliked = {
+					"user_id": dbidcandidate,
+					"content_id":  $(this).data("dbid")
+					// "liked":"0",
+					// "link": $(this).data("link")
+				}
+
+				d3.json("https://48npahzxyh.execute-api.us-east-2.amazonaws.com/dev/update_unlike",function(error, data) {
+					console.log("respuesta Luis");
+					console.log(data);
+					console.log(error);
+				})
+				.header("Content-Type","application/json")
+				.send("POST", JSON.stringify( submitliked ) );
+
+				// Kevin
+				let submitseenliked = {
+					"content":{
+						"id": $(this).data("dbuid"),
+						"candidate_id": dbidcandidate,
+						"liked": false
+					}
+				}
+
+				d3.json("https://gapp-kthh.supter.ai/api/likedseen",function(error, data) {
+					console.log("respuesta Kevin");
+					console.log(data);
+					console.log(error);
+				})
+				.header("Content-Type","application/json")
+				.send("POST", JSON.stringify( submitseenliked ) );
+
+
+			}	
+			
+		})
+
+	})
+</script>
