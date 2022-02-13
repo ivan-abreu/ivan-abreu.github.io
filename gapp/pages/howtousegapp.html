@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html>
+
+<body>
 <style type="text/css">
 
 	body {
@@ -10,7 +14,10 @@
 	.layout {
 		/*height: 702px;*/
 		margin-top: 60px;
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* 9 competencias */
+		/*grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;*/ /* 9 competencias */
+		display: grid;
+		grid-template-columns: 0.4fr 0.6fr;
+		gap: 16px;
 		/*background-color: #d7f4f2;*/
 	}
 
@@ -37,7 +44,7 @@
 
 	/*.layout p:first-of-type {
 		
-	}*/
+	}
 
 	
 	.naranja {
@@ -57,6 +64,7 @@
 		align-self: center;
 		justify-self: center;
 	}
+	*/
 	/*#comenzar {
 		width: 100px;
 		height: 100px;
@@ -71,7 +79,7 @@
 	
 
 	
-
+	/*
 	.competencia {
 		grid-column: 2 / 6;
 	}
@@ -86,9 +94,67 @@
 		height: 67px !important;
 		margin-bottom: 10px;
 	}
-
+	*/
 	#landscapeWarning {
 		display: none;
+	}
+
+	.fullcolumns {
+		grid-column: 1 / -1;
+	}
+
+	.leftcolumn {
+		grid-column: 1 / 2;
+	}
+
+	.rightcolumn {
+		grid-column: 2 / -1;
+	}
+
+	.howtouse {
+		font-size: 1.2rem;
+		margin-bottom: 1rem !important;
+	}
+
+	.rightcolumn img, .leftcolumn img {
+		width: 100%;
+		border: 1px solid #229cff85;
+	}
+
+	.rightcolumn svg, .leftcolumn svg {
+		width: 100%;
+		border: 1px solid #229cff85;
+	}
+
+	.titlemanual {
+		font-size: 1.4rem;
+		font-weight: 700;
+	} 
+
+	.manuallanguage {
+		font-size: 0.689em;
+		font-weight: 400;
+	}
+
+	.manualblockseparatorpattern {
+		height: 3rem;
+		/*background-color: #229bff;*/
+		/*background: linear-gradient(45deg #ffffff 50%,#229bff 50%);*/
+		background-image: repeating-linear-gradient(-45deg, currentColor 0, currentColor 2px, transparent 0, transparent 50%);
+    	background-size: 10px 10px;
+		margin-bottom: 4rem !important;
+	}
+
+	.manualblockseparatorpatter2 {
+		height: 4px;
+		/*background-color: #229bff;*/
+		background-image: repeating-linear-gradient(90deg, currentColor 0, currentColor 4px, transparent 0, transparent 8px);
+		background-size: 8px 8px;
+	}
+
+	.manualblockseparator {
+		height: 3rem;
+		/*background-color: #229bff;*/
 	}
 
 	/* mobile 	*/
@@ -102,17 +168,34 @@
 			margin-top: 40px;
 			padding: 0px 20px;
 		}
+		/*
 		.competenciamenu {
 			grid-column: 1 / 7;
 			display: flex;
 			justify-content: center;
-			/*background-color: red;*/
 		}
 
 		.competenciamenu svg {
 			width: 80%;
-			/*height: 57px !important;*/
 			margin-bottom: -15px;
+		}
+		*/
+
+		.leftcolumn {
+			grid-column: 1 / -1;
+		}
+
+		.rightcolumn {
+			grid-column: 1 / -1;
+		}
+
+		.leftcolumn {
+			display: flex;
+			justify-content: center;
+		}
+		.rightcolumn img, .leftcolumn img {
+			width: 80%;
+			border: 1px solid #002680;
 		}
 	}
 
@@ -120,16 +203,290 @@
 
 	
 </style>
+
 <div class="layout azulgapp" style="font-size: 2rem;font-weight: 300;padding-top: 4rem;">
 		
 	<h1 style="display: none">gapp</h1>
-	<!-- <img src="images/logogapp.svg"> -->
 	
-	<p data-es="Cómo utilizar <span class='gapp'>Gapp</span>" data-en="How to use <span class='gapp'>Gapp</span>">Cómo utilizar <span class='gapp'>Gapp</span></p>
+	<p class="fullcolumns" data-es="Cómo utilizar <span class='gapp'>Gapp</span>" data-en="How to use <span class='gapp'>Gapp</span>">Cómo utilizar <span class='gapp'>Gapp</span></p>
+	<p class="fullcolumns titlemanual"
+		data-es='Manual de usuarios <span class="manuallanguage">(ESPAÑOL)</span>''
+		data-en='User handbook <span class="manuallanguage">(ENGLISH)</span>''
+	>
+		Manual de usuarios <span class="manuallanguage">(ESPAÑOL)</span>
+	</p>
+	
+	<p class="fullcolumns howtouse" 
+		data-es="En esta sección te daremos los pasos para empezar a utilizar Gapp y obtener herramientas que aporten al cierre de brechas tanto de competencias como de habilidades en el ámbito digital." 
+		data-en="In this section we will give you the quick steps to start using Gapp
+		and get advantage of this tool for closing gaps in competences and
+		skills in the digital field."
+	>
+		En esta sección te daremos los pasos para empezar a utilizar Gapp y obtener herramientas que aporten al cierre de brechas tanto de competencias como de habilidades en el ámbito digital.
+	</p>
+	
+	<div class="fullcolumns manualblockseparatorpattern"></div>
+
+	<div class="leftcolumn" id="comenzar1">
+		<svg id="comenzar1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 414 713.5" enable-background="new 0 0 414 713.5" xml:space="preserve" >
+			<g id="Capa_1">
+				<image overflow="visible" width="828" height="1427" xlink:href="./images/howtouse/2-Comenzar-Paso1.png"  transform="matrix(0.5 0 0 0.5 0 0)" 
+					data-imges="./images/howtouse/2-Comenzar-Paso1.png"
+					data-imgen="./images/howtouse/Eng2-LetsStart-Step1.png"
+				>
+				</image>
+			</g>
+			<g id="Capa_2">
+				
+					<circle id="circulo" class="parpadea" display="none" fill="none" stroke="#F3B745" stroke-width="12" stroke-miterlimit="10" cx="96" cy="264" r="72"/>
+					<path id="cursor" class="parpadea" display="none" fill="#F3B745" d="M125.1,286.4c-0.4,1-1.3,1.6-2.3,1.6h-10.8l4.6,9.7c1,2,0.1,4.5-1.9,5.5
+					c-2,1-4.5,0.1-5.5-1.9l-4.8-10l-7.7,9c-0.5,0.6-1.2,0.9-1.9,0.9c-0.3,0-0.6,0-0.8-0.2c-1-0.4-1.6-1.3-1.6-2.4V261
+					c0-1,0.6-1.8,1.4-2.2c0.9-0.4,1.9-0.2,2.6,0.4l27.8,24.6C125.2,284.4,125.4,285.4,125.1,286.4z" />
+				
+					<line display="none" fill="none" stroke="#F3B745" stroke-width="12" stroke-linecap="round" stroke-miterlimit="10" x1="86.6" y1="244.2" x2="75.5" y2="221.9"/>
+				
+					<line display="none" fill="none" stroke="#F3B745" stroke-width="12" stroke-linecap="round" stroke-miterlimit="10" x1="72.3" y1="259.8" x2="48.6" y2="252"/>
+				
+					<line display="none" fill="none" stroke="#F3B745" stroke-width="12" stroke-linecap="round" stroke-miterlimit="10" x1="106.8" y1="243.1" x2="114.6" y2="219.5"/>
+			</g>
+		</svg>
+	</div>
+	<div class="rightcolumn howtouse">
+		<h4
+			data-es="Paso 1: Comenzar"
+			data-en="Step 1: Let’s start"
+		>
+		Paso 1: Comenzar</h4>
+		<p
+			data-es="En el menú principal da clic en « comenzar » para mostrar las 9 áreas que forman parte de GAPP"
+			data-en="In the main menu, click on “Let’s Start” to display the 9 areas of
+			competence in GAPP"
+		>
+		En el menú principal da clic en « comenzar » para mostrar las 9 áreas que forman parte de GAPP</p>
+	</div>
+
+
+
+	<div class="fullcolumns manualblockseparator"></div>
+
+	<div class="leftcolumn">
+		<!--<img src="./images/howtouse/3-Comenzar-Paso2.png" alt="comenzar">-->
+
+		<svg id="comenzar2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 414 712" enable-background="new 0 0 414 712" xml:space="preserve">
+			<image overflow="visible" width="828" height="1424" xlink:href="./images/howtouse/3-Comenzar-Paso2.png"  transform="matrix(0.5 0 0 0.5 0 0)"
+			data-imges="./images/howtouse/3-Comenzar-Paso2.png"
+			data-imgen="./images/howtouse/Eng3-LetsStart-Step2.png"
+			>
+			</image>
+			<path id="cursor" fill="#F3B745" d="M237.6,92.5c-0.4,1-1.3,1.6-2.3,1.6h-10.8l4.6,9.7c1,2,0.1,4.5-1.9,5.5c-2,1-4.5,0.1-5.5-1.9l-4.8-10l-7.7,9
+				c-0.5,0.6-1.2,0.9-1.9,0.9c-0.3,0-0.6,0-0.8-0.2c-1-0.4-1.6-1.3-1.6-2.4V67.1c0-1,0.6-1.8,1.4-2.2c0.9-0.4,1.9-0.2,2.6,0.4
+				l27.8,24.6C237.7,90.5,237.9,91.6,237.6,92.5z"/>
+			<circle id="circulo_1_" class="parpadea" display="none" fill="none" stroke="#F3B745" stroke-width="12" stroke-miterlimit="10" cx="326" cy="285.9" r="72"/>
+		</svg>
+	</div>
+
+	<div class="rightcolumn howtouse">
+		<h4
+			data-es="Paso 2: Selecciona una de las 9 áreas de competencia"
+			data-en="Step 2: Select one of the 9 areas of competence"
+		>Paso 2: Selecciona una de las 9 áreas de competencia</h4>
+		<p
+		data-es="Da clic en cualquiera de las competencias para comenzar."
+		data-en="To start, click on any of the listed competencies."
+		>Da clic en cualquiera de las competencias para comenzar.</p>
+		<li
+		data-es="Se mostrará el porcentaje de avance cuando las áreas no han sido completadas. Puedes avanzar a tu ritmo."
+		data-en="-The percentage of progress will be displayed for the areas that
+		have not been completed yet. You can move at your own pace."
+		>Se mostrará el porcentaje de avance cuando las áreas no han sido completadas. Puedes avanzar a tu ritmo.</li>
+		<li
+		data-es="Se mostrará el nivel alcanzado con estrellas cuando la evaluaciónde esa competencia se haya finalizado."
+		data-en="The level achieved will be displayed with stars when the evaluation
+		of that competence has been fully completed."
+		>Se mostrará el nivel alcanzado con estrellas cuando la evaluaciónde esa competencia se haya finalizado.</li>
+		
+	</div>
+	<!-- -->
+	<div class="fullcolumns manualblockseparator"></div>
+
+	<div class="leftcolumn">
+		<!-- <img src="./images/howtouse/4-RevisaTuAvance-Paso3.png" alt="comenzar">-->
+		<svg id="revisa1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 414 712" enable-background="new 0 0 414 712" xml:space="preserve">
+			<image overflow="visible" width="828" height="1424" id="imagen" xlink:href="./images/howtouse/4-RevisaTuAvance-Paso3.png"  transform="matrix(0.5 0 0 0.5 0 0)"
+			data-imges="./images/howtouse/4-RevisaTuAvance-Paso3.png"
+			data-imgen="./images/howtouse/Eng4-CheckYourProgress-Step3.png"
+			>
+			</image>
+			<circle id="circulo" display="none" class="parpadea" fill="none" stroke="#F3B745" stroke-width="12" stroke-miterlimit="10" cx="121" cy="312" r="72"/>
+			<path id="cursor" display="none" class="parpadea" fill="#F3B745" d="M150.1,334.4c-0.4,1-1.3,1.6-2.3,1.6h-10.8l4.6,9.7c1,2,0.1,4.5-1.9,5.5c-2,1-4.5,0.1-5.5-1.9
+				l-4.8-10l-7.7,9c-0.5,0.6-1.2,0.9-1.9,0.9c-0.3,0-0.6,0-0.8-0.2c-1-0.4-1.6-1.3-1.6-2.4V309c0-1,0.6-1.8,1.4-2.2
+				c0.9-0.4,1.9-0.2,2.6,0.4l27.8,24.6C150.2,332.4,150.4,333.4,150.1,334.4z"/>
+		</svg>
+	</div>
+	
+	<div class="rightcolumn howtouse">
+		<h4
+		data-es="Paso 3: Revisa tu avance:"
+		data-en="Step 3: Check your progress"
+		>Paso 3: Revisa tu avance:</h4>
+		<p
+		data-es="En la sección « Revisa tu avance » se mostrará el nivel alcanzado en cada área completada."
+		data-en="In this section, the level reached in each completed area will be displayed."
+		>En la sección « Revisa tu avance » se mostrará el nivel alcanzado en cada área completada.</p>
+	</div>
+	<!-- -->
+
+
+	<div class="leftcolumn">
+		<!-- <img src="./images/howtouse/5-RevisaTuAvance2.png" alt="comenzar">-->
+
+		<svg id="avance2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 414 712" enable-background="new 0 0 414 712" xml:space="preserve">
+			<image overflow="visible" width="828" height="1424" xlink:href="./images/howtouse/5-RevisaTuAvance2.png"  transform="matrix(0.5 0 0 0.5 0 0)"
+			data-imges="./images/howtouse/5-RevisaTuAvance2.png"
+			data-imgen="./images/howtouse/Eng5-CheckYourProgess2.png"
+			>
+			</image>
+			<circle id="circulo" class="parpadea" display="none" fill="none" stroke="#F3B745" stroke-width="12" stroke-miterlimit="10" cx="109" cy="312" r="72"/>
+			<circle id="circulo_1_" class="parpadea" display="none" fill="none" stroke="#F3B745" stroke-width="12" stroke-miterlimit="10" cx="342" cy="655.9" r="46"/>
+			<circle id="circulo_2_" class="parpadea" display="none" fill="none" stroke="#F3B745" stroke-width="12" stroke-miterlimit="10" cx="342" cy="655.9" r="99.9"/>
+			<path id="cursor" class="parpadea" display="none" fill="#F3B745" d="M138.1,334.4c-0.4,1-1.3,1.6-2.3,1.6h-10.8l4.6,9.7c1,2,0.1,4.5-1.9,5.5c-2,1-4.5,0.1-5.5-1.9
+				l-4.8-10l-7.7,9c-0.5,0.6-1.2,0.9-1.9,0.9c-0.3,0-0.6,0-0.8-0.2c-1-0.4-1.6-1.3-1.6-2.4V309c0-1,0.6-1.8,1.4-2.2
+				c0.9-0.4,1.9-0.2,2.6,0.4l27.8,24.6C138.2,332.4,138.4,333.4,138.1,334.4z"/>
+		</svg>
+	</div>
+	
+	<div class="rightcolumn howtouse">
+		<!--<h4>Paso 3: Revisa tu avance:</h4>-->
+		<li
+		data-es="Cada sección muestra el nivel actual de cada habilidad en el área de competencia evaluada."
+		data-en="The level reached for each skill is shown by area of competence evaluated."
+		>Cada sección muestra el nivel actual de cada habilidad en el área de competencia evaluada.</li>
+		<li
+		data-es="También puedes revisar las áreas por finalizar."
+		data-en="You can also review the areas to be completed."
+		>También puedes revisar las áreas por finalizar.</li>
+	</div>
+
+
+	<div class="fullcolumns manualblockseparator"></div>
+	<!-- -->
+	<div class="leftcolumn">
+		<!--<img src="./images/howtouse/6-RevisaTuAvance-Paso4.png" alt="comenzar">-->
+
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 414 812.5" enable-background="new 0 0 414 812.5" xml:space="preserve">
+			<image overflow="visible" width="828" height="1625" xlink:href="./images/howtouse/6-RevisaTuAvance-Paso4.png"  transform="matrix(0.5 0 0 0.5 0 0)"
+			data-imges="./images/howtouse/6-RevisaTuAvance-Paso4.png"
+			data-imgen="./images/howtouse/Eng6-CheckYourProgress-Step4.png"
+			>
+			</image>
+			<circle id="circulo" class="parpadea" fill="none" stroke="#F3B745" stroke-width="12" stroke-miterlimit="10" cx="63" cy="671.6" r="97.6"/>
+			<path id="cursor" class="parpadea" fill="#F3B745" d="M92.1,694c-0.4,1-1.3,1.6-2.3,1.6H79.1l4.6,9.7c1,2,0.1,4.5-1.9,5.5c-2,1-4.5,0.1-5.5-1.9
+				l-4.8-10l-7.7,9c-0.5,0.6-1.2,0.9-1.9,0.9c-0.3,0-0.6,0-0.8-0.2c-1-0.4-1.6-1.3-1.6-2.4v-37.6c0-1,0.6-1.8,1.4-2.2
+				c0.9-0.4,1.9-0.2,2.6,0.4l27.8,24.6C92.2,692,92.4,693.1,92.1,694z"/>
+		</svg>
+	</div>
+	
+	<div class="rightcolumn howtouse">
+		<h4
+		data-es="Paso 4: Revisa el contenido recomendado"
+		data-en="Step 4: Check the recommended content"
+		>Paso 4: Revisa el contenido recomendado</h4>
+		<p
+		data-es="Una vez completada la evaluación de una competencia, tendrás acceso a contenido digital que te apoyará a subir de nivel en tus habilidades, sólo da clic el el icono « contenido recomendado »"
+		data-en='Once the evaluation is completed, you will have access to digital content that will support you to level up your skills, just click on the “recommended content” icon.'
+		>Una vez completada la evaluación de una competencia, tendrás acceso a contenido digital que te apoyará a subir de nivel en tus habilidades, sólo da clic el el icono « contenido recomendado »</p>
+	</div>
+
+	<!-- -->
+
+	<div class="fullcolumns manualblockseparator"></div>
+
+
+	<div class="leftcolumn">
+		<!--<img src="./images/howtouse/7-ContenidoRecomendado-Paso5.png" alt="comenzar">-->
+
+		<svg id="recomendado5" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 414 812.5" enable-background="new 0 0 414 812.5" xml:space="preserve">
+			<image overflow="visible" width="828" height="1625" xlink:href="./images/howtouse/7-ContenidoRecomendado-Paso5.png"  transform="matrix(0.5 0 0 0.5 0 0)"
+			data-imges="./images/howtouse/7-ContenidoRecomendado-Paso5.png"
+			data-imgen="./images/howtouse/7-ContenidoRecomendado-Paso5.png"
+			>
+			</image>
+			<path id="cursor" fill="#F3B745" d="M368.5,628c-0.4,1-1.3,1.6-2.3,1.6h-10.8l4.6,9.7c1,2,0.1,4.5-1.9,5.5c-2,1-4.5,0.1-5.5-1.9
+				l-4.8-10l-7.7,9c-0.5,0.6-1.2,0.9-1.9,0.9c-0.3,0-0.6,0-0.8-0.2c-1-0.4-1.6-1.3-1.6-2.4v-37.6c0-1,0.6-1.8,1.4-2.2
+				c0.9-0.4,1.9-0.2,2.6,0.4l27.8,24.6C368.6,626,368.8,627.1,368.5,628z"/>
+		</svg>
+	</div>
+	
+	<div class="rightcolumn howtouse">
+		<h4
+		data-es="Paso 5: Cierra brechas"
+		data-en="¿?"
+		>Paso 5: Cierra brechas</h4>
+		<p
+		data-es="Comienza a cerrar brechas al revisar el contenido adecuado para cada área de competencia y habilidad."
+		data-en="¿?"
+		>Comienza a cerrar brechas al revisar el contenido adecuado para cada área de competencia y habilidad.</p>
+		<p
+		data-es="Si te gustó el contenido puedes marcarlo al dar clic en el icono de corazón."
+		data-en=""
+		>Si te gustó el contenido puedes marcarlo al dar clic en el icono de corazón.</p>
+	</div>
+
+	<!-- -->
+	<div class="leftcolumn">
+		<!--<img src="./images/howtouse/8-ContenidosDeAprendizaje1.png" alt="comenzar">-->
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 414 715" enable-background="new 0 0 414 715" xml:space="preserve">
+			<image overflow="visible" width="828" height="1430" xlink:href="./images/howtouse/8-ContenidosDeAprendizaje1.png"  transform="matrix(0.5 0 0 0.5 0 0)"
+			data-imges="./images/howtouse/8-ContenidosDeAprendizaje1.png"
+			data-imgen="./images/howtouse/Eng7-YourLearnigPath1.png"
+			>
+			</image>
+			<circle id="circulo" class="parpadea" display="none" fill="none" stroke="#F3B745" stroke-width="12" stroke-miterlimit="10" cx="131.5" cy="363" r="72"/>
+			<path id="cursor" class="parpadea" display="none" fill="#F3B745" d="M160.6,385.4c-0.4,1-1.3,1.6-2.3,1.6h-10.8l4.6,9.7c1,2,0.1,4.5-1.9,5.5
+				c-2,1-4.5,0.1-5.5-1.9l-4.8-10l-7.7,9c-0.5,0.6-1.2,0.9-1.9,0.9c-0.3,0-0.6,0-0.8-0.2c-1-0.4-1.6-1.3-1.6-2.4V360
+				c0-1,0.6-1.8,1.4-2.2c0.9-0.4,1.9-0.2,2.6,0.4l27.8,24.6C160.7,383.4,160.9,384.4,160.6,385.4z"/>
+		</svg>
+	</div>
+	
+	<div class="rightcolumn howtouse">
+		<!--<h4>Paso 5: Cierra brechas</h4>-->
+		<p
+		data-es="En esta sección también puedes encontrar el contenido seleccionado para las áreas de competencia que han sido completadas."
+		data-en="In this section you can also find the content selected for the areas of competence that have been completed."
+		>En esta sección también puedes encontrar el contenido seleccionado para las áreas de competencia que han sido completadas.</p>
+	</div>
 
 	
 
+	<!-- -->
+	<div class="leftcolumn">
+		<!--<img src="./images/howtouse/9-ContenidosDeAprendizaje2.png" alt="comenzar">-->
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 414 713" enable-background="new 0 0 414 713" xml:space="preserve">
+			<image overflow="visible" width="828" height="1426" xlink:href="./images/howtouse/9-ContenidosDeAprendizaje2.png"  transform="matrix(0.5 0 0 0.5 0 0)"
+			data-imges="./images/howtouse/9-ContenidosDeAprendizaje2.png"
+			data-imgen="./images/howtouse/Eng8-YourLearningPath2.png"
+			>
+			</image>
+			<circle id="circulo" class="parpadea" display="none" fill="none" stroke="#F3B745" stroke-width="12" stroke-miterlimit="10" cx="196" cy="190" r="72"/>
+			<path id="cursor" class="parpadea" display="none" fill="#F3B745" d="M225.1,212.4c-0.4,1-1.3,1.6-2.3,1.6h-10.8l4.6,9.7c1,2,0.1,4.5-1.9,5.5
+				c-2,1-4.5,0.1-5.5-1.9l-4.8-10l-7.7,9c-0.5,0.6-1.2,0.9-1.9,0.9c-0.3,0-0.6,0-0.8-0.2c-1-0.4-1.6-1.3-1.6-2.4V187
+				c0-1,0.6-1.8,1.4-2.2c0.9-0.4,1.9-0.2,2.6,0.4l27.8,24.6C225.2,210.4,225.4,211.4,225.1,212.4z"/>
+		</svg>
 
+	</div>
+	
+	<div class="rightcolumn howtouse">
+		<!--<h4>Paso 5: Cierra brechas</h4>-->
+		<p
+		data-es="Para descubrir las recomendaciones y volver a ellas cuando lo necesites da clic en cada una de las competencias listadas. Se muestran únicamente aquellas que han sido evaluadas al 100%."
+		data-en="To discover the content recommended and return to it whenever you need, click on each of the listed competencies. Only those that have been 100% evaluated are shown."
+		>Para descubrir las recomendaciones y volver a ellas cuando lo necesites da clic en cada una de las competencias listadas. Se muestran únicamente aquellas que han sido evaluadas al 100%.</p>
+	</div>
+
+	<div class="fullcolumns manualblockseparator"></div>
+
+	<div class="fullcolumns manualblockseparatorpattern"></div>
 
 </div>
 <script type="text/javascript">
@@ -164,6 +521,54 @@
 				
 			})
 		//}
+		
+		/*
+		d3.select("#cursorcomenzar1")
+			.transition()
+            .duration(1000)
+            .style("display", "initial");
+		*/
+		var forwardbackwardanimflag = true;
+		//var forwardbackwardanimmodule = 0;
+		var forwardbackwardanim = setInterval(() => {
 
+			if( forwardbackwardanimflag) {
+				d3.selectAll(".parpadea").style("display", "initial")
+				
+				d3.select("#comenzar2").selectAll("#cursor")
+				  .transition().duration(400).attr("transform", "translate(-60,415)")
+
+				d3.select("#recomendado5").selectAll("#cursor")
+				  .transition().duration(400).attr("transform", "translate(-200,0)")
+
+				//d3.select("#comenzar1").select("#circulo").style("display", "initial")
+				//.select("#comenzar1").select("#cursor").style("display", "initial");
+			} else {
+				d3.selectAll(".parpadea").style("display", "none");
+
+				d3.select("#comenzar2").selectAll("#cursor")
+				  .transition().duration(400).attr("transform", "translate(-60,0)")
+
+				d3.select("#recomendado5").selectAll("#cursor")
+				  .transition().duration(400).attr("transform", "translate(0,0)")
+			}
+			forwardbackwardanimflag = !forwardbackwardanimflag
+
+		}, 1000)
+		
+		
+		/*function animateManual( objeto ) {
+			alert( objeto )
+		}*/
+
+		/*
+		d3.xml("../images/howtouse/2-Comenzar-Paso1.svg")
+			.then(data => {
+				d3.select("#comenzar1").node().append(data.documentElement)
+				d3.select("#cursorcomenzar1").style("display", "initial");
+			});
+			*/
 	})
 </script>
+</body>
+</html>
