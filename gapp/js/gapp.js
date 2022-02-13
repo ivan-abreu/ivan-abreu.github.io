@@ -153,7 +153,7 @@ function parseURL() {
 			$(`#menu-mobile li[data-page="${targetpageName}"]`).addClass('currentpage');
 			if ( estado == 1) $("#hamburger").trigger( "click" );	
 
-			let pageURL = `pages/${targetpage}`;
+			let pageURL = `./pages/${targetpage}`;
 
 			switch(activepage) {
 			  case "unboarding.html":
@@ -193,7 +193,7 @@ function parseURL() {
 	
 	} else {
 		// warning NO candidate
-		location.replace("wc/")
+		location.replace("./wc/")
 	}
 
 }
@@ -358,6 +358,10 @@ function setupLanguage() {
 function changeLanguage( lang ) {
 	$( "*[data-es]").each(function( index ) {
 	  $( this ).html( $( this ).data(lang) ) ;
+	});
+
+	$( "*[data-imges]").each(function( index ) {
+		$( this ).attr("xlink:href", $( this ).data("img"+lang) )
 	});
 }
 
@@ -1693,7 +1697,7 @@ function endCompetencieUX() {
 
 		let entidad  = `<div class="endcompetenciewrapper">`
 			entidad += `	<div class="endcompetenciemessagefinal" style="margin-top:-2rem;" >`
-			entidad += `		<img src="images/closeiconw.svg" />`
+			entidad += `		<img src="./images/closeiconw.svg" />`
 			entidad += `		<div class="light" style="font-weight: 300;">${line1[defaultlanguage]}</div>`
 			entidad += `		<div class="bold" style="margin-top: 0.8rem;">${line2[defaultlanguage]}</div>`
 			entidad += `	</div>`
@@ -1728,7 +1732,7 @@ function endCompetencieUX() {
 
 		let entidad  = `<div class="endcompetenciewrapper">`
 			entidad += `	<div class="endcompetenciemessage" style="margin-top:-2rem;" >`
-			entidad += `		<img src="images/closeiconw.svg" />`
+			entidad += `		<img src="./images/closeiconw.svg" />`
 			entidad += `		<div class="light" style="font-weight: 300;">${line1[defaultlanguage]}</div>`
 			entidad += `		<div class="bold" style="margin-top: 0.8rem;">${line2[defaultlanguage]}</div>`
 			entidad += `	</div>`
