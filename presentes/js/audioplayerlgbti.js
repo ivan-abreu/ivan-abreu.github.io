@@ -48,6 +48,7 @@ var AudioPlayerLGBTI = function(p) {
         p.file = f;
         song.stop();
         song = p.loadSound(  `../audios/${f}` , loaded);
+        //alert("loading")
     } 
 
     p.getFileRecording = function() {
@@ -73,6 +74,7 @@ var AudioPlayerLGBTI = function(p) {
         song.play();
         song.setVolume(0.4);
         song.onended( endPlayer );
+        alert("loaded")
     }
 
     p.draw = function() {
