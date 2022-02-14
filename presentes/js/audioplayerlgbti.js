@@ -72,9 +72,9 @@ var AudioPlayerLGBTI = function(p) {
 
     function loaded() {
         song.play();
-        song.setVolume(0.3);
+        song.setVolume(0.4);
         song.onended( endPlayer );
-        //alert("loaded")
+        alert("loaded")
     }
 
     p.draw = function() {
