@@ -84,6 +84,7 @@ class Sketch {
       d3.select(".menuicon").style("display", "initial")
       d3.select(".tooltip").style("display", "initial")
       d3.select("#cargando").style("display", "none")
+      d3.select("#loading-bar").style("display", "none")
       enableScroll();
       playAnimacionPortada();
     })
