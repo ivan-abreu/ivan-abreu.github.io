@@ -19,6 +19,7 @@ class Sketch {
     this.container = document.getElementById("slider");
 
     this.imagesDic = {
+      "portada00": "../images/portada00B.jpg", // 0
       "portada01": "../images/portada01.jpg", // 0
       "portada02": "../images/portada02.jpg", // 1
       "portada03": "../images/portada04.jpg", // 2
@@ -79,6 +80,12 @@ class Sketch {
       this.addObjects();
       this.resize();
       this.play();
+      d3.select("#scrolldowniconwrapper").style("display", "initial")
+      d3.select(".menuicon").style("display", "initial")
+      d3.select(".tooltip").style("display", "initial")
+      d3.select("#cargando").style("display", "none")
+      enableScroll();
+      playAnimacionPortada();
     })
     
 
@@ -100,8 +107,9 @@ class Sketch {
     
 
     Promise.all(promises).then((result) => {
-      console.log( result);
+      //console.log( result );
       cb();
+      console.log( "listo" );
     }).catch( (error) => {
       console.log( error)
     });
@@ -131,7 +139,7 @@ class Sketch {
     
 
     // image cover
-    this.imageAspect = this.texturesDic["portada01"].image.height/this.texturesDic["portada01"].image.width;
+    this.imageAspect = this.texturesDic["portada00"].image.height/this.texturesDic["portada00"].image.width;
     let a1; let a2;
     if(this.height/this.width>this.imageAspect) {
       a1 = (this.width/this.height) * this.imageAspect ;
@@ -176,8 +184,8 @@ class Sketch {
         swipe: { type: "f", value: 0 },
         width: { type: "f", value: 0 },
         radius: { type: "f", value: 0 },
-        texture1: { type: "f", value: this.texturesDic["portada01"] },
-        texture2: { type: "f", value: this.texturesDic["portada02"] },
+        texture1: { type: "f", value: this.texturesDic["portada00"] },
+        texture2: { type: "f", value: this.texturesDic["portada01"] },
         displacement: { type: "f", value: new THREE.TextureLoader().load('../img/disp1.jpg') },
         resolution: { type: "v4", value: new THREE.Vector4() },
       },
