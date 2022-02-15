@@ -237,7 +237,7 @@ function stopAnimacionPortada() {
     sketch.stop();
 }
 
-playAnimacionPortada();
+//playAnimacionPortada();
 
 var tweens1 = TweenMax.to(".tituloprincipal", 1.8, {"opacity": "0", "y": window.innerHeight*0.65 });
 	
@@ -777,4 +777,6 @@ function adjustMainMenu(currentTriggerEle) {
     //alert(1818)
 }
 
-adjustMainMenu("inicio")
+adjustMainMenu("inicio");
+
+disableScroll();
