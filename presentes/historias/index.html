@@ -97,10 +97,22 @@
         <div id="mainlayout">
             <section class="portada" id="portadatitulo">
                 
-                <h1 class="tituloprincipal">Mayores <span class="lgbt">LGBTI+</span> en México:<br>existir, sobrevivir, persistir.</h1>
+                <h1 class="tituloprincipal">
+                    Mayores <span class="lgbt">LGBTI+</span> en México:<br>existir, sobrevivir, persistir.
+                </h1>
 
                 <div id="scrolldowniconwrapper"></div>
                 <div class="tooltip"><i>SCROLL DOWN</i> PARA COMENZAR</div>
+                <div id="cargando">
+                    CARGANDO
+                    <svg id="loading-bar" xmlns="http://www.w3.org/2000/svg" width="36" height="22" viewBox="0 0 36 22">
+                        <g>
+                          <rect id="loading-bar-left" fill="#ffffff" width="8" height="22"/>
+                          <rect id="loading-bar-middle" fill="#ffffff" width="8" height="22" x="14"/>
+                          <rect id="loading-bar-right" fill="#ffffff" width="8" height="22" x="28"/>
+                        </g>
+                    </svg>
+                </div>
                 <script>
                     d3.xml("../images/scrolldown_anim.svg")
                     .then(data => {
@@ -221,7 +233,7 @@
                         <q>No había grupos de lesbianas, no había grupos de chicos trans, no había nada. Entonces yo la verdad cada vez esto se me iba agudizando más, pero como quiera yo dije: si no te mueves pues entonces ahí quédate, aislado, vete a chillar a un rincón y muérete de tristeza. Y no, yo pasé a un lado tantito la tristeza y dije: a caminar pa’ delante, para adelante, para adelante</q>
                     </p>
                     <div class="wrappervideo playvideo" id="mario04w" >
-                        <video class="videoinline" id="mario04" preload="auto" poster="../images/mario_04video.jpg" >
+                        <video class="videoinline" id="mario04" preload="auto" poster="../images/mario_04video.jpg" onabort="alert('aaaabort')" >
                             <source src="../videos/mario_04.mp4" onended="videoEnded(this)" type="video/mp4">
                             Your browser does not support HTML5 video.
                         </video>
@@ -592,7 +604,7 @@
         <script src="../js/dispmapwebgl/dat-gui.js"></script>
         <script src="../js/dispmapwebgl/gsap.js"></script>
         <script src="../js/dispmapwebgl/sketch.js"></script>
-        <script src="../js/dispmapwebgl/demo8.js"></script>
+        <script src="../js/dispmapwebgl/initbackgroundanim.js"></script>
 
         <script src="../js/audioplayerlgbti.js"></script>
         
